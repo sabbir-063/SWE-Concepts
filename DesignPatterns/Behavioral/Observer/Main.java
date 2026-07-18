@@ -1,27 +1,27 @@
-﻿package DesignPatterns.Behavioral.Observer;
+package DesignPatterns.Behavioral.Observer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 // ==========================================
-// Component 1: Subject (à¦ªà¦¾à¦¬à¦²à¦¿à¦¶à¦¾à¦° / à¦¯à¦¾à¦° à¦ªà¦°à¦¿à¦¬à¦°à§à¦¤à¦¨ à¦¸à¦¬à¦¾à¦‡ à¦œà¦¾à¦¨à¦¤à§‡ à¦šà¦¾à§Ÿ)
+// Component 1: Subject (পাবলিশার / যার পরিবর্তন সবাই জানতে চায়)
 // ==========================================
 interface Publisher {
-    void subscribe(Subscriber subscriber);     // à¦¸à¦¾à¦¬à¦¸à§à¦•à§à¦°à¦¾à¦‡à¦¬ à¦•à¦°à¦¾à¦° à¦œà¦¨à§à¦¯
-    void unsubscribe(Subscriber subscriber);   // à¦†à¦¨à¦¸à¦¾à¦¬à¦¸à§à¦•à§à¦°à¦¾à¦‡à¦¬ à¦•à¦°à¦¾à¦° à¦œà¦¨à§à¦¯
-    void notifySubscribers();                  // à¦†à¦ªà¦¡à§‡à¦Ÿ à¦œà¦¾à¦¨à¦¾à¦¨à§‹à¦° à¦œà¦¨à§à¦¯
+    void subscribe(Subscriber subscriber);     // সাবস্ক্রাইব করার জন্য
+    void unsubscribe(Subscriber subscriber);   // আনসাবস্ক্রাইব করার জন্য
+    void notifySubscribers();                  // আপডেট জানানোর জন্য
 }
 
 // ==========================================
-// Component 2: Observer (à¦¸à¦¾à¦¬à¦¸à§à¦•à§à¦°à¦¾à¦‡à¦¬à¦¾à¦° / à¦¯à¦¾à¦°à¦¾ à¦†à¦ªà¦¡à§‡à¦Ÿ à¦ªà§‡à¦¤à§‡ à¦šà¦¾à§Ÿ)
+// Component 2: Observer (সাবস্ক্রাইবার / যারা আপডেট পেতে চায়)
 // ==========================================
 interface Subscriber {
-    // à¦¸à¦¾à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦¯à¦–à¦¨à¦‡ à¦†à¦ªà¦¡à§‡à¦Ÿ à¦¹à¦¬à§‡, à¦¤à¦–à¦¨ à¦¸à§‡ à¦¸à¦¾à¦¬à¦¸à§à¦•à§à¦°à¦¾à¦‡à¦¬à¦¾à¦°à§‡à¦° à¦à¦‡ à¦®à§‡à¦¥à¦¡à¦Ÿà¦¾ à¦•à¦² à¦•à¦°à§‡ à¦¦à¦¿à¦¬à§‡
+    // সাবজেক্ট যখনই আপডেট হবে, তখন সে সাবস্ক্রাইবারের এই মেথডটা কল করে দিবে
     void update(String latestArticle);
 }
 
 // ==========================================
-// Component 3: Concrete Subject (à¦†à¦¸à¦² à¦ªà¦¾à¦¬à¦²à¦¿à¦¶à¦¾à¦°)
+// Component 3: Concrete Subject (আসল পাবলিশার)
 // ==========================================
 class TechBlog implements Publisher {
     private List<Subscriber> subscribers = new ArrayList<>();
@@ -43,21 +43,21 @@ class TechBlog implements Publisher {
     public void notifySubscribers() {
         System.out.println("\nNotifying all " + subscribers.size() + " subscribers...");
         for (Subscriber sub : subscribers) {
-            sub.update(latestArticle); // à¦¸à¦¬à¦¾à¦‡à¦•à§‡ à¦¨à¦¤à§à¦¨ à¦†à¦°à§à¦Ÿà¦¿à¦•à§‡à¦²à§‡à¦° à¦–à¦¬à¦° à¦ªà¦¾à¦ à¦¿à§Ÿà§‡ à¦¦à¦¿à¦²à§‹
+            sub.update(latestArticle); // সবাইকে নতুন আর্টিকেলের খবর পাঠিয়ে দিলো
         }
     }
 
-    // à¦¨à¦¤à§à¦¨ à¦†à¦°à§à¦Ÿà¦¿à¦•à§‡à¦² à¦ªà¦¾à¦¬à¦²à¦¿à¦¶ à¦•à¦°à¦¾à¦° à¦®à§‡à¦¥à¦¡
+    // নতুন আর্টিকেল পাবলিশ করার মেথড
     public void publishNewArticle(String title) {
         this.latestArticle = title;
         System.out.println("\n>>> [TechBlog] Published New Article: " + title + " <<<");
-        // à¦ªà¦¾à¦¬à¦²à¦¿à¦¶ à¦¹à¦“à§Ÿà¦¾à¦° à¦¸à¦¾à¦¥à§‡ à¦¸à¦¾à¦¥à§‡à¦‡ à¦¸à¦¬à¦¾à¦‡à¦•à§‡ à¦…à¦Ÿà§‹à¦®à§à¦¯à¦¾à¦Ÿà¦¿à¦• à¦¨à§‹à¦Ÿà¦¿à¦«à¦¾à¦‡ à¦•à¦°à¦¾ à¦¹à¦šà§à¦›à§‡
+        // পাবলিশ হওয়ার সাথে সাথেই সবাইকে অটোম্যাটিক নোটিফাই করা হচ্ছে
         notifySubscribers();
     }
 }
 
 // ==========================================
-// Component 4: Concrete Observer (à¦†à¦¸à¦² à¦¸à¦¾à¦¬à¦¸à§à¦•à§à¦°à¦¾à¦‡à¦¬à¦¾à¦°)
+// Component 4: Concrete Observer (আসল সাবস্ক্রাইবার)
 // ==========================================
 class User implements Subscriber {
     private String name;
@@ -68,7 +68,7 @@ class User implements Subscriber {
 
     @Override
     public void update(String latestArticle) {
-        // à¦¨à¦¤à§à¦¨ à¦†à¦ªà¦¡à§‡à¦Ÿ à¦ªà§‡à¦²à§‡ à¦‡à¦‰à¦œà¦¾à¦° à¦•à§€ à¦•à¦°à¦¬à§‡, à¦¸à§‡à¦Ÿà¦¾ à¦à¦–à¦¾à¦¨à§‡ à¦¬à¦²à¦¾ à¦†à¦›à§‡
+        // নতুন আপডেট পেলে ইউজার কী করবে, সেটা এখানে বলা আছে
         System.out.println(name + " received a notification! New post: " + latestArticle);
     }
 }
@@ -80,26 +80,26 @@ class User implements Subscriber {
 public class Main {
     public static void main(String[] args) {
         
-        // à§§. à¦à¦•à¦Ÿà¦¿ à¦ªà¦¾à¦¬à¦²à¦¿à¦¶à¦¾à¦° à¦¬à¦¾à¦¨à¦¾à¦²à¦¾à¦®
+        // ১. একটি পাবলিশার বানালাম
         TechBlog codingBlog = new TechBlog();
 
-        // à§¨. à¦•à¦¿à¦›à§ à¦¸à¦¾à¦¬à¦¸à§à¦•à§à¦°à¦¾à¦‡à¦¬à¦¾à¦° à¦¬à¦¾à¦¨à¦¾à¦²à¦¾à¦®
+        // ২. কিছু সাবস্ক্রাইবার বানালাম
         User sabbir = new User("Sabbir");
         User musfique = new User("Musfique");
         User john = new User("John");
 
-        // à§©. à¦¸à¦¾à¦¬à¦¸à§à¦•à§à¦°à¦¾à¦‡à¦¬à¦¾à¦°à¦°à¦¾ à¦¬à§à¦²à¦—à§‡ à¦¸à¦¾à¦¬à¦¸à§à¦•à§à¦°à¦¾à¦‡à¦¬ à¦•à¦°à¦²à§‹
+        // ৩. সাবস্ক্রাইবাররা ব্লগে সাবস্ক্রাইব করলো
         codingBlog.subscribe(sabbir);
         codingBlog.subscribe(musfique);
         codingBlog.subscribe(john);
 
-        // à§ª. à¦¬à§à¦²à¦— à¦¯à¦–à¦¨à¦‡ à¦¨à¦¤à§à¦¨ à¦•à¦¿à¦›à§ à¦ªà¦¾à¦¬à¦²à¦¿à¦¶ à¦•à¦°à¦¬à§‡, à¦¸à¦¬à¦¾à¦° à¦•à¦¾à¦›à§‡ à¦…à¦Ÿà§‹à¦®à§à¦¯à¦¾à¦Ÿà¦¿à¦• à¦–à¦¬à¦° à¦šà¦²à§‡ à¦¯à¦¾à¦¬à§‡!
+        // ৪. ব্লগ যখনই নতুন কিছু পাবলিশ করবে, সবার কাছে অটোম্যাটিক খবর চলে যাবে!
         codingBlog.publishNewArticle("Mastering Observer Pattern in Java");
         
-        // à§«. à¦œà¦¨ à¦†à¦¨à¦¸à¦¾à¦¬à¦¸à§à¦•à§à¦°à¦¾à¦‡à¦¬ à¦•à¦°à¦²à§‹
+        // ৫. জন আনসাবস্ক্রাইব করলো
         codingBlog.unsubscribe(john);
 
-        // à§¬. à¦à¦¬à¦¾à¦° à¦¨à¦¤à§à¦¨ à¦†à¦°à§à¦Ÿà¦¿à¦•à§‡à¦² à¦ªà¦¾à¦¬à¦²à¦¿à¦¶ à¦¹à¦²à§‡ à¦œà¦¨ à¦†à¦° à¦¨à§‹à¦Ÿà¦¿à¦«à¦¿à¦•à§‡à¦¶à¦¨ à¦ªà¦¾à¦¬à§‡ à¦¨à¦¾
+        // ৬. এবার নতুন আর্টিকেল পাবলিশ হলে জন আর নোটিফিকেশন পাবে না
         codingBlog.publishNewArticle("How to write Clean Code");
     }
 }

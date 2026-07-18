@@ -1,17 +1,17 @@
-﻿package DesignPatterns.Behavioral.State;
+package DesignPatterns.Behavioral.State;
 
 // ==========================================
-// Component 2: State Interface (à¦¸à§à¦Ÿà§‡à¦Ÿà§‡à¦° à¦•à¦®à¦¨ à¦°à§à¦²à¦¸)
+// Component 2: State Interface (স্টেটের কমন রুলস)
 // ==========================================
 interface MobileAlertState {
     void alert(MobileContext context);
 }
 
 // ==========================================
-// Component 3: Concrete States (à¦†à¦²à¦¾à¦¦à¦¾ à¦†à¦²à¦¾à¦¦à¦¾ à¦¸à§à¦Ÿà§‡à¦Ÿ)
+// Component 3: Concrete States (আলাদা আলাদা স্টেট)
 // ==========================================
 
-// à¦­à¦¾à¦‡à¦¬à§à¦°à§‡à¦¶à¦¨ à¦¸à§à¦Ÿà§‡à¦Ÿ
+// ভাইব্রেশন স্টেট
 class VibrationState implements MobileAlertState {
     @Override
     public void alert(MobileContext context) {
@@ -19,7 +19,7 @@ class VibrationState implements MobileAlertState {
     }
 }
 
-// à¦¸à¦¾à¦‡à¦²à§‡à¦¨à§à¦Ÿ à¦¸à§à¦Ÿà§‡à¦Ÿ
+// সাইলেন্ট স্টেট
 class SilentState implements MobileAlertState {
     @Override
     public void alert(MobileContext context) {
@@ -27,7 +27,7 @@ class SilentState implements MobileAlertState {
     }
 }
 
-// à¦¸à¦¾à¦‰à¦¨à§à¦¡ à¦¬à¦¾ à¦°à¦¿à¦‚ à¦¸à§à¦Ÿà§‡à¦Ÿ
+// সাউন্ড বা রিং স্টেট
 class SoundState implements MobileAlertState {
     @Override
     public void alert(MobileContext context) {
@@ -36,25 +36,25 @@ class SoundState implements MobileAlertState {
 }
 
 // ==========================================
-// Component 1: Context (à¦†à¦¸à¦² à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦¯à¦¾à¦° à¦¸à§à¦Ÿà§‡à¦Ÿ à¦¬à¦¦à¦²à¦¾à¦¬à§‡)
+// Component 1: Context (আসল অবজেক্ট যার স্টেট বদলাবে)
 // ==========================================
 class MobileContext {
     private MobileAlertState currentState;
 
-    // à¦¡à¦¿à¦«à¦²à§à¦Ÿà¦­à¦¾à¦¬à§‡ à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦°à¦¿à¦‚ à¦¸à§à¦Ÿà§‡à¦Ÿà§‡ à¦¥à¦¾à¦•à§‡
+    // ডিফল্টভাবে মোবাইল রিং স্টেটে থাকে
     public MobileContext() {
         currentState = new SoundState(); 
     }
 
-    // à¦¸à§à¦Ÿà§‡à¦Ÿ à¦ªà¦°à¦¿à¦¬à¦°à§à¦¤à¦¨ à¦•à¦°à¦¾à¦° à¦®à§‡à¦¥à¦¡
+    // স্টেট পরিবর্তন করার মেথড
     public void setState(MobileAlertState state) {
         this.currentState = state;
     }
 
-    // à¦¸à§à¦Ÿà§‡à¦Ÿ à¦…à¦¨à§à¦¯à¦¾à§Ÿà§€ à¦•à¦¾à¦œ à¦•à¦°à¦¾à¦° à¦®à§‡à¦¥à¦¡
+    // স্টেট অনুযায়ী কাজ করার মেথড
     public void alert() {
-        // à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¨à¦¿à¦œà§‡ à¦šà§‡à¦• à¦•à¦°à§‡ à¦¨à¦¾ à¦¸à§‡ à¦•à§‹à¦¨ à¦¸à§à¦Ÿà§‡à¦Ÿà§‡ à¦†à¦›à§‡, 
-        // à¦¸à§‡ à¦¶à§à¦§à§ à¦•à¦¾à¦°à§‡à¦¨à§à¦Ÿ à¦¸à§à¦Ÿà§‡à¦Ÿà¦•à§‡ à¦¬à¦²à§‡- "à¦¤à§‹à¦®à¦¾à¦° à¦•à¦¾à¦œà¦Ÿà¦¾ à¦•à¦°à§‹"
+        // মোবাইল নিজে চেক করে না সে কোন স্টেটে আছে, 
+        // সে শুধু কারেন্ট স্টেটকে বলে- "তোমার কাজটা করো"
         currentState.alert(this);
     }
 }
@@ -65,20 +65,20 @@ class MobileContext {
 public class Main {
     public static void main(String[] args) {
         
-        // à§§. à¦à¦•à¦Ÿà¦¿ à¦®à§‹à¦¬à¦¾à¦‡à¦² à¦¤à§ˆà¦°à¦¿ à¦•à¦°à¦²à¦¾à¦® (à¦¡à¦¿à¦«à¦²à§à¦Ÿ Sound mode)
+        // ১. একটি মোবাইল তৈরি করলাম (ডিফল্ট Sound mode)
         MobileContext myMobile = new MobileContext();
         
         System.out.println("--- Someone is calling ---");
-        myMobile.alert(); // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: Ring... Ring... Ring...
+        myMobile.alert(); // আউটপুট: Ring... Ring... Ring...
 
-        // à§¨. à¦‡à¦‰à¦œà¦¾à¦° à¦®à§‹à¦¬à¦¾à¦‡à¦²à¦Ÿà¦¿ à¦­à¦¾à¦‡à¦¬à§à¦°à§‡à¦¶à¦¨à§‡ à¦¦à¦¿à¦²à§‹
+        // ২. ইউজার মোবাইলটি ভাইব্রেশনে দিলো
         System.out.println("\n--- Changed to Vibrate Mode ---");
         myMobile.setState(new VibrationState());
-        myMobile.alert(); // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: Bzzzz... Bzzzz...
+        myMobile.alert(); // আউটপুট: Bzzzz... Bzzzz...
 
-        // à§©. à¦‡à¦‰à¦œà¦¾à¦° à¦®à¦¿à¦Ÿà¦¿à¦‚à§Ÿà§‡ à¦—à§‡à¦²à§‹, à¦¤à¦¾à¦‡ à¦¸à¦¾à¦‡à¦²à§‡à¦¨à§à¦Ÿ à¦•à¦°à§‡ à¦¦à¦¿à¦²à§‹
+        // ৩. ইউজার মিটিংয়ে গেলো, তাই সাইলেন্ট করে দিলো
         System.out.println("\n--- Changed to Silent Mode ---");
         myMobile.setState(new SilentState());
-        myMobile.alert(); // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: (No sound, just screen wakes up)
+        myMobile.alert(); // আউটপুট: (No sound, just screen wakes up)
     }
 }

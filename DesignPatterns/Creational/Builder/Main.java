@@ -1,14 +1,14 @@
-﻿package DesignPatterns.Creational.Builder;
+package DesignPatterns.Creational.Builder;
 
-// à¦®à§‚à¦² à¦•à§à¦²à¦¾à¦¸ (à¦¯à§‡à¦Ÿà¦¿ à¦†à¦®à¦°à¦¾ à¦¤à§ˆà¦°à¦¿ à¦•à¦°à¦¤à§‡ à¦šà¦¾à¦‡)
+// মূল ক্লাস (যেটি আমরা তৈরি করতে চাই)
 class House {
     private int floors;
     private boolean hasGarage;
     private boolean hasGarden;
     private boolean hasPool;
 
-    // à¦•à¦¨à¦¸à§à¦Ÿà§à¦°à¦¾à¦•à§à¦Ÿà¦°à¦•à§‡ private à¦•à¦°à¦¾ à¦¹à¦²à§‹, à¦¯à¦¾à¦¤à§‡ à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦•à§‡à¦‰ object à¦¬à¦¾à¦¨à¦¾à¦¤à§‡ à¦¨à¦¾ à¦ªà¦¾à¦°à§‡à¥¤ 
-    // à¦¶à§à¦§à§ Builder à¦à¦‡ à¦•à¦¨à¦¸à§à¦Ÿà§à¦°à¦¾à¦•à§à¦Ÿà¦° à¦•à¦² à¦•à¦°à¦¤à§‡ à¦ªà¦¾à¦°à¦¬à§‡à¥¤
+    // কনস্ট্রাক্টরকে private করা হলো, যাতে সরাসরি কেউ object বানাতে না পারে। 
+    // শুধু Builder এই কনস্ট্রাক্টর কল করতে পারবে।
     private House(HouseBuilder builder) {
         this.floors = builder.floors;
         this.hasGarage = builder.hasGarage;
@@ -21,15 +21,15 @@ class House {
                 "Garage: " + hasGarage + ", Garden: " + hasGarden + ", Pool: " + hasPool);
     }
 
-    // ---- à¦¸à§à¦Ÿà§à¦¯à¦¾à¦Ÿà¦¿à¦• à¦‡à¦¨à¦¾à¦° à¦•à§à¦²à¦¾à¦¸ à¦¹à¦¿à¦¸à§‡à¦¬à§‡ Builder (Java-à¦¤à§‡ à¦à¦Ÿà¦¿ à¦¸à§à¦Ÿà§à¦¯à¦¾à¦¨à§à¦¡à¦¾à¦°à§à¦¡ à¦ªà§à¦°à§à¦¯à¦¾à¦•à¦Ÿà¦¿à¦¸) ----
+    // ---- স্ট্যাটিক ইনার ক্লাস হিসেবে Builder (Java-তে এটি স্ট্যান্ডার্ড প্র্যাকটিস) ----
     public static class HouseBuilder {
-        // Builder-à¦à¦° à¦­à§‡à¦¤à¦°à§‡à¦“ à¦¸à§‡à¦® à¦ªà§à¦°à¦ªà¦¾à¦°à§à¦Ÿà¦¿à¦—à§à¦²à§‹ à¦¥à¦¾à¦•à¦¬à§‡
+        // Builder-এর ভেতরেও সেম প্রপার্টিগুলো থাকবে
         private int floors = 0; // default values
         private boolean hasGarage = false;
         private boolean hasGarden = false;
         private boolean hasPool = false;
 
-        // à¦§à¦¾à¦ªà§‡ à¦§à¦¾à¦ªà§‡ à¦­à§à¦¯à¦¾à¦²à§ à¦¸à§‡à¦Ÿ à¦•à¦°à¦¾à¦° à¦®à§‡à¦¥à¦¡à¦—à§à¦²à§‹ (à¦à¦—à§à¦²à§‹ this à¦°à¦¿à¦Ÿà¦¾à¦°à§à¦¨ à¦•à¦°à§‡ à¦¯à¦¾à¦¤à§‡ à¦šà§‡à¦‡à¦¨ à¦•à¦°à¦¾ à¦¯à¦¾à§Ÿ)
+        // ধাপে ধাপে ভ্যালু সেট করার মেথডগুলো (এগুলো this রিটার্ন করে যাতে চেইন করা যায়)
         public HouseBuilder setFloors(int floors) {
             this.floors = floors;
             return this;
@@ -50,9 +50,9 @@ class House {
             return this;
         }
 
-        // à¦«à¦¾à¦‡à¦¨à¦¾à¦² à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦¤à§ˆà¦°à¦¿ à¦•à¦°à¦¾à¦° à¦®à§‡à¦¥à¦¡
+        // ফাইনাল অবজেক্ট তৈরি করার মেথড
         public House build() {
-            return new House(this); // à¦¬à¦°à§à¦¤à¦®à¦¾à¦¨ Builder à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿà¦Ÿà¦¾à¦•à§‡ à¦ªà¦¾à¦¸ à¦•à¦°à§‡ à¦¦à§‡à¦“à§Ÿà¦¾ à¦¹à¦²à§‹
+            return new House(this); // বর্তমান Builder অবজেক্টটাকে পাস করে দেওয়া হলো
         }
     }
 }
@@ -61,8 +61,8 @@ class House {
 public class Main {
     public static void main(String[] args) {
         
-        // à§§. à¦à¦•à¦Ÿà¦¿ à¦²à¦¾à¦•à§à¦¸à¦¾à¦°à¦¿ à¦¬à¦¾à§œà¦¿ à¦¬à¦¾à¦¨à¦¾à¦¨à§‹ (à¦§à¦¾à¦ªà§‡ à¦§à¦¾à¦ªà§‡)
-        // à¦²à¦•à§à¦·à§à¦¯ à¦•à¦°à§à¦¨ Method Chaining-à¦à¦° à¦•à¦¾à¦°à¦£à§‡ à¦•à§‹à¦¡ à¦ªà§œà¦¾ à¦•à¦¤à§‹ à¦¸à¦¹à¦œ à¦¹à§Ÿà§‡ à¦—à§‡à¦›à§‡!
+        // ১. একটি লাক্সারি বাড়ি বানানো (ধাপে ধাপে)
+        // লক্ষ্য করুন Method Chaining-এর কারণে কোড পড়া কতো সহজ হয়ে গেছে!
         House luxuryHouse = new House.HouseBuilder()
                 .setFloors(3)
                 .addGarage()
@@ -71,16 +71,16 @@ public class Main {
                 .build();
                 
         luxuryHouse.describe();
-        // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: House with 3 floor(s), Garage: true, Garden: true, Pool: true
+        // আউটপুট: House with 3 floor(s), Garage: true, Garden: true, Pool: true
 
-        // à§¨. à¦à¦•à¦Ÿà¦¿ à¦¸à¦¾à¦§à¦¾à¦°à¦£ à¦¬à¦¾à§œà¦¿ à¦¬à¦¾à¦¨à¦¾à¦¨à§‹ (à¦¶à§à¦§à§ à¦¯à§‡à¦—à§à¦²à§‹ à¦¦à¦°à¦•à¦¾à¦° à¦¸à§‡à¦—à§à¦²à§‹à¦‡ à¦•à¦² à¦•à¦°à¦²à¦¾à¦®)
+        // ২. একটি সাধারণ বাড়ি বানানো (শুধু যেগুলো দরকার সেগুলোই কল করলাম)
         House simpleHouse = new House.HouseBuilder()
                 .setFloors(1)
                 .addGarage()
-                // Garden à¦¬à¦¾ Pool à¦•à¦² à¦•à¦°à¦²à¦¾à¦® à¦¨à¦¾, à¦•à¦¾à¦°à¦£ à¦¸à§‡à¦—à§à¦²à§‹ à¦¦à¦°à¦•à¦¾à¦° à¦¨à§‡à¦‡
+                // Garden বা Pool কল করলাম না, কারণ সেগুলো দরকার নেই
                 .build();
                 
         simpleHouse.describe();
-        // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: House with 1 floor(s), Garage: true, Garden: false, Pool: false
+        // আউটপুট: House with 1 floor(s), Garage: true, Garden: false, Pool: false
     }
 }

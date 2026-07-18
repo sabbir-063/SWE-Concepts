@@ -1,26 +1,26 @@
-﻿package DesignPatterns.Creational.Factory;
+package DesignPatterns.Creational.Factory;
 
-// à§§. Product Interface 
+// ১. Product Interface 
 interface Vehicle {
     void drive();
 }
 
-// à§¨. Concrete Products 
+// ২. Concrete Products 
 class Car implements Vehicle {
     @Override
     public void drive() {
-        System.out.println("Driving a car on the road ðŸš—...");
+        System.out.println("Driving a car on the road 🚗...");
     }
 }
 
 class Bike implements Vehicle {
     @Override
     public void drive() {
-        System.out.println("Riding a bike on the road ðŸï¸");
+        System.out.println("Riding a bike on the road 🏍️");
     }
 }
 
-// à§©. Creator / Abstract Factory Class
+// ৩. Creator / Abstract Factory Class
 abstract class VehicleFactory {
     public abstract Vehicle createVehicle();
 
@@ -31,7 +31,7 @@ abstract class VehicleFactory {
     }
 }
 
-// à§ª. Concrete Creators 
+// ৪. Concrete Creators 
 class CarFactory extends VehicleFactory {
     @Override
     public Vehicle createVehicle() {
@@ -46,7 +46,7 @@ class BikeFactory extends VehicleFactory {
     }
 }
 
-// à§«. Main Class (à¦à¦Ÿà¦¾à¦‡ à¦¶à§à¦§à§ public à¦¥à¦¾à¦•à¦¬à§‡)
+// ৫. Main Class (এটাই শুধু public থাকবে)
 public class Main {
     public static void main(String[] args) {
         

@@ -1,7 +1,7 @@
-﻿package DesignPatterns.Creational.Prototype;
+package DesignPatterns.Creational.Prototype;
 
-// à§§. à¦ªà§à¦°à§‹à¦Ÿà§‹à¦Ÿà¦¾à¦‡à¦ª à¦•à§à¦²à¦¾à¦¸ (à¦¯à§‡à¦Ÿà¦¾à¦•à§‡ à¦†à¦®à¦°à¦¾ à¦•à§à¦²à§‹à¦¨ à¦•à¦°à¦¤à§‡ à¦šà¦¾à¦‡)
-// à¦œà¦¾à¦­à¦¾à¦¤à§‡ à¦•à§à¦²à§‹à¦¨ à¦¸à¦¾à¦ªà§‹à¦°à§à¦Ÿ à¦•à¦°à¦¾à¦° à¦œà¦¨à§à¦¯ Cloneable à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦«à§‡à¦¸ à¦‡à¦®à¦ªà§à¦²à¦¿à¦®à§‡à¦¨à§à¦Ÿ à¦•à¦°à¦¤à§‡ à¦¹à§Ÿ
+// ১. প্রোটোটাইপ ক্লাস (যেটাকে আমরা ক্লোন করতে চাই)
+// জাভাতে ক্লোন সাপোর্ট করার জন্য Cloneable ইন্টারফেস ইমপ্লিমেন্ট করতে হয়
 class Sheep implements Cloneable {
     private String name;
     private String color;
@@ -20,14 +20,14 @@ class Sheep implements Cloneable {
     }
 
     public void describe() {
-        System.out.println(name + " is a " + color + " sheep ðŸ‘");
+        System.out.println(name + " is a " + color + " sheep 🐑");
     }
 
-    // à§¨. à¦•à§à¦²à§‹à¦¨ à¦®à§‡à¦¥à¦¡ à¦“à¦­à¦¾à¦°à¦°à¦¾à¦‡à¦¡ à¦•à¦°à¦¾
+    // ২. ক্লোন মেথড ওভাররাইড করা
     @Override
     protected Sheep clone() {
         try {
-            // à¦œà¦¾à¦­à¦¾à¦° à¦¡à¦¿à¦«à¦²à§à¦Ÿ à¦•à§à¦²à§‹à¦¨ à¦®à§‡à¦¥à¦¡ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦›à¦¿ (Shallow Copy)
+            // জাভার ডিফল্ট ক্লোন মেথড ব্যবহার করছি (Shallow Copy)
             return (Sheep) super.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
@@ -39,20 +39,20 @@ class Sheep implements Cloneable {
 // ---- Main Method (Client Code) ----
 public class Main {
     public static void main(String[] args) {
-        // à§§. à¦à¦•à¦Ÿà¦¿ à¦†à¦¸à¦² à¦­à§‡à§œà¦¾ à¦¬à¦¾à¦¨à¦¾à¦²à¦¾à¦®
+        // ১. একটি আসল ভেড়া বানালাম
         Sheep originalDolly = new Sheep("Dolly", "white");
-        originalDolly.describe(); // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: Dolly is a white sheep ðŸ‘
+        originalDolly.describe(); // আউটপুট: Dolly is a white sheep 🐑
 
-        // à§¨. à¦¨à¦¤à§à¦¨ à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦¨à¦¾ à¦¬à¦¾à¦¨à¦¿à§Ÿà§‡ à¦†à¦—à§‡à¦°à¦Ÿà¦¾à¦•à§‡à¦‡ à¦•à§à¦²à§‹à¦¨ à¦•à¦°à¦²à¦¾à¦®
+        // ২. নতুন অবজেক্ট না বানিয়ে আগেরটাকেই ক্লোন করলাম
         Sheep clonedDolly = originalDolly.clone();
         
-        // à¦•à§à¦²à§‹à¦¨ à¦•à¦°à¦¾ à¦­à§‡à§œà¦¾à¦° à¦¶à§à¦§à§ à¦¨à¦¾à¦®à¦Ÿà¦¾ à¦¬à¦¦à¦²à§‡ à¦¦à¦¿à¦²à¦¾à¦®, à¦¬à¦¾à¦•à¦¿ à¦¬à§ˆà¦¶à¦¿à¦·à§à¦Ÿà§à¦¯ (color) à¦¸à§‡à¦® à¦¥à¦¾à¦•à¦²à§‹!
+        // ক্লোন করা ভেড়ার শুধু নামটা বদলে দিলাম, বাকি বৈশিষ্ট্য (color) সেম থাকলো!
         clonedDolly.setName("Dolly Clone 1");
         clonedDolly.setColor("black");
-        clonedDolly.describe(); // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: Dolly Clone 1 is a black sheep ðŸ‘
+        clonedDolly.describe(); // আউটপুট: Dolly Clone 1 is a black sheep 🐑
 
-        // à¦šà§‡à¦• à¦•à¦°à§‡ à¦¦à§‡à¦–à¦¿ à¦¤à¦¾à¦°à¦¾ à¦à¦•à¦‡ à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦•à¦¿ à¦¨à¦¾
+        // চেক করে দেখি তারা একই অবজেক্ট কি না
         System.out.println(originalDolly == clonedDolly); 
-        // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: false (à¦…à¦°à§à¦¥à¦¾à§Ž à¦®à§‡à¦®à¦°à¦¿à¦¤à§‡ à¦¤à¦¾à¦°à¦¾ à¦¸à¦®à§à¦ªà§‚à¦°à§à¦£ à¦†à¦²à¦¾à¦¦à¦¾ à¦¦à§à¦Ÿà¦¿ à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ)
+        // আউটপুট: false (অর্থাৎ মেমরিতে তারা সম্পূর্ণ আলাদা দুটি অবজেক্ট)
     }
 }

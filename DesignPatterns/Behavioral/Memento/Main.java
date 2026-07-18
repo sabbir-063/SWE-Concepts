@@ -1,11 +1,11 @@
-﻿package DesignPatterns.Behavioral.Memento;
+package DesignPatterns.Behavioral.Memento;
 
 import java.util.Stack;
 
 // ==========================================
-// Component 2: Memento (à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿà§‡à¦° à¦¸à§‡à¦­ à¦•à¦°à¦¾ à¦¸à§à¦Ÿà§‡à¦Ÿ à¦¬à¦¾ à¦¸à§à¦¨à§à¦¯à¦¾à¦ªà¦¶à¦Ÿ)
+// Component 2: Memento (অবজেক্টের সেভ করা স্টেট বা স্ন্যাপশট)
 // ==========================================
-// à¦à¦‡ à¦•à§à¦²à¦¾à¦¸à§‡à¦° à¦­à§à¦¯à¦¾à¦²à§ à¦à¦•à¦¬à¦¾à¦° à¦¸à§‡à¦Ÿ à¦¹à¦²à§‡ à¦†à¦° à¦ªà¦°à¦¿à¦¬à¦°à§à¦¤à¦¨ à¦•à¦°à¦¾ à¦¯à¦¾à§Ÿ à¦¨à¦¾ (Immutable)
+// এই ক্লাসের ভ্যালু একবার সেট হলে আর পরিবর্তন করা যায় না (Immutable)
 class EditorState {
     private final String content;
 
@@ -19,7 +19,7 @@ class EditorState {
 }
 
 // ==========================================
-// Component 1: Originator (à¦†à¦¸à¦² à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦¯à¦¾à¦° à¦¸à§à¦Ÿà§‡à¦Ÿ à¦†à¦®à¦°à¦¾ à¦¸à§‡à¦­ à¦•à¦°à¦¤à§‡ à¦šà¦¾à¦‡)
+// Component 1: Originator (আসল অবজেক্ট যার স্টেট আমরা সেভ করতে চাই)
 // ==========================================
 class TextEditor {
     private String content;
@@ -32,22 +32,22 @@ class TextEditor {
         return content;
     }
 
-    // à¦¬à¦°à§à¦¤à¦®à¦¾à¦¨ à¦…à¦¬à¦¸à§à¦¥à¦¾à¦° à¦à¦•à¦Ÿà¦¿ à¦¸à§à¦¨à§à¦¯à¦¾à¦ªà¦¶à¦Ÿ (Memento) à¦¤à§ˆà¦°à¦¿ à¦•à¦°à§‡ à¦¦à¦¿à¦šà§à¦›à§‡
+    // বর্তমান অবস্থার একটি স্ন্যাপশট (Memento) তৈরি করে দিচ্ছে
     public EditorState saveState() {
         return new EditorState(this.content);
     }
 
-    // à¦à¦•à¦Ÿà¦¿ à¦ªà§à¦°à¦¨à§‹ à¦¸à§à¦¨à§à¦¯à¦¾à¦ªà¦¶à¦Ÿ (Memento) à¦¥à§‡à¦•à§‡ à¦†à¦—à§‡à¦° à¦…à¦¬à¦¸à§à¦¥à¦¾à§Ÿ à¦«à¦¿à¦°à§‡ à¦¯à¦¾à¦“à§Ÿà¦¾
+    // একটি পুরনো স্ন্যাপশট (Memento) থেকে আগের অবস্থায় ফিরে যাওয়া
     public void restoreState(EditorState state) {
         this.content = state.getContent();
     }
 }
 
 // ==========================================
-// Component 3: Caretaker (à¦¯à§‡ à¦¸à§‡à¦­ à¦•à¦°à¦¾ à¦¸à§à¦Ÿà§‡à¦Ÿà¦—à§à¦²à§‹ à¦œà¦®à¦¾ à¦•à¦°à§‡ à¦°à¦¾à¦–à§‡)
+// Component 3: Caretaker (যে সেভ করা স্টেটগুলো জমা করে রাখে)
 // ==========================================
 class History {
-    // à¦¸à§à¦Ÿà§à¦¯à¦¾à¦• (Stack) à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¾ à¦¹à¦šà§à¦›à§‡ à¦¯à¦¾à¦¤à§‡ à¦¸à¦¬à¦¾à¦° à¦¶à§‡à¦·à§‡à¦° à¦¸à§‡à¦­ à¦•à¦°à¦¾ à¦¸à§à¦Ÿà§‡à¦Ÿ à¦¸à¦¬à¦¾à¦° à¦†à¦—à§‡ à¦ªà¦¾à¦“à§Ÿà¦¾ à¦¯à¦¾à§Ÿ (LIFO)
+    // স্ট্যাক (Stack) ব্যবহার করা হচ্ছে যাতে সবার শেষের সেভ করা স্টেট সবার আগে পাওয়া যায় (LIFO)
     private Stack<EditorState> historyStates = new Stack<>();
 
     public void push(EditorState state) {
@@ -70,25 +70,25 @@ public class Main {
         TextEditor editor = new TextEditor();
         History history = new History();
 
-        // à§§. à¦à¦¡à¦¿à¦Ÿà¦°à§‡ à¦•à¦¿à¦›à§ à¦²à¦¿à¦–à¦²à¦¾à¦®
+        // ১. এডিটরে কিছু লিখলাম
         editor.type("Hello");
         System.out.println("Current Content: " + editor.getContent()); // Hello
 
-        // à§¨. à¦¬à¦°à§à¦¤à¦®à¦¾à¦¨ à¦…à¦¬à¦¸à§à¦¥à¦¾ à¦¸à§‡à¦­ à¦•à¦°à§‡ à¦°à¦¾à¦–à¦²à¦¾à¦®
+        // ২. বর্তমান অবস্থা সেভ করে রাখলাম
         history.push(editor.saveState());
 
-        // à§©. à¦†à¦°à¦“ à¦•à¦¿à¦›à§ à¦²à¦¿à¦–à¦²à¦¾à¦®
+        // ৩. আরও কিছু লিখলাম
         editor.type("Hello World!");
         System.out.println("Current Content: " + editor.getContent()); // Hello World!
 
-        // à§ª. à¦à¦‡ à¦…à¦¬à¦¸à§à¦¥à¦¾à¦“ à¦¸à§‡à¦­ à¦•à¦°à§‡ à¦°à¦¾à¦–à¦²à¦¾à¦®
+        // ৪. এই অবস্থাও সেভ করে রাখলাম
         history.push(editor.saveState());
 
-        // à§«. à¦à¦¬à¦¾à¦° à¦­à§à¦² à¦•à¦°à§‡ à¦¸à¦¬ à¦®à§à¦›à§‡ à¦…à¦¨à§à¦¯ à¦•à¦¿à¦›à§ à¦²à¦¿à¦–à§‡ à¦«à§‡à¦²à¦²à¦¾à¦®
+        // ৫. এবার ভুল করে সব মুছে অন্য কিছু লিখে ফেললাম
         editor.type("Oops! Wrong text.");
         System.out.println("Current Content: " + editor.getContent()); // Oops! Wrong text.
 
-        // à§¬. à¦à¦¬à¦¾à¦° Undo à¦•à¦°à¦¬à§‹ (Caretaker à¦¥à§‡à¦•à§‡ à¦†à¦—à§‡à¦° à¦¸à§à¦Ÿà§‡à¦Ÿ à¦¨à¦¿à§Ÿà§‡ à¦†à¦¸à¦¬à§‹)
+        // ৬. এবার Undo করবো (Caretaker থেকে আগের স্টেট নিয়ে আসবো)
         System.out.println("\n--- Performing Undo ---");
         editor.restoreState(history.pop());
         System.out.println("After 1st Undo: " + editor.getContent()); // Hello World!

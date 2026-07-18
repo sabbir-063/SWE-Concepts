@@ -1,16 +1,16 @@
-﻿package DesignPatterns.Structural.Decorator;
+package DesignPatterns.Structural.Decorator;
 
-// à§§. Base Component (à¦®à§‚à¦² à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦«à§‡à¦¸)
+// ১. Base Component (মূল ইন্টারফেস)
 interface Coffee {
     int getCost();
     String getDescription();
 }
 
-// à§¨. Concrete Component (à¦†à¦®à¦¾à¦¦à§‡à¦° à¦¬à§‡à¦¸à¦¿à¦• à¦•à¦«à¦¿)
+// ২. Concrete Component (আমাদের বেসিক কফি)
 class SimpleCoffee implements Coffee {
     @Override
     public int getCost() {
-        return 50; // à¦¬à§‡à¦¸à¦¿à¦• à¦•à¦«à¦¿à¦° à¦¦à¦¾à¦® à§«à§¦ à¦Ÿà¦¾à¦•à¦¾
+        return 50; // বেসিক কফির দাম ৫০ টাকা
     }
 
     @Override
@@ -19,10 +19,10 @@ class SimpleCoffee implements Coffee {
     }
 }
 
-// à§©. Base Decorator (à¦à¦Ÿà¦¿ à¦¹à¦²à§‹ à¦®à§‚à¦² à¦°à§à¦¯à¦¾à¦ªà¦¾à¦° / Wrapper à¦•à§à¦²à¦¾à¦¸)
-// à¦à¦Ÿà¦¿ Coffee à¦‡à¦®à¦ªà§à¦²à¦¿à¦®à§‡à¦¨à§à¦Ÿ à¦•à¦°à§‡, à¦†à¦¬à¦¾à¦° à¦­à§‡à¦¤à¦°à§‡ à¦à¦•à¦Ÿà¦¿ Coffee à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦§à¦¾à¦°à¦£à¦“ à¦•à¦°à§‡ (Composition)!
+// ৩. Base Decorator (এটি হলো মূল র্যাপার / Wrapper ক্লাস)
+// এটি Coffee ইমপ্লিমেন্ট করে, আবার ভেতরে একটি Coffee অবজেক্ট ধারণও করে (Composition)!
 abstract class CoffeeDecorator implements Coffee {
-    protected Coffee coffee; // à¦¯à§‡ à¦•à¦«à¦¿à¦Ÿà¦¾à¦•à§‡ à¦¸à§‡ à¦®à§à§œà¦¿à§Ÿà§‡ (wrap) à¦°à¦¾à¦–à¦›à§‡
+    protected Coffee coffee; // যে কফিটাকে সে মুড়িয়ে (wrap) রাখছে
 
     public CoffeeDecorator(Coffee coffee) {
         this.coffee = coffee;
@@ -30,16 +30,16 @@ abstract class CoffeeDecorator implements Coffee {
 
     @Override
     public int getCost() {
-        return coffee.getCost(); // à¦­à§‡à¦¤à¦°à§‡à¦° à¦•à¦«à¦¿à¦° à¦¦à¦¾à¦® à¦°à¦¿à¦Ÿà¦¾à¦°à§à¦¨ à¦•à¦°à¦¬à§‡
+        return coffee.getCost(); // ভেতরের কফির দাম রিটার্ন করবে
     }
 
     @Override
     public String getDescription() {
-        return coffee.getDescription(); // à¦­à§‡à¦¤à¦°à§‡à¦° à¦•à¦«à¦¿à¦° à¦¡à§‡à¦¸à¦•à§à¦°à¦¿à¦ªà¦¶à¦¨ à¦°à¦¿à¦Ÿà¦¾à¦°à§à¦¨ à¦•à¦°à¦¬à§‡
+        return coffee.getDescription(); // ভেতরের কফির ডেসক্রিপশন রিটার্ন করবে
     }
 }
 
-// à§ª. Concrete Decorators (à¦à¦• à¦à¦•à¦Ÿà¦¾ à¦¨à¦¤à§à¦¨ à¦«à¦¿à¦šà¦¾à¦° à¦¬à¦¾ à¦²à§‡à§Ÿà¦¾à¦°)
+// ৪. Concrete Decorators (এক একটা নতুন ফিচার বা লেয়ার)
 class MilkDecorator extends CoffeeDecorator {
     public MilkDecorator(Coffee coffee) {
         super(coffee);
@@ -47,7 +47,7 @@ class MilkDecorator extends CoffeeDecorator {
 
     @Override
     public int getCost() {
-        return super.getCost() + 15; // à¦•à¦«à¦¿à¦° à¦®à§‚à¦² à¦¦à¦¾à¦®à§‡à¦° à¦¸à¦¾à¦¥à§‡ à¦¦à§à¦§à§‡à¦° à¦¦à¦¾à¦® à§§à§« à¦Ÿà¦¾à¦•à¦¾ à¦¯à§‹à¦—
+        return super.getCost() + 15; // কফির মূল দামের সাথে দুধের দাম ১৫ টাকা যোগ
     }
 
     @Override
@@ -63,7 +63,7 @@ class SugarDecorator extends CoffeeDecorator {
 
     @Override
     public int getCost() {
-        return super.getCost() + 5; // à¦šà¦¿à¦¨à¦¿à¦° à¦¦à¦¾à¦® à§« à¦Ÿà¦¾à¦•à¦¾ à¦¯à§‹à¦—
+        return super.getCost() + 5; // চিনির দাম ৫ টাকা যোগ
     }
 
     @Override
@@ -79,7 +79,7 @@ class CaramelDecorator extends CoffeeDecorator {
 
     @Override
     public int getCost() {
-        return super.getCost() + 25; // à¦•à§à¦¯à¦¾à¦°à¦¾à¦®à§‡à¦²à§‡à¦° à¦¦à¦¾à¦® à§¨à§« à¦Ÿà¦¾à¦•à¦¾ à¦¯à§‹à¦—
+        return super.getCost() + 25; // ক্যারামেলের দাম ২৫ টাকা যোগ
     }
 
     @Override
@@ -92,22 +92,22 @@ class CaramelDecorator extends CoffeeDecorator {
 public class Main {
     public static void main(String[] args) {
         
-        // à§§. à¦ªà§à¦°à¦¥à¦®à§‡ à¦¶à§à¦§à§ à¦à¦•à¦Ÿà¦¿ à¦¬à§‡à¦¸à¦¿à¦• à¦•à¦«à¦¿ à¦¬à¦¾à¦¨à¦¾à¦²à¦¾à¦®
+        // ১. প্রথমে শুধু একটি বেসিক কফি বানালাম
         Coffee myCoffee = new SimpleCoffee();
         System.out.println(myCoffee.getDescription() + " = " + myCoffee.getCost() + " BDT");
-        // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: Plain Coffee = 50 BDT
+        // আউটপুট: Plain Coffee = 50 BDT
 
-        // à§¨. à¦à¦¬à¦¾à¦° à¦¬à§‡à¦¸à¦¿à¦• à¦•à¦«à¦¿à¦° à¦šà¦¾à¦°à¦§à¦¾à¦°à§‡ à¦¦à§à¦§à§‡à¦° (Milk) à¦²à§‡à§Ÿà¦¾à¦° à¦¬à¦¾ à¦¡à§‡à¦•à§‹à¦°à§‡à¦¶à¦¨ à¦¯à§à¦•à§à¦¤ à¦•à¦°à¦²à¦¾à¦®
+        // ২. এবার বেসিক কফির চারধারে দুধের (Milk) লেয়ার বা ডেকোরেশন যুক্ত করলাম
         myCoffee = new MilkDecorator(myCoffee);
         System.out.println(myCoffee.getDescription() + " = " + myCoffee.getCost() + " BDT");
-        // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: Plain Coffee + Milk = 65 BDT
+        // আউটপুট: Plain Coffee + Milk = 65 BDT
 
-        // à§©. à¦à¦°à¦ªà¦° à¦šà¦¿à¦¨à¦¿ à¦à¦¬à¦‚ à¦•à§à¦¯à¦¾à¦°à¦¾à¦®à§‡à¦² à¦²à§‡à§Ÿà¦¾à¦°à¦“ à¦¯à§à¦•à§à¦¤ à¦•à¦°à¦²à¦¾à¦® (Nested Wrapping)
+        // ৩. এরপর চিনি এবং ক্যারামেল লেয়ারও যুক্ত করলাম (Nested Wrapping)
         myCoffee = new SugarDecorator(myCoffee);
         myCoffee = new CaramelDecorator(myCoffee);
 
-        // à¦«à¦¾à¦‡à¦¨à¦¾à¦² à¦°à§‡à¦œà¦¾à¦²à§à¦Ÿ:
+        // ফাইনাল রেজাল্ট:
         System.out.println(myCoffee.getDescription() + " = " + myCoffee.getCost() + " BDT");
-        // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: Plain Coffee + Milk + Sugar + Caramel = 95 BDT
+        // আউটপুট: Plain Coffee + Milk + Sugar + Caramel = 95 BDT
     }
 }

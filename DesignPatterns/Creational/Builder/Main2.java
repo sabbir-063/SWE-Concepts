@@ -1,13 +1,13 @@
-﻿package DesignPatterns.Creational.Builder;
+package DesignPatterns.Creational.Builder;
 
-// à§§. Product (à¦†à¦®à¦°à¦¾ à¦¯à¦¾ à¦¬à¦¾à¦¨à¦¾à¦¬à§‹) â€“ Pizza
+// ১. Product (আমরা যা বানাবো) – Pizza
 class Pizza {
     private String dough;
     private String sauce;
     private String cheese;
     private String topping;
     
-    // Constructor private à¦°à¦¾à¦–à¦¬à§‹ à¦¯à¦¾à¦¤à§‡ à¦¶à§à¦§à§ Builder à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¾ à¦¯à¦¾à§Ÿ
+    // Constructor private রাখবো যাতে শুধু Builder ব্যবহার করা যায়
     Pizza() {}
 
     public void setDough(String dough) { this.dough = dough; }
@@ -20,15 +20,15 @@ class Pizza {
         return "Pizza [Dough: " + dough + ", Sauce: " + sauce + ", Cheese: " + cheese + ", Topping: " + topping + "]";
     }
 }
-// à§¨. Builder Interface
+// ২. Builder Interface
 interface PizzaBuilder {
     void buildDough();
     void buildSauce();
     void buildCheese();
     void buildTopping();
-    Pizza getResult(); // à¦¬à¦¾à¦¨à¦¾à¦¨à§‹ à¦¶à§‡à¦· à¦¹à¦²à§‡ à¦ªà§à¦°à§‹à¦¡à¦¾à¦•à§à¦Ÿ à¦°à¦¿à¦Ÿà¦¾à¦°à§à¦¨ à¦•à¦°à¦¬à§‡
+    Pizza getResult(); // বানানো শেষ হলে প্রোডাক্ট রিটার্ন করবে
 }
-// à§©. Concrete Builder â€“ Italian Pizza
+// ৩. Concrete Builder – Italian Pizza
 class ItalianPizzaBuilder implements PizzaBuilder {
     private Pizza pizza = new Pizza();
 
@@ -39,7 +39,7 @@ class ItalianPizzaBuilder implements PizzaBuilder {
 
     public Pizza getResult() { return pizza; }
 }
-// à§ª. Concrete Builder â€“ American Pizza
+// ৪. Concrete Builder – American Pizza
 class AmericanPizzaBuilder implements PizzaBuilder {
     private Pizza pizza = new Pizza();
 
@@ -50,7 +50,7 @@ class AmericanPizzaBuilder implements PizzaBuilder {
 
     public Pizza getResult() { return pizza; }
 }
-// à§«. Director (à¦¨à¦¿à¦°à§à¦¦à§‡à¦¶à¦•) â€“ à¦œà¦Ÿà¦¿à¦² step à¦—à§à¦²à§‹ à¦ªà¦°à¦¿à¦šà¦¾à¦²à¦¨à¦¾ à¦•à¦°à§‡
+// ৫. Director (নির্দেশক) – জটিল step গুলো পরিচালনা করে
 class PizzaDirector {
     public void constructItalianPizza(PizzaBuilder builder) {
         builder.buildDough();
@@ -66,13 +66,13 @@ class PizzaDirector {
     }
 }
 
-// à§¬. Main Class
+// ৬. Main Class
 public class Main2 {
     public static void main(String[] args) {
         
         PizzaDirector director = new PizzaDirector();
 
-        // Italian Pizza à¦¬à¦¾à¦¨à¦¾à¦¨à§‹
+        // Italian Pizza বানানো
         PizzaBuilder italianBuilder = new ItalianPizzaBuilder();
         director.constructItalianPizza(italianBuilder);
         Pizza italianPizza = italianBuilder.getResult();
@@ -80,7 +80,7 @@ public class Main2 {
 
         System.out.println("----------------------------");
 
-        // American Pizza à¦¬à¦¾à¦¨à¦¾à¦¨à§‹
+        // American Pizza বানানো
         PizzaBuilder americanBuilder = new AmericanPizzaBuilder();
         director.constructAmericanPizza(americanBuilder);
         Pizza americanPizza = americanBuilder.getResult();

@@ -1,4 +1,4 @@
-﻿package DesignPatterns.Behavioral.Mediator;
+package DesignPatterns.Behavioral.Mediator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,15 +7,15 @@ import java.util.List;
 // Component 1: Mediator Interface
 // ==========================================
 interface ChatMediator {
-    void sendMessage(String message, User user); // à¦‡à¦‰à¦œà¦¾à¦° à¦®à§‡à¦¸à§‡à¦œ à¦ªà¦¾à¦ à¦¾à¦²à§‡ à¦®à¦¿à¦¡à¦¿à§Ÿà§‡à¦Ÿà¦° à¦¤à¦¾ à¦°à¦¿à¦¸à¦¿à¦­ à¦•à¦°à¦¬à§‡
-    void addUser(User user);                     // à¦šà§à¦¯à¦¾à¦Ÿ à¦°à§à¦®à§‡ à¦‡à¦‰à¦œà¦¾à¦° à¦…à§à¦¯à¦¾à¦¡ à¦•à¦°à¦¾à¦° à¦œà¦¨à§à¦¯
+    void sendMessage(String message, User user); // ইউজার মেসেজ পাঠালে মিডিয়েটর তা রিসিভ করবে
+    void addUser(User user);                     // চ্যাট রুমে ইউজার অ্যাড করার জন্য
 }
 
 // ==========================================
-// Component 2: Concrete Mediator (à¦†à¦¸à¦² à¦šà§à¦¯à¦¾à¦Ÿ à¦°à§à¦®)
+// Component 2: Concrete Mediator (আসল চ্যাট রুম)
 // ==========================================
 class ChatRoomImpl implements ChatMediator {
-    // à¦®à¦¿à¦¡à¦¿à§Ÿà§‡à¦Ÿà¦° à¦¸à¦¬à¦¾à¦° à¦–à¦¬à¦°à¦¾à¦–à¦¬à¦° à¦°à¦¾à¦–à§‡
+    // মিডিয়েটর সবার খবরাখবর রাখে
     private List<User> users;
 
     public ChatRoomImpl() {
@@ -29,7 +29,7 @@ class ChatRoomImpl implements ChatMediator {
 
     @Override
     public void sendMessage(String message, User sender) {
-        // à¦¯à§‡ à¦®à§‡à¦¸à§‡à¦œ à¦ªà¦¾à¦ à¦¿à§Ÿà§‡à¦›à§‡ à¦¤à¦¾à¦•à§‡ à¦›à¦¾à§œà¦¾ à¦¬à¦¾à¦•à¦¿ à¦¸à¦¬à¦¾à¦‡à¦•à§‡ à¦®à§‡à¦¸à§‡à¦œà¦Ÿà¦¿ à¦ªà§Œà¦à¦›à§‡ à¦¦à¦¿à¦¬à§‡ à¦®à¦¿à¦¡à¦¿à§Ÿà§‡à¦Ÿà¦°
+        // যে মেসেজ পাঠিয়েছে তাকে ছাড়া বাকি সবাইকে মেসেজটি পৌঁছে দিবে মিডিয়েটর
         for (User u : users) {
             if (u != sender) {
                 u.receiveMessage(message);
@@ -40,10 +40,10 @@ class ChatRoomImpl implements ChatMediator {
 
 
 // ==========================================
-// Component 3: Colleagues (à¦¯à¦¾à¦¦à§‡à¦° à¦®à¦§à§à¦¯à§‡ à¦¯à§‹à¦—à¦¾à¦¯à§‹à¦— à¦¹à¦¬à§‡)
+// Component 3: Colleagues (যাদের মধ্যে যোগাযোগ হবে)
 // ==========================================
 abstract class User {
-    protected ChatMediator mediator; // à¦‡à¦‰à¦œà¦¾à¦°à§‡à¦° à¦•à¦¾à¦›à§‡ à¦¶à§à¦§à§ à¦®à¦¿à¦¡à¦¿à§Ÿà§‡à¦Ÿà¦°à§‡à¦° à¦°à§‡à¦«à¦¾à¦°à§‡à¦¨à§à¦¸ à¦¥à¦¾à¦•à¦¬à§‡
+    protected ChatMediator mediator; // ইউজারের কাছে শুধু মিডিয়েটরের রেফারেন্স থাকবে
     protected String name;
 
     public User(ChatMediator mediator, String name) {
@@ -63,7 +63,7 @@ class ChatUser extends User {
     @Override
     public void send(String message) {
         System.out.println(this.name + " Sending Message: " + message);
-        // à¦‡à¦‰à¦œà¦¾à¦° à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦•à¦¾à¦‰à¦•à§‡ à¦¨à¦¾ à¦ªà¦¾à¦ à¦¿à§Ÿà§‡ à¦®à¦¿à¦¡à¦¿à§Ÿà§‡à¦Ÿà¦°à¦•à§‡ à¦®à§‡à¦¸à§‡à¦œà¦Ÿà¦¿ à¦¦à¦¿à§Ÿà§‡ à¦¦à¦¿à¦²à§‹!
+        // ইউজার সরাসরি কাউকে না পাঠিয়ে মিডিয়েটরকে মেসেজটি দিয়ে দিলো!
         mediator.sendMessage(message, this);
     }
 
@@ -80,24 +80,24 @@ class ChatUser extends User {
 public class Main {
     public static void main(String[] args) {
         
-        // à§§. à¦à¦•à¦Ÿà¦¿ à¦®à¦¿à¦¡à¦¿à§Ÿà§‡à¦Ÿà¦° (à¦šà§à¦¯à¦¾à¦Ÿ à¦°à§à¦®) à¦¬à¦¾à¦¨à¦¾à¦²à¦¾à¦®
+        // ১. একটি মিডিয়েটর (চ্যাট রুম) বানালাম
         ChatMediator chatRoom = new ChatRoomImpl();
 
-        // à§¨. à¦‡à¦‰à¦œà¦¾à¦°à¦¦à§‡à¦° à¦¤à§ˆà¦°à¦¿ à¦•à¦°à¦²à¦¾à¦® à¦à¦¬à¦‚ à¦¤à¦¾à¦¦à§‡à¦° à¦¹à¦¾à¦¤à§‡ à¦®à¦¿à¦¡à¦¿à§Ÿà§‡à¦Ÿà¦° à¦§à¦°à¦¿à§Ÿà§‡ à¦¦à¦¿à¦²à¦¾à¦®
+        // ২. ইউজারদের তৈরি করলাম এবং তাদের হাতে মিডিয়েটর ধরিয়ে দিলাম
         User user1 = new ChatUser(chatRoom, "Sabbir");
         User user2 = new ChatUser(chatRoom, "Musfique");
         User user3 = new ChatUser(chatRoom, "John");
 
-        // à§©. à¦‡à¦‰à¦œà¦¾à¦°à¦¦à§‡à¦° à¦šà§à¦¯à¦¾à¦Ÿ à¦°à§à¦®à§‡ à¦¯à§à¦•à§à¦¤ à¦•à¦°à¦²à¦¾à¦®
+        // ৩. ইউজারদের চ্যাট রুমে যুক্ত করলাম
         chatRoom.addUser(user1);
         chatRoom.addUser(user2);
         chatRoom.addUser(user3);
 
-        // à§ª. à¦®à§à¦¯à¦¾à¦œà¦¿à¦•! à¦¸à¦¾à¦¬à§à¦¬à¦¿à¦° à¦®à§‡à¦¸à§‡à¦œ à¦ªà¦¾à¦ à¦¾à¦²à§‹, à¦•à¦¿à¦¨à§à¦¤à§ à¦¸à§‡ à¦œà¦¾à¦¨à§‡ à¦¨à¦¾ à¦œà¦¨ à¦¬à¦¾ à¦®à§à¦¶à¦«à¦¿à¦• à¦•à§‡!
-        // à¦¸à§‡ à¦¶à§à¦§à§ à¦šà§à¦¯à¦¾à¦Ÿ à¦°à§à¦®à¦•à§‡ à¦®à§‡à¦¸à§‡à¦œ à¦¦à¦¿à¦²à§‹à¥¤ 
+        // ৪. ম্যাজিক! সাব্বির মেসেজ পাঠালো, কিন্তু সে জানে না জন বা মুশফিক কে!
+        // সে শুধু চ্যাট রুমকে মেসেজ দিলো। 
         user1.send("Hi Everyone! How are you?");
         
-        /* à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ:
+        /* আউটপুট:
            Sabbir Sending Message: Hi Everyone! How are you?
            Musfique Received: Hi Everyone! How are you?
            John Received: Hi Everyone! How are you?

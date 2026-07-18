@@ -1,17 +1,17 @@
-﻿package DesignPatterns.Behavioral.Interpreter;
+package DesignPatterns.Behavioral.Interpreter;
 
 // ==========================================
-// Component 1: Abstract Expression (à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦ªà§à¦°à§‡à¦Ÿà¦¾à¦°à§‡à¦° à¦°à§à¦²à¦¸)
+// Component 1: Abstract Expression (ইন্টারপ্রেটারের রুলস)
 // ==========================================
 interface Expression {
-    // context à¦¹à¦²à§‹ à¦¸à§‡à¦‡ à¦¬à¦¾à¦•à§à¦¯ à¦¬à¦¾ à¦¡à§‡à¦Ÿà¦¾, à¦¯à¦¾à¦•à§‡ à¦†à¦®à¦°à¦¾ à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦ªà§à¦°à§‡à¦Ÿ à¦¬à¦¾ à¦šà§‡à¦• à¦•à¦°à¦¬à§‹
+    // context হলো সেই বাক্য বা ডেটা, যাকে আমরা ইন্টারপ্রেট বা চেক করবো
     boolean interpret(String context);
 }
 
 // ==========================================
-// Component 2: Terminal Expression (à¦¸à¦¬à¦šà§‡à¦¯à¦¼à§‡ à¦›à§‹à¦Ÿ à¦à¦¬à¦‚ à¦¶à§‡à¦·à§‡à¦° à¦‡à¦‰à¦¨à¦¿à¦Ÿ)
+// Component 2: Terminal Expression (সবচেয়ে ছোট এবং শেষের ইউনিট)
 // ==========================================
-// à¦à¦Ÿà¦¿ à¦šà§‡à¦• à¦•à¦°à§‡ à¦¯à§‡, à¦¨à¦¿à¦°à§à¦¦à¦¿à¦·à§à¦Ÿ à¦•à§‹à¦¨à§‹ à¦¶à¦¬à§à¦¦ à¦¬à¦¾à¦•à§à¦¯à§‡à¦° à¦­à§‡à¦¤à¦° à¦†à¦›à§‡ à¦•à¦¿ à¦¨à¦¾
+// এটি চেক করে যে, নির্দিষ্ট কোনো শব্দ বাক্যের ভেতর আছে কি না
 class WordExpression implements Expression {
     private String data;
 
@@ -21,16 +21,16 @@ class WordExpression implements Expression {
 
     @Override
     public boolean interpret(String context) {
-        // à¦¯à¦¦à¦¿ à¦¬à¦¾à¦•à§à¦¯à§‡à¦° à¦­à§‡à¦¤à¦° à¦†à¦®à¦¾à¦¦à§‡à¦° à¦•à¦¾à¦™à§à¦•à§à¦·à¦¿à¦¤ à¦¶à¦¬à§à¦¦à¦Ÿà¦¿ à¦¥à¦¾à¦•à§‡, à¦¤à¦¬à§‡ true à¦°à¦¿à¦Ÿà¦¾à¦°à§à¦¨ à¦•à¦°à¦¬à§‡
+        // যদি বাক্যের ভেতর আমাদের কাঙ্ক্ষিত শব্দটি থাকে, তবে true রিটার্ন করবে
         return context.contains(data);
     }
 }
 
 // ==========================================
-// Component 3: Non-Terminal Expression (à¦¯à¦¾à¦¦à§‡à¦° à¦­à§‡à¦¤à¦° à¦…à¦¨à§à¦¯ à¦à¦•à§à¦¸à¦ªà§à¦°à§‡à¦¶à¦¨ à¦¥à¦¾à¦•à§‡)
+// Component 3: Non-Terminal Expression (যাদের ভেতর অন্য এক্সপ্রেশন থাকে)
 // ==========================================
 
-// OR à¦à¦•à§à¦¸à¦ªà§à¦°à§‡à¦¶à¦¨ (à¦¦à§à¦Ÿà¦¿à¦° à¦¯à§‡à¦•à§‹à¦¨à§‹ à¦à¦•à¦Ÿà¦¿ true à¦¹à¦²à§‡à¦‡ true)
+// OR এক্সপ্রেশন (দুটির যেকোনো একটি true হলেই true)
 class OrExpression implements Expression {
     private Expression expr1;
     private Expression expr2;
@@ -46,7 +46,7 @@ class OrExpression implements Expression {
     }
 }
 
-// AND à¦à¦•à§à¦¸à¦ªà§à¦°à§‡à¦¶à¦¨ (à¦¦à§à¦Ÿà¦¿à¦•à§‡à¦‡ true à¦¹à¦¤à§‡ à¦¹à¦¬à§‡)
+// AND এক্সপ্রেশন (দুটিকেই true হতে হবে)
 class AndExpression implements Expression {
     private Expression expr1;
     private Expression expr2;
@@ -68,14 +68,14 @@ class AndExpression implements Expression {
 // ==========================================
 public class Main {
     
-    // à¦à¦•à¦Ÿà¦¿ à¦°à§à¦² à¦¤à§ˆà¦°à¦¿ à¦•à¦°à¦¾ à¦¹à¦šà§à¦›à§‡: "Java" à¦…à¦¥à¦¬à¦¾ "Spring" à¦œà¦¾à¦¨à¦²à§‡ à¦¸à§‡ à¦¬à§à¦¯à¦¾à¦•à¦à¦¨à§à¦¡ à¦¡à§‡à¦­à§‡à¦²à¦ªà¦¾à¦°
+    // একটি রুল তৈরি করা হচ্ছে: "Java" অথবা "Spring" জানলে সে ব্যাকএন্ড ডেভেলপার
     public static Expression getBackendDeveloperRule() {
         Expression java = new WordExpression("Java");
         Expression spring = new WordExpression("Spring");
         return new OrExpression(java, spring);
     }
 
-    // à¦†à¦°à§‡à¦•à¦Ÿà¦¿ à¦°à§à¦² à¦¤à§ˆà¦°à¦¿ à¦•à¦°à¦¾ à¦¹à¦šà§à¦›à§‡: "Java" à¦à¦¬à¦‚ "Spring" à¦¦à§à¦Ÿà§‹à¦‡ à¦œà¦¾à¦¨à¦²à§‡ à¦¸à§‡ à¦ªà§à¦°à§‹-à¦¡à§‡à¦­à§‡à¦²à¦ªà¦¾à¦°
+    // আরেকটি রুল তৈরি করা হচ্ছে: "Java" এবং "Spring" দুটোই জানলে সে প্রো-ডেভেলপার
     public static Expression getProDeveloperRule() {
         Expression java = new WordExpression("Java");
         Expression spring = new WordExpression("Spring");
@@ -87,7 +87,7 @@ public class Main {
         Expression isBackend = getBackendDeveloperRule();
         Expression isPro = getProDeveloperRule();
 
-        // à¦‡à¦‰à¦œà¦¾à¦° à§§: à¦¸à§‡ à¦¶à§à¦§à§ Java à¦œà¦¾à¦¨à§‡
+        // ইউজার ১: সে শুধু Java জানে
         String user1Context = "I know Java and HTML";
         System.out.println("User 1 Context: " + user1Context);
         System.out.println("Is Backend Developer? " + isBackend.interpret(user1Context)); // true
@@ -95,7 +95,7 @@ public class Main {
 
         System.out.println("\n-----------------------------------\n");
 
-        // à¦‡à¦‰à¦œà¦¾à¦° à§¨: à¦¸à§‡ Java à¦à¦¬à¦‚ Spring à¦¦à§à¦Ÿà§‹à¦‡ à¦œà¦¾à¦¨à§‡
+        // ইউজার ২: সে Java এবং Spring দুটোই জানে
         String user2Context = "I love coding in Java and Spring framework";
         System.out.println("User 2 Context: " + user2Context);
         System.out.println("Is Backend Developer? " + isBackend.interpret(user2Context)); // true

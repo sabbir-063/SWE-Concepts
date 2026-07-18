@@ -1,28 +1,28 @@
-﻿package DesignPatterns.Behavioral.Command;
+package DesignPatterns.Behavioral.Command;
 
 // ==========================================
-// Component 3: Receiver (à¦¯à§‡ à¦†à¦¸à¦²à§‡à¦‡ à¦•à¦¾à¦œà¦—à§à¦²à§‹ à¦•à¦°à¦¬à§‡)
+// Component 3: Receiver (যে আসলেই কাজগুলো করবে)
 // ==========================================
 class Light {
-    public void turnOn() { System.out.println("Light is ON ðŸ’¡"); }
-    public void turnOff() { System.out.println("Light is OFF â¬›"); }
+    public void turnOn() { System.out.println("Light is ON 💡"); }
+    public void turnOff() { System.out.println("Light is OFF ⬛"); }
 }
 
 // ==========================================
-// Component 1: Command Interface (à¦•à¦®à¦¨ à¦°à§à¦²à¦¸)
+// Component 1: Command Interface (কমন রুলস)
 // ==========================================
 interface Command {
-    void execute(); // à¦•à¦¾à¦œà¦Ÿà¦¾ à¦•à¦°à¦¾à¦° à¦œà¦¨à§à¦¯
-    void undo();    // à¦•à¦¾à¦œà¦Ÿà¦¾ à¦«à¦¿à¦°à¦¿à§Ÿà§‡ à¦¨à§‡à¦“à§Ÿà¦¾à¦° à¦œà¦¨à§à¦¯ (Undo)
+    void execute(); // কাজটা করার জন্য
+    void undo();    // কাজটা ফিরিয়ে নেওয়ার জন্য (Undo)
 }
 
 // ==========================================
-// Component 2: Concrete Commands (à¦†à¦²à¦¾à¦¦à¦¾ à¦†à¦²à¦¾à¦¦à¦¾ à¦•à¦®à¦¾à¦¨à§à¦¡à§‡à¦° à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ)
+// Component 2: Concrete Commands (আলাদা আলাদা কমান্ডের অবজেক্ট)
 // ==========================================
 
-// à¦²à¦¾à¦‡à¦Ÿ à¦…à¦¨ à¦•à¦°à¦¾à¦° à¦•à¦®à¦¾à¦¨à§à¦¡
+// লাইট অন করার কমান্ড
 class TurnOnLightCommand implements Command {
-    private Light light; // à¦°à¦¿à¦¸à¦¿à¦­à¦¾à¦°à§‡à¦° à¦°à§‡à¦«à¦¾à¦°à§‡à¦¨à§à¦¸
+    private Light light; // রিসিভারের রেফারেন্স
 
     public TurnOnLightCommand(Light light) {
         this.light = light;
@@ -35,11 +35,11 @@ class TurnOnLightCommand implements Command {
 
     @Override
     public void undo() {
-        light.turnOff(); // On-à¦à¦° à¦‰à¦²à§à¦Ÿà§‹ à¦¹à¦²à§‹ Off
+        light.turnOff(); // On-এর উল্টো হলো Off
     }
 }
 
-// à¦²à¦¾à¦‡à¦Ÿ à¦…à¦« à¦•à¦°à¦¾à¦° à¦•à¦®à¦¾à¦¨à§à¦¡
+// লাইট অফ করার কমান্ড
 class TurnOffLightCommand implements Command {
     private Light light;
 
@@ -54,18 +54,18 @@ class TurnOffLightCommand implements Command {
 
     @Override
     public void undo() {
-        light.turnOn(); // Off-à¦à¦° à¦‰à¦²à§à¦Ÿà§‹ à¦¹à¦²à§‹ On
+        light.turnOn(); // Off-এর উল্টো হলো On
     }
 }
 
 // ==========================================
-// Component 4: Invoker (à¦¯à§‡ à¦•à¦®à¦¾à¦¨à§à¦¡ à¦§à¦¾à¦°à¦£ à¦•à¦°à§‡ à¦à¦¬à¦‚ à¦à¦•à§à¦¸à¦¿à¦•à¦¿à¦‰à¦Ÿ à¦•à¦°à§‡)
+// Component 4: Invoker (যে কমান্ড ধারণ করে এবং এক্সিকিউট করে)
 // ==========================================
 class RemoteControl {
     private Command buttonCommand;
-    private Command lastCommand; // Undo à¦•à¦°à¦¾à¦° à¦œà¦¨à§à¦¯ à¦†à¦—à§‡à¦° à¦•à¦®à¦¾à¦¨à§à¦¡à¦Ÿà¦¾ à¦¸à§‡à¦­ à¦°à¦¾à¦–à¦¾
+    private Command lastCommand; // Undo করার জন্য আগের কমান্ডটা সেভ রাখা
 
-    // à¦¬à¦¾à¦Ÿà¦¨à§‡ à¦†à¦®à¦°à¦¾ à¦¯à§‡à¦•à§‹à¦¨à§‹ à¦•à¦®à¦¾à¦¨à§à¦¡ à¦¸à§‡à¦Ÿ à¦•à¦°à¦¤à§‡ à¦ªà¦¾à¦°à¦¿ (Dynamically)
+    // বাটনে আমরা যেকোনো কমান্ড সেট করতে পারি (Dynamically)
     public void setCommand(Command command) {
         this.buttonCommand = command;
     }
@@ -73,7 +73,7 @@ class RemoteControl {
     public void pressButton() {
         if (buttonCommand != null) {
             buttonCommand.execute();
-            lastCommand = buttonCommand; // à¦•à¦¾à¦œ à¦¶à§‡à¦·à§‡ à¦¸à§‡à¦­ à¦•à¦°à§‡ à¦°à¦¾à¦–à¦²à¦¾à¦®
+            lastCommand = buttonCommand; // কাজ শেষে সেভ করে রাখলাম
         }
     }
 
@@ -93,23 +93,23 @@ class RemoteControl {
 public class Main {
     public static void main(String[] args) {
         
-        // à§§. à¦°à¦¿à¦¸à¦¿à¦­à¦¾à¦° (Light) à¦à¦¬à¦‚ à¦‡à¦¨à¦­à§‹à¦•à¦¾à¦° (Remote) à¦¤à§ˆà¦°à¦¿ à¦•à¦°à¦²à¦¾à¦®
+        // ১. রিসিভার (Light) এবং ইনভোকার (Remote) তৈরি করলাম
         Light livingRoomLight = new Light();
         RemoteControl remote = new RemoteControl();
 
-        // à§¨. à¦•à¦¿à¦›à§ à¦•à¦®à¦¾à¦¨à§à¦¡ à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦¤à§ˆà¦°à¦¿ à¦•à¦°à¦²à¦¾à¦®
+        // ২. কিছু কমান্ড অবজেক্ট তৈরি করলাম
         Command turnOn = new TurnOnLightCommand(livingRoomLight);
         Command turnOff = new TurnOffLightCommand(livingRoomLight);
 
-        // à§©. à¦°à¦¿à¦®à§‹à¦Ÿà§‡à¦° à¦¬à¦¾à¦Ÿà¦¨à§‡ "Turn ON" à¦•à¦®à¦¾à¦¨à§à¦¡ à¦¸à§‡à¦Ÿ à¦•à¦°à§‡ à¦¬à¦¾à¦Ÿà¦¨ à¦šà¦¾à¦ªà¦²à¦¾à¦®
+        // ৩. রিমোটের বাটনে "Turn ON" কমান্ড সেট করে বাটন চাপলাম
         remote.setCommand(turnOn);
-        remote.pressButton();  // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: Light is ON ðŸ’¡
+        remote.pressButton();  // আউটপুট: Light is ON 💡
 
-        // à§ª. à¦à¦¬à¦¾à¦° à¦¬à¦¾à¦Ÿà¦¨à§‡à¦° à¦•à¦¾à¦œ à¦ªà¦¾à¦²à§à¦Ÿà§‡ à¦¦à¦¿à¦²à¦¾à¦® "Turn OFF"-à¦
+        // ৪. এবার বাটনের কাজ পাল্টে দিলাম "Turn OFF"-এ
         remote.setCommand(turnOff);
-        remote.pressButton();  // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: Light is OFF â¬›
+        remote.pressButton();  // আউটপুট: Light is OFF ⬛
 
-        // à§«. à¦®à§à¦¯à¦¾à¦œà¦¿à¦•! à¦à¦¬à¦¾à¦° Undo à¦¬à¦¾à¦Ÿà¦¨ à¦šà¦¾à¦ªà¦¬à§‹!
-        remote.pressUndo();    // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: --- Undo Button Pressed --- \n Light is ON ðŸ’¡
+        // ৫. ম্যাজিক! এবার Undo বাটন চাপবো!
+        remote.pressUndo();    // আউটপুট: --- Undo Button Pressed --- \n Light is ON 💡
     }
 }

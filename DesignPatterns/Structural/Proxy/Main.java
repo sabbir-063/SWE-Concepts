@@ -1,24 +1,24 @@
-﻿package DesignPatterns.Structural.Proxy;
+package DesignPatterns.Structural.Proxy;
 
 import java.util.ArrayList;
 import java.util.List;
-// à§§. Subject Interface (à¦†à¦¸à¦² à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦à¦¬à¦‚ à¦ªà§à¦°à¦•à§à¦¸à¦¿â€” à¦¦à§à¦œà¦¨à¦•à§‡à¦‡ à¦à¦Ÿà¦¿ à¦®à¦¾à¦¨à¦¤à§‡ à¦¹à¦¬à§‡)
+// ১. Subject Interface (আসল অবজেক্ট এবং প্রক্সি— দুজনকেই এটি মানতে হবে)
 interface Internet {
     void connectTo(String serverHost);
 }
 
-// à§¨. Real Subject (à¦†à¦¸à¦² à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿ à¦•à¦¾à¦¨à§‡à¦•à¦¶à¦¨, à¦¯à¦¾ à¦¸à¦°à¦¾à¦¸à¦°à¦¿ à¦¸à¦¾à¦‡à¦Ÿà§‡ à¦•à¦¾à¦¨à§‡à¦•à§à¦Ÿ à¦•à¦°à§‡)
+// ২. Real Subject (আসল ইন্টারনেট কানেকশন, যা সরাসরি সাইটে কানেক্ট করে)
 class RealInternet implements Internet {
     @Override
     public void connectTo(String serverHost) {
-        System.out.println("Connecting to " + serverHost + " ðŸŒ");
+        System.out.println("Connecting to " + serverHost + " 🌐");
     }
 }
 
-// à§©. Proxy Subject (à¦ªà¦¾à¦¹à¦¾à¦°à¦¾à¦¦à¦¾à¦°, à¦¯à§‡ à¦†à¦¸à¦² à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿà§‡à¦° à¦†à¦—à§‡ à¦šà§‡à¦• à¦•à¦°à¦¬à§‡)
+// ৩. Proxy Subject (পাহারাদার, যে আসল ইন্টারনেটের আগে চেক করবে)
 class ProxyInternet implements Internet {
     private RealInternet realInternet;
-    // à¦¬à§à¦²à¦• à¦•à¦°à¦¾ à¦¸à¦¾à¦‡à¦Ÿà§‡à¦° à¦²à¦¿à¦¸à§à¦Ÿ
+    // ব্লক করা সাইটের লিস্ট
     private static List<String> bannedSites = new ArrayList<>();
 
     static {
@@ -29,18 +29,18 @@ class ProxyInternet implements Internet {
 
     @Override
     public void connectTo(String serverHost) {
-        // à¦ªà§à¦°à¦•à§à¦¸à¦¿à¦° à¦¨à¦¿à¦œà¦¸à§à¦¬ à¦²à¦œà¦¿à¦• (Access Control)
+        // প্রক্সির নিজস্ব লজিক (Access Control)
         if (bannedSites.contains(serverHost.toLowerCase())) {
-            System.out.println("Access Denied âŒ: Cannot connect to " + serverHost);
-            return; // à¦°à¦¿à¦•à§‹à§Ÿà§‡à¦¸à§à¦Ÿ à¦à¦–à¦¾à¦¨à§‡à¦‡ à¦¬à§à¦²à¦• à¦•à¦°à§‡ à¦¦à¦¿à¦²à§‹!
+            System.out.println("Access Denied ❌: Cannot connect to " + serverHost);
+            return; // রিকোয়েস্ট এখানেই ব্লক করে দিলো!
         }
 
-        // à¦¯à¦¦à¦¿ à¦¸à¦¬ à¦ à¦¿à¦• à¦¥à¦¾à¦•à§‡, à¦¤à¦¬à§‡ à¦†à¦¸à¦² à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿà§‡à¦° à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦¤à§ˆà¦°à¦¿ à¦•à¦°à§‡ à¦¤à¦¾à¦•à§‡ à¦•à¦² à¦•à¦°à¦¾
+        // যদি সব ঠিক থাকে, তবে আসল ইন্টারনেটের অবজেক্ট তৈরি করে তাকে কল করা
         if (realInternet == null) {
             realInternet = new RealInternet(); 
         }
         
-        // à¦†à¦¸à¦² à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿà¦•à§‡ à¦•à¦¾à¦œà¦Ÿà¦¾ à¦¬à§à¦à¦¿à§Ÿà§‡ à¦¦à§‡à¦“à§Ÿà¦¾ (Delegation)
+        // আসল অবজেক্টকে কাজটা বুঝিয়ে দেওয়া (Delegation)
         realInternet.connectTo(serverHost);
     }
 }
@@ -49,16 +49,16 @@ class ProxyInternet implements Internet {
 public class Main {
     public static void main(String[] args) {
         
-        // à¦•à§à¦²à¦¾à§Ÿà§‡à¦¨à§à¦Ÿ à¦®à¦¨à§‡ à¦•à¦°à¦›à§‡ à¦¸à§‡ à¦†à¦¸à¦² à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿ à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦›à§‡
-        // à¦•à¦¿à¦¨à§à¦¤à§ à¦†à¦®à¦°à¦¾ à¦¤à¦¾à¦•à§‡ à¦ªà§à¦°à¦•à§à¦¸à¦¿ à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿ à¦§à¦°à¦¿à§Ÿà§‡ à¦¦à¦¿à§Ÿà§‡à¦›à¦¿!
+        // ক্লায়েন্ট মনে করছে সে আসল ইন্টারনেট ব্যবহার করছে
+        // কিন্তু আমরা তাকে প্রক্সি ইন্টারনেট ধরিয়ে দিয়েছি!
         Internet internet = new ProxyInternet();
 
         try {
-            internet.connectTo("google.com");      // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: Connecting to google.com ðŸŒ
-            internet.connectTo("wikipedia.org");   // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: Connecting to wikipedia.org ðŸŒ
+            internet.connectTo("google.com");      // আউটপুট: Connecting to google.com 🌐
+            internet.connectTo("wikipedia.org");   // আউটপুট: Connecting to wikipedia.org 🌐
             
-            // à¦à¦¬à¦¾à¦° à¦¬à§à¦²à¦•à¦¡ à¦¸à¦¾à¦‡à¦Ÿà§‡ à¦¯à¦¾à¦“à§Ÿà¦¾à¦° à¦šà§‡à¦·à§à¦Ÿà¦¾
-            internet.connectTo("facebook.com");    // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: Access Denied âŒ: Cannot connect to facebook.com
+            // এবার ব্লকড সাইটে যাওয়ার চেষ্টা
+            internet.connectTo("facebook.com");    // আউটপুট: Access Denied ❌: Cannot connect to facebook.com
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

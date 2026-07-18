@@ -1,23 +1,23 @@
-﻿package DesignPatterns.Behavioral.Iterator;
+package DesignPatterns.Behavioral.Iterator;
 
 // ==========================================
-// Component 1: Iterator Interface (à¦•à¦®à¦¨ à¦°à§à¦²à¦¸)
+// Component 1: Iterator Interface (কমন রুলস)
 // ==========================================
 interface MyIterator {
-    boolean hasNext(); // à¦ªà¦°à§‡à¦° à¦•à§‹à¦¨à§‹ à¦†à¦‡à¦Ÿà§‡à¦® à¦¬à¦¾à¦•à¦¿ à¦†à¦›à§‡ à¦•à¦¿ à¦¨à¦¾?
-    String next();     // à¦ªà¦°à§‡à¦° à¦†à¦‡à¦Ÿà§‡à¦®à¦Ÿà¦¾ à¦¦à¦¾à¦“
+    boolean hasNext(); // পরের কোনো আইটেম বাকি আছে কি না?
+    String next();     // পরের আইটেমটা দাও
 }
 
 // ==========================================
 // Component 3: IterableCollection Interface
 // ==========================================
 interface SongCollection {
-    MyIterator createIterator(); // à¦•à¦¾à¦²à§‡à¦•à¦¶à¦¨à¦•à§‡ à¦…à¦¬à¦¶à§à¦¯à¦‡ à¦à¦•à¦Ÿà¦¿ à¦‡à¦Ÿà¦¾à¦°à§‡à¦Ÿà¦° à¦¦à¦¿à¦¤à§‡ à¦¹à¦¬à§‡
+    MyIterator createIterator(); // কালেকশনকে অবশ্যই একটি ইটারেটর দিতে হবে
 }
 
 
 // ==========================================
-// Component 4: Concrete Collection (à¦†à¦¸à¦² à¦¡à¦¾à¦Ÿà¦¾ à¦¹à§‹à¦²à§à¦¡à¦¾à¦°)
+// Component 4: Concrete Collection (আসল ডাটা হোল্ডার)
 // ==========================================
 class Playlist implements SongCollection {
     private String[] songs;
@@ -34,7 +34,7 @@ class Playlist implements SongCollection {
         }
     }
 
-    // à¦•à¦¾à¦²à§‡à¦•à¦¶à¦¨à¦Ÿà¦¿ à¦¤à¦¾à¦° à¦¨à¦¿à¦œà§‡à¦° à¦œà¦¨à§à¦¯ à¦à¦•à¦Ÿà¦¿ à¦¸à§à¦ªà§‡à¦¶à¦¾à¦² à¦‡à¦Ÿà¦¾à¦°à§‡à¦Ÿà¦° à¦¬à¦¾à¦¨à¦¿à§Ÿà§‡ à¦°à¦¿à¦Ÿà¦¾à¦°à§à¦¨ à¦•à¦°à¦¬à§‡
+    // কালেকশনটি তার নিজের জন্য একটি স্পেশাল ইটারেটর বানিয়ে রিটার্ন করবে
     @Override
     public MyIterator createIterator() {
         return new PlaylistIterator(this.songs);
@@ -43,11 +43,11 @@ class Playlist implements SongCollection {
 
 
 // ==========================================
-// Component 2: Concrete Iterator (à¦†à¦¸à¦² à¦²à§à¦ª à¦šà¦¾à¦²à¦¾à¦¨à§‹à¦° à¦²à¦œà¦¿à¦•)
+// Component 2: Concrete Iterator (আসল লুপ চালানোর লজিক)
 // ==========================================
 class PlaylistIterator implements MyIterator {
     private String[] songs;
-    private int currentPosition = 0; // à¦•à¦¾à¦°à§‡à¦¨à§à¦Ÿ à¦ªà¦œà¦¿à¦¶à¦¨ à¦Ÿà§à¦°à§à¦¯à¦¾à¦• à¦°à¦¾à¦–à¦¾à¦° à¦œà¦¨à§à¦¯ à¦ªà§Ÿà§‡à¦¨à§à¦Ÿà¦¾à¦°
+    private int currentPosition = 0; // কারেন্ট পজিশন ট্র্যাক রাখার জন্য পয়েন্টার
 
     public PlaylistIterator(String[] songs) {
         this.songs = songs;
@@ -55,13 +55,13 @@ class PlaylistIterator implements MyIterator {
 
     @Override
     public boolean hasNext() {
-        // à¦¯à¦¦à¦¿ à¦ªà§Ÿà§‡à¦¨à§à¦Ÿà¦¾à¦°à¦Ÿà¦¿ à¦…à§à¦¯à¦¾à¦°à§‡à¦° à¦²à§‡à¦‚à¦¥ à¦¬à¦¾ à¦¨à¦¾à¦² (null) à¦­à§à¦¯à¦¾à¦²à§à¦° à¦šà§‡à§Ÿà§‡ à¦›à§‹à¦Ÿ à¦¥à¦¾à¦•à§‡
+        // যদি পয়েন্টারটি অ্যারের লেংথ বা নাল (null) ভ্যালুর চেয়ে ছোট থাকে
         return currentPosition < songs.length && songs[currentPosition] != null;
     }
 
     @Override
     public String next() {
-        // à¦¬à¦°à§à¦¤à¦®à¦¾à¦¨ à¦ªà¦œà¦¿à¦¶à¦¨à§‡à¦° à¦—à¦¾à¦¨à¦Ÿà¦¿ à¦°à¦¿à¦Ÿà¦¾à¦°à§à¦¨ à¦•à¦°à§‡ à¦ªà§Ÿà§‡à¦¨à§à¦Ÿà¦¾à¦° à¦à¦• à¦§à¦¾à¦ª à¦¬à¦¾à§œà¦¿à§Ÿà§‡ à¦¦à¦¿à¦²à§‹
+        // বর্তমান পজিশনের গানটি রিটার্ন করে পয়েন্টার এক ধাপ বাড়িয়ে দিলো
         String song = songs[currentPosition];
         currentPosition++;
         return song;
@@ -75,22 +75,22 @@ class PlaylistIterator implements MyIterator {
 public class Main {
     public static void main(String[] args) {
         
-        // à§§. à¦à¦•à¦Ÿà¦¿ à¦ªà§à¦²à§‡-à¦²à¦¿à¦¸à§à¦Ÿ à¦¬à¦¾à¦¨à¦¾à¦²à¦¾à¦® à¦à¦¬à¦‚ à¦—à¦¾à¦¨ à¦°à¦¾à¦–à¦²à¦¾à¦®
+        // ১. একটি প্লে-লিস্ট বানালাম এবং গান রাখলাম
         Playlist myPlaylist = new Playlist(3);
         myPlaylist.addSong("Song 1: Believer");
         myPlaylist.addSong("Song 2: Shape of You");
         myPlaylist.addSong("Song 3: Faded");
 
-        // à§¨. à¦•à§à¦²à¦¾à§Ÿà§‡à¦¨à§à¦Ÿ à¦ªà§à¦²à§‡-à¦²à¦¿à¦¸à§à¦Ÿà§‡à¦° à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à¦¾à¦² à¦¸à§à¦Ÿà§à¦°à¦¾à¦•à¦šà¦¾à¦° (Array) à¦œà¦¾à¦¨à§‡ à¦¨à¦¾à¥¤ 
-        // à¦¸à§‡ à¦¶à§à¦§à§ à¦‡à¦Ÿà¦¾à¦°à§‡à¦Ÿà¦° à¦šà¦¾à¦‡à¦²à§‹à¥¤
+        // ২. ক্লায়েন্ট প্লে-লিস্টের ইন্টারনাল স্ট্রাকচার (Array) জানে না। 
+        // সে শুধু ইটারেটর চাইলো।
         MyIterator iterator = myPlaylist.createIterator();
 
-        // à§©. à¦‡à¦‰à¦¨à¦¿à¦­à¦¾à¦°à§à¦¸à¦¾à¦² à¦¸à§à¦Ÿà¦¾à¦‡à¦²à§‡ à¦²à§à¦ª à¦šà¦¾à¦²à¦¾à¦¨à§‹
+        // ৩. ইউনিভার্সাল স্টাইলে লুপ চালানো
         System.out.println("--- Playing My Playlist ---");
         
         while (iterator.hasNext()) {
             String song = iterator.next();
-            System.out.println("Playing ðŸŽµ: " + song);
+            System.out.println("Playing 🎵: " + song);
         }
         
         System.out.println("--- Playlist Ended ---");

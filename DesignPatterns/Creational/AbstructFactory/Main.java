@@ -1,6 +1,6 @@
-﻿package DesignPatterns.Creational.AbstructFactory;
+package DesignPatterns.Creational.AbstructFactory;
 
-// ---- Products (à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦«à§‡à¦¸) ----
+// ---- Products (ইন্টারফেস) ----
 interface Button {
     void render();
 }
@@ -9,24 +9,24 @@ interface Checkbox {
 }
 // ---- Windows Family Products ----
 class WindowsButton implements Button {
-    public void render() { System.out.println("Rendering a Windows-style button ðŸŸ¦"); }
+    public void render() { System.out.println("Rendering a Windows-style button 🟦"); }
 }
 class WindowsCheckbox implements Checkbox {
-    public void render() { System.out.println("Rendering a Windows-style checkbox â˜‘ï¸"); }
+    public void render() { System.out.println("Rendering a Windows-style checkbox ☑️"); }
 }
 // ---- Mac Family Products ----
 class MacButton implements Button {
-    public void render() { System.out.println("Rendering a Mac-style button ðŸŽ"); }
+    public void render() { System.out.println("Rendering a Mac-style button 🍎"); }
 }
 class MacCheckbox implements Checkbox {
-    public void render() { System.out.println("Rendering a Mac-style checkbox âœ…"); }
+    public void render() { System.out.println("Rendering a Mac-style checkbox ✅"); }
 }
-// ---- Abstract Factory (à¦à¦–à¦¾à¦¨à§‡ à¦«à§à¦¯à¦¾à¦®à¦¿à¦²à¦¿à¦° à¦¸à¦¬ à¦ªà§à¦°à§‹à¦¡à¦¾à¦•à§à¦Ÿ à¦¬à¦¾à¦¨à¦¾à¦¨à§‹à¦° à¦®à§‡à¦¥à¦¡ à¦¥à¦¾à¦•à¦¬à§‡) ----
+// ---- Abstract Factory (এখানে ফ্যামিলির সব প্রোডাক্ট বানানোর মেথড থাকবে) ----
 interface UIFactory {
     Button createButton();
     Checkbox createCheckbox();
 }
-// ---- Concrete Factories (à¦†à¦²à¦¾à¦¦à¦¾ à¦†à¦²à¦¾à¦¦à¦¾ à¦«à§à¦¯à¦¾à¦®à¦¿à¦²à¦¿à¦° à¦«à§à¦¯à¦¾à¦•à§à¦Ÿà¦°à¦¿) ----
+// ---- Concrete Factories (আলাদা আলাদা ফ্যামিলির ফ্যাক্টরি) ----
 class WindowsFactory implements UIFactory {
     public Button createButton() { return new WindowsButton(); }
     public Checkbox createCheckbox() { return new WindowsCheckbox(); }
@@ -36,11 +36,11 @@ class MacFactory implements UIFactory {
     public Checkbox createCheckbox() { return new MacCheckbox(); }
 }
 
-// ---- Client Code (à¦…à§à¦¯à¦¾à¦ªà§à¦²à¦¿à¦•à§‡à¦¶à¦¨) ----
+// ---- Client Code (অ্যাপ্লিকেশন) ----
 class Application {
     private Button button;
     private Checkbox checkbox;
-    // à¦…à§à¦¯à¦¾à¦ªà§à¦²à¦¿à¦•à§‡à¦¶à¦¨ à¦¶à§à¦§à§ à¦œà¦¾à¦¨à§‡ à¦¸à§‡ à¦à¦•à¦Ÿà¦¿ UIFactory à¦ªà¦¾à¦¬à§‡, à¦¸à§‡à¦Ÿà¦¾ Windows à¦¨à¦¾ Mac à¦¤à¦¾ à¦¤à¦¾à¦° à¦œà¦¾à¦¨à¦¾à¦° à¦¦à¦°à¦•à¦¾à¦° à¦¨à§‡à¦‡
+    // অ্যাপ্লিকেশন শুধু জানে সে একটি UIFactory পাবে, সেটা Windows না Mac তা তার জানার দরকার নেই
     public Application(UIFactory factory) {
         button = factory.createButton();
         checkbox = factory.createCheckbox();
@@ -55,15 +55,15 @@ class Application {
 public class Main {
     public static void main(String[] args) {
         
-        // à¦§à¦°à§à¦¨ à¦‡à¦‰à¦œà¦¾à¦° Windows à¦¸à¦¿à¦²à§‡à¦•à§à¦Ÿ à¦•à¦°à§‡à¦›à§‡
+        // ধরুন ইউজার Windows সিলেক্ট করেছে
         UIFactory factory = new WindowsFactory(); 
         Application app = new Application(factory);
         app.paint();
         
         System.out.println("\n-------------------------\n");
 
-        // à¦à¦–à¦¨ User Mac à¦¸à¦¿à¦²à§‡à¦•à§à¦Ÿ à¦•à¦°à¦²à§‹
-        factory = new MacFactory(); // à¦¶à§à¦§à§ factory à¦ªà¦°à¦¿à¦¬à¦°à§à¦¤à¦¨ à¦•à¦°à¦²à¦¾à¦®
+        // এখন User Mac সিলেক্ট করলো
+        factory = new MacFactory(); // শুধু factory পরিবর্তন করলাম
         app = new Application(factory);
         app.paint();
 

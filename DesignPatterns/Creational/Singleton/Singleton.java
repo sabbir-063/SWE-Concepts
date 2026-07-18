@@ -1,22 +1,22 @@
-﻿package DesignPatterns.Creational.Singleton;
+package DesignPatterns.Creational.Singleton;
 public class Singleton {
-    // à§¨. Private Static Instance (volatile à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¾ à¦¹à§Ÿ thread safety à¦à¦° à¦œà¦¨à§à¦¯)
+    // ২. Private Static Instance (volatile ব্যবহার করা হয় thread safety এর জন্য)
     private static volatile Singleton instance = null;
     
     private String data;
 
-    // à§§. Private Constructor
+    // ১. Private Constructor
     private Singleton(String data) {
         this.data = data;
     }
 
-    // à§©. Public Static Method
+    // ৩. Public Static Method
     public static Singleton getInstance(String data) {
         if (instance == null) { 
-            // à¦ªà§à¦°à¦¥à¦® à¦šà§‡à¦• (Double-checked locking)
+            // প্রথম চেক (Double-checked locking)
             synchronized (Singleton.class) {
                 if (instance == null) { 
-                    // à¦¥à§à¦°à§‡à¦¡ à¦¸à§‡à¦«à¦Ÿà¦¿à¦° à¦œà¦¨à§à¦¯ à¦¦à§à¦¬à¦¿à¦¤à§€à§Ÿ à¦šà§‡à¦•
+                    // থ্রেড সেফটির জন্য দ্বিতীয় চেক
                     instance = new Singleton(data);
                     System.out.println("New instance created!");
                 }

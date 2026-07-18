@@ -1,16 +1,16 @@
-﻿package DesignPatterns.Structural.Flyweight;
+package DesignPatterns.Structural.Flyweight;
 
 import java.util.HashMap;
 import java.util.Map;
 
-// à§§. Flyweight Interface
+// ১. Flyweight Interface
 interface TreeType {
-    void draw(int x, int y); // x, y à¦¹à¦²à§‹ Extrinsic state (à¦¯à§‡à¦Ÿà¦¾ à¦ªà§à¦°à¦¤à¦¿à¦Ÿà¦¾ à¦—à¦¾à¦›à§‡à¦° à¦†à¦²à¦¾à¦¦à¦¾)
+    void draw(int x, int y); // x, y হলো Extrinsic state (যেটা প্রতিটা গাছের আলাদা)
 }
 
-// à§¨. Concrete Flyweight (à¦à¦‡ à¦•à§à¦²à¦¾à¦¸à¦Ÿà¦¿ à¦®à§‡à¦®à¦°à¦¿à¦¤à§‡ à¦¶à§‡à§Ÿà¦¾à¦° à¦•à¦°à¦¾ à¦¹à¦¬à§‡)
+// ২. Concrete Flyweight (এই ক্লাসটি মেমরিতে শেয়ার করা হবে)
 class SharedTreeType implements TreeType {
-    private String name;    // Intrinsic State (à¦¸à¦¬à¦¾à¦° à¦œà¦¨à§à¦¯ à¦¸à§‡à¦®)
+    private String name;    // Intrinsic State (সবার জন্য সেম)
     private String color;   // Intrinsic State
     private String texture; // Intrinsic State
 
@@ -27,17 +27,17 @@ class SharedTreeType implements TreeType {
     }
 }
 
-// à§©. Flyweight Factory (à¦à¦Ÿà¦¿ à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦¶à§‡à§Ÿà¦¾à¦°à¦¿à¦‚ à¦®à§à¦¯à¦¾à¦¨à§‡à¦œ à¦•à¦°à¦¬à§‡)
+// ৩. Flyweight Factory (এটি অবজেক্ট শেয়ারিং ম্যানেজ করবে)
 class TreeFactory {
-    // à¦•à§à¦¯à¦¾à¦¶ (Cache) à¦®à§‡à¦®à¦°à¦¿ à¦¹à¦¿à¦¸à§‡à¦¬à§‡ à¦à¦•à¦Ÿà¦¿ HashMap à¦¬à§à¦¯à¦¬à¦¹à¦¾à¦° à¦•à¦°à¦¾ à¦¹à¦²à§‹
+    // ক্যাশ (Cache) মেমরি হিসেবে একটি HashMap ব্যবহার করা হলো
     private static Map<String, TreeType> treeTypes = new HashMap<>();
 
     public static TreeType getTreeType(String name, String color, String texture) {
-        // à¦¯à¦¦à¦¿ à¦à¦‡ à¦¨à¦¾à¦®à§‡à¦° à¦—à¦¾à¦› à¦†à¦—à§‡ à¦¥à§‡à¦•à§‡à¦‡ à¦•à§à¦¯à¦¾à¦¶à§‡ à¦¥à¦¾à¦•à§‡, à¦¤à¦¬à§‡ à¦¸à§‡à¦Ÿà¦¾à¦‡ à¦°à¦¿à¦Ÿà¦¾à¦°à§à¦¨ à¦•à¦°à¦¬à§‡
+        // যদি এই নামের গাছ আগে থেকেই ক্যাশে থাকে, তবে সেটাই রিটার্ন করবে
         TreeType type = treeTypes.get(name);
         
         if (type == null) {
-            // à¦†à¦° à¦¯à¦¦à¦¿ à¦¨à¦¾ à¦¥à¦¾à¦•à§‡, à¦¤à¦¬à§‡ à¦¨à¦¤à§à¦¨ à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦¬à¦¾à¦¨à¦¿à§Ÿà§‡ à¦•à§à¦¯à¦¾à¦¶à§‡ à¦¸à§‡à¦­ à¦•à¦°à§‡ à¦°à¦¾à¦–à¦¬à§‡
+            // আর যদি না থাকে, তবে নতুন অবজেক্ট বানিয়ে ক্যাশে সেভ করে রাখবে
             type = new SharedTreeType(name, color, texture);
             treeTypes.put(name, type);
             System.out.println("--> Created new TreeType object in memory: " + name);
@@ -46,30 +46,30 @@ class TreeFactory {
     }
 }
 
-// à§ª. Client Code (Main Method)
+// ৪. Client Code (Main Method)
 public class Main {
     public static void main(String[] args) {
         
-        // à§§. à¦ªà§à¦°à¦¥à¦® à¦—à¦¾à¦›à¦Ÿà¦¿ à¦°à§‡à¦¨à§à¦¡à¦¾à¦° à¦•à¦°à¦›à¦¿ 
+        // ১. প্রথম গাছটি রেন্ডার করছি 
         TreeType oak1 = TreeFactory.getTreeType("Oak", "Green", "Rough");
         oak1.draw(10, 20); 
-        // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: --> Created new TreeType object in memory: Oak
+        // আউটপুট: --> Created new TreeType object in memory: Oak
         //         Drawing a Green Oak tree... at (10, 20)
 
-        // à§¨. à¦¦à§à¦¬à¦¿à¦¤à§€à§Ÿ Oak à¦—à¦¾à¦›à¦Ÿà¦¿ à¦°à§‡à¦¨à§à¦¡à¦¾à¦° à¦•à¦°à¦›à¦¿ 
+        // ২. দ্বিতীয় Oak গাছটি রেন্ডার করছি 
         TreeType oak2 = TreeFactory.getTreeType("Oak", "Green", "Rough");
         oak2.draw(50, 70);
-        // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: Drawing a Green Oak tree... at (50, 70) 
-        // (à¦à¦–à¦¾à¦¨à§‡ à¦–à§‡à§Ÿà¦¾à¦² à¦•à¦°à§à¦¨, à¦¨à¦¤à§à¦¨ à¦•à¦°à§‡ à¦•à§‹à¦¨à§‹ à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦¤à§ˆà¦°à¦¿ à¦¹à¦²à§‹ à¦¨à¦¾! à¦†à¦—à§‡à¦°à¦Ÿà¦¾à¦‡ à¦¶à§‡à§Ÿà¦¾à¦° à¦¹à¦²à§‹)
+        // আউটপুট: Drawing a Green Oak tree... at (50, 70) 
+        // (এখানে খেয়াল করুন, নতুন করে কোনো অবজেক্ট তৈরি হলো না! আগেরটাই শেয়ার হলো)
 
-        // à§©. à¦¨à¦¤à§à¦¨ à¦à¦•à¦Ÿà¦¿ Pine à¦—à¦¾à¦› à¦°à§‡à¦¨à§à¦¡à¦¾à¦° à¦•à¦°à¦›à¦¿
+        // ৩. নতুন একটি Pine গাছ রেন্ডার করছি
         TreeType pine1 = TreeFactory.getTreeType("Pine", "Dark Green", "Smooth");
         pine1.draw(100, 150);
-        // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: --> Created new TreeType object in memory: Pine
+        // আউটপুট: --> Created new TreeType object in memory: Pine
         //         Drawing a Dark Green Pine tree... at (100, 150)
         
-        // à¦šà§‡à¦• à¦•à¦°à§‡ à¦¦à§‡à¦–à¦¿ oak1 à¦à¦¬à¦‚ oak2 à¦®à§‡à¦®à¦°à¦¿à¦¤à§‡ à¦à¦•à¦‡ à¦…à¦¬à¦œà§‡à¦•à§à¦Ÿ à¦•à¦¿ à¦¨à¦¾
+        // চেক করে দেখি oak1 এবং oak2 মেমরিতে একই অবজেক্ট কি না
         System.out.println("Are both Oak trees the same object? " + (oak1 == oak2)); 
-        // à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ: true (à¦®à§à¦¯à¦¾à¦œà¦¿à¦•! à¦°â€à§à¦¯à¦¾à¦® à¦¬à§‡à¦à¦šà§‡ à¦—à§‡à¦²à§‹!)
+        // আউটপুট: true (ম্যাজিক! র‍্যাম বেঁচে গেলো!)
     }
 }

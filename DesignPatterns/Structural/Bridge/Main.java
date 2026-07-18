@@ -1,20 +1,20 @@
-﻿package DesignPatterns.Structural.Bridge;
+package DesignPatterns.Structural.Bridge;
 
 // ==========================================
-// Implementation Hierarchy (à¦•à§€à¦­à¦¾à¦¬à§‡ à¦•à¦¾à¦œ à¦¹à¦¬à§‡)
+// Implementation Hierarchy (কীভাবে কাজ হবে)
 // ==========================================
 
-// à§§. Device à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦«à§‡à¦¸ (à¦à¦Ÿà¦¿ à¦¹à¦²à§‹ Bridge)
+// ১. Device ইন্টারফেস (এটি হলো Bridge)
 interface Device {
     void turnOn();
     void turnOff();
     void setVolume(int level);
 }
 
-// à§¨. Concrete Implementations (à¦†à¦¸à¦² à¦¡à¦¿à¦­à¦¾à¦‡à¦¸à¦—à§à¦²à§‹)
+// ২. Concrete Implementations (আসল ডিভাইসগুলো)
 class TV implements Device {
     @Override
-    public void turnOn() { System.out.println("TV is now ON ðŸ“º"); }
+    public void turnOn() { System.out.println("TV is now ON 📺"); }
     
     @Override
     public void turnOff() { System.out.println("TV is now OFF"); }
@@ -25,7 +25,7 @@ class TV implements Device {
 
 class Radio implements Device {
     @Override
-    public void turnOn() { System.out.println("Radio is now ON ðŸ“»"); }
+    public void turnOn() { System.out.println("Radio is now ON 📻"); }
     
     @Override
     public void turnOff() { System.out.println("Radio is now OFF"); }
@@ -35,12 +35,12 @@ class Radio implements Device {
 }
 
 // ==========================================
-// Abstraction Hierarchy (à¦•à§€ à¦•à¦¾à¦œ à¦¹à¦¬à§‡)
+// Abstraction Hierarchy (কী কাজ হবে)
 // ==========================================
 
-// à§©. à¦°à¦¿à¦®à§‹à¦Ÿ à¦•à¦¨à§à¦Ÿà§à¦°à§‹à¦² (à¦à¦Ÿà¦¿ à¦¡à¦¿à¦­à¦¾à¦‡à¦¸à§‡à¦° à¦¸à¦¾à¦¥à§‡ Bridge à¦¤à§ˆà¦°à¦¿ à¦•à¦°à§‡ Composition-à¦à¦° à¦®à¦¾à¦§à§à¦¯à¦®à§‡)
+// ৩. রিমোট কন্ট্রোল (এটি ডিভাইসের সাথে Bridge তৈরি করে Composition-এর মাধ্যমে)
 class RemoteControl {
-    protected Device device; // Bridge - à¦¡à¦¿à¦­à¦¾à¦‡à¦¸à§‡à¦° à¦°à§‡à¦«à¦¾à¦°à§‡à¦¨à§à¦¸
+    protected Device device; // Bridge - ডিভাইসের রেফারেন্স
 
     public RemoteControl(Device device) {
         this.device = device;
@@ -55,16 +55,16 @@ class RemoteControl {
     }
 }
 
-// à§ª. à¦‰à¦¨à§à¦¨à¦¤ à¦°à¦¿à¦®à§‹à¦Ÿ à¦•à¦¨à§à¦Ÿà§à¦°à§‹à¦² (à¦¨à¦¤à§à¦¨ à¦«à¦¿à¦šà¦¾à¦° à¦¯à§‹à¦— à¦•à¦°à¦¾ à¦¹à¦²à§‹, à¦•à¦¿à¦¨à§à¦¤à§ à¦¡à¦¿à¦­à¦¾à¦‡à¦¸à§‡à¦° à¦•à§‹à¦¡ à¦›à§à¦à¦¤à§‡ à¦¹à¦²à§‹ à¦¨à¦¾)
+// ৪. উন্নত রিমোট কন্ট্রোল (নতুন ফিচার যোগ করা হলো, কিন্তু ডিভাইসের কোড ছুঁতে হলো না)
 class AdvancedRemoteControl extends RemoteControl {
     public AdvancedRemoteControl(Device device) {
         super(device);
     }
 
-    // à¦¨à¦¤à§à¦¨ à¦à¦•à¦Ÿà¦¿ à¦®à§‡à¦¥à¦¡ (Mute)
+    // নতুন একটি মেথড (Mute)
     public void mute() {
         device.setVolume(0);
-        System.out.println("Device is muted ðŸ”‡");
+        System.out.println("Device is muted 🔇");
     }
 }
 
@@ -74,19 +74,19 @@ class AdvancedRemoteControl extends RemoteControl {
 public class Main {
     public static void main(String[] args) {
         
-        // à§§. à¦à¦•à¦Ÿà¦¿ à¦°à§‡à¦¡à¦¿à¦“ à¦¬à¦¾à¦¨à¦¾à¦²à¦¾à¦® à¦à¦¬à¦‚ à¦¸à§‡à¦Ÿà¦¾ à¦¸à¦¾à¦§à¦¾à¦°à¦£ à¦°à¦¿à¦®à§‹à¦Ÿà§‡à¦° à¦¸à¦¾à¦¥à§‡ à¦•à¦¾à¦¨à§‡à¦•à§à¦Ÿ à¦•à¦°à¦²à¦¾à¦®
+        // ১. একটি রেডিও বানালাম এবং সেটা সাধারণ রিমোটের সাথে কানেক্ট করলাম
         Device radio = new Radio();
         RemoteControl radioRemote = new RemoteControl(radio);
         
-        radioRemote.togglePower(); // à¦°à§‡à¦¡à¦¿à¦“ à¦šà¦¾à¦²à§ à¦¹à¦¬à§‡
+        radioRemote.togglePower(); // রেডিও চালু হবে
         
         System.out.println("-----------------");
 
-        // à§¨. à¦à¦•à¦Ÿà¦¿ à¦Ÿà¦¿à¦­à¦¿ à¦¬à¦¾à¦¨à¦¾à¦²à¦¾à¦® à¦à¦¬à¦‚ à¦¸à§‡à¦Ÿà¦¾ à¦…à§à¦¯à¦¾à¦¡à¦­à¦¾à¦¨à§à¦¸à¦¡ à¦°à¦¿à¦®à§‹à¦Ÿà§‡à¦° à¦¸à¦¾à¦¥à§‡ à¦•à¦¾à¦¨à§‡à¦•à§à¦Ÿ à¦•à¦°à¦²à¦¾à¦®
+        // ২. একটি টিভি বানালাম এবং সেটা অ্যাডভান্সড রিমোটের সাথে কানেক্ট করলাম
         Device tv = new TV();
         AdvancedRemoteControl tvRemote = new AdvancedRemoteControl(tv);
         
-        tvRemote.togglePower(); // à¦Ÿà¦¿à¦­à¦¿ à¦šà¦¾à¦²à§ à¦¹à¦¬à§‡
-        tvRemote.mute();        // à¦Ÿà¦¿à¦­à¦¿ à¦®à¦¿à¦‰à¦Ÿ à¦¹à¦¬à§‡
+        tvRemote.togglePower(); // টিভি চালু হবে
+        tvRemote.mute();        // টিভি মিউট হবে
     }
 }
