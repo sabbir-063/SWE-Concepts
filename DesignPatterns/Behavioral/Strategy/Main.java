@@ -37,7 +37,7 @@ class CreditCardPayment implements PaymentStrategy {
 
     @Override
     public void pay(int amount) {
-        System.out.println("Paid " + amount + " BDT using Credit Card. Name: " + nameOnCard);
+        System.out.println("Paid " + amount + " BDT using Credit Card. Name: " + nameOnCard + ", Card Number: " + cardNumber);
     }
 }
 
