@@ -56,6 +56,8 @@
 - `[x]` Section 16: Distributed Transactions (SAGA, CQRS)
   - `[x]` Write ComputerNetworks/Module3_SystemDesignAdvanced/16_Distributed_Transactions/README.md
   - `[x]` Write ComputerNetworks/Module3_SystemDesignAdvanced/16_Distributed_Transactions/Quiz.md
-- `[ ]` Section 17: Storage & RAID
-  - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/17_Storage_RAID/README.md
-  - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/17_Storage_RAID/Quiz.md
+- `[x]` Section 17: Storage & RAID
+  - `[x]` Write ComputerNetworks/Module3_SystemDesignAdvanced/17_Storage_RAID/README.md
+  - `[x]` Write ComputerNetworks/Module3_SystemDesignAdvanced/17_Storage_RAID/Quiz.md
+
+**Status:** ALL SECTIONS IN PART 1 (MODULE 1, 2, 3) COMPLETED! READY FOR PART 2 (OPERATING SYSTEMS)
