@@ -67,6 +67,13 @@ SWE/
 11. **Scalability**: Vertical vs Horizontal scaling, database sharding/partitioning, read replicas, stateless architecture patterns.
 12. **Storage**: Block, File, and Object storage models, NAS/SAN architectures, RAID levels (0, 1, 5, 6, 10) and their trade-offs.
 
+#### Module 3: System Design Advanced
+70. **Message Queues & Event Streaming**: RabbitMQ vs Kafka, pub/sub models, event-driven architectures, decoupling background tasks.
+71. **API Gateways & Service Mesh**: Routing, rate limiting, authentication at the edge (Kong, API Gateway), and service-to-service communication (Istio).
+72. **Distributed Databases & Consistency**: Deep dive into the CAP Theorem, PACELC, NoSQL types (Key-Value, Document, Graph), Eventual vs Strong Consistency.
+73. **Distributed Transactions**: Two-Phase Commit (2PC), Saga Pattern (Choreography vs Orchestration), Event Sourcing, CQRS.
+74. **Storage & RAID**: Block vs File vs Object storage models (S3), NAS/SAN architectures, RAID levels (0, 1, 5, 6, 10).
+
 ---
 
 ### Part 2: Operating Systems (অপারেটিং সিস্টেম)

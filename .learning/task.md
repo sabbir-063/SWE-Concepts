@@ -42,3 +42,20 @@
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/12_Microservices_Monolith/Quiz.md
 
 **Status:** ALL SECTIONS IN MODULE 1 & 2 COMPLETED!
+
+## Part 1: Computer Networks & System Design (Module 3: Advanced System Design)
+- `[x]` Section 13: Message Queues & Event Streaming
+  - `[x]` Write ComputerNetworks/Module3_SystemDesignAdvanced/13_Message_Queues/README.md
+  - `[x]` Write ComputerNetworks/Module3_SystemDesignAdvanced/13_Message_Queues/Quiz.md
+- `[ ]` Section 14: API Gateways & Service Mesh
+  - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/14_API_Gateways/README.md
+  - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/14_API_Gateways/Quiz.md
+- `[ ]` Section 15: Distributed Databases & Consistency
+  - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/15_Distributed_Databases/README.md
+  - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/15_Distributed_Databases/Quiz.md
+- `[ ]` Section 16: Distributed Transactions (SAGA, CQRS)
+  - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/16_Distributed_Transactions/README.md
+  - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/16_Distributed_Transactions/Quiz.md
+- `[ ]` Section 17: Storage & RAID
+  - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/17_Storage_RAID/README.md
+  - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/17_Storage_RAID/Quiz.md
