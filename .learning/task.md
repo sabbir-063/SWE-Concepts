@@ -22,7 +22,10 @@
 - `[x]` Section 7: Caching
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/07_Caching/README.md
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/07_Caching/Quiz.md
-- `[ ]` Section 8: CDN (Content Delivery Network)
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/08_CDN/README.md
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/08_CDN/Quiz.md
+- `[x]` Section 8: CDN (Content Delivery Network)
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/08_CDN/README.md
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/08_CDN/Quiz.md
+- `[ ]` Section 9: Proxy (Forward & Reverse)
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/README.md
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/Quiz.md
 - `[ ]` ... (and so on for remaining chapters)
