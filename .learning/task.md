@@ -34,7 +34,11 @@
 - `[x]` Section 11: Scalability
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/README.md
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/Quiz.md
-- `[ ]` Section 12: Microservices vs Monolith
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/12_Microservices_Monolith/README.md
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/12_Microservices_Monolith/Quiz.md
-- `[ ]` ... (and so on for remaining chapters)
+- `[x]` Section 11: Scalability
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/README.md
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/Quiz.md
+- `[x]` Section 12: Microservices vs Monolith
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/12_Microservices_Monolith/README.md
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/12_Microservices_Monolith/Quiz.md
+
+**Status:** ALL SECTIONS IN MODULE 1 & 2 COMPLETED!
