@@ -1,6 +1,6 @@
-# Chapter 1 to 6 Completion Walkthrough
+# Chapter 1 to 7 Completion Walkthrough
 
-We have successfully delivered Chapters 1 through 6 of the Computer Networks curriculum.
+We have successfully delivered Chapters 1 through 7 of the Computer Networks curriculum.
 
 ## Changes Made
 1. **Module 1 - Chapter 1 (IP Protocol)**:
@@ -20,9 +20,12 @@ We have successfully delivered Chapters 1 through 6 of the Computer Networks cur
    - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/05_Load_Balancing/Quiz.md) - 30 MCQs.
 6. **Module 2 - Chapter 6 (Clustering)**:
    - Written [README.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/06_Clustering/README.md) - Detailed guide covering High-availability clusters, active-passive vs active-active configurations, replication, and state persistence.
-   - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/06_Clustering/Quiz.md) - Exactly 30 MCQs with interactive collapsible answers and explanations under each question.
+   - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/06_Clustering/Quiz.md) - 30 MCQs.
+7. **Module 2 - Chapter 7 (Caching)**:
+   - Written [README.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/07_Caching/README.md) - Detailed guide covering caching levels, eviction strategies (LRU, LFU, FIFO), write policies, cache hit/miss, and cache stampede.
+   - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/07_Caching/Quiz.md) - Exactly 30 MCQs with interactive collapsible answers and explanations under each question.
 
 ## How to Proceed
-1. Open the [Clustering Study Guide](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/06_Clustering/README.md) to read and study.
-2. Open the [Clustering Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/06_Clustering/Quiz.md) to practice the 30 MCQs.
-3. Let me know when you are ready to commit and proceed to **Chapter 7: Caching**!
+1. Open the [Caching Study Guide](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/07_Caching/README.md) to read and study.
+2. Open the [Caching Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/07_Caching/Quiz.md) to practice the 30 MCQs.
+3. Let me know when you are ready to commit and proceed to **Chapter 8: CDN**!

@@ -19,7 +19,10 @@
 - `[x]` Section 6: Clustering
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/06_Clustering/README.md
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/06_Clustering/Quiz.md
-- `[ ]` Section 7: Caching
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/07_Caching/README.md
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/07_Caching/Quiz.md
+- `[x]` Section 7: Caching
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/07_Caching/README.md
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/07_Caching/Quiz.md
+- `[ ]` Section 8: CDN (Content Delivery Network)
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/08_CDN/README.md
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/08_CDN/Quiz.md
 - `[ ]` ... (and so on for remaining chapters)
