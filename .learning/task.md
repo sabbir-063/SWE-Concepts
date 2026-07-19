@@ -25,7 +25,10 @@
 - `[x]` Section 8: CDN (Content Delivery Network)
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/08_CDN/README.md
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/08_CDN/Quiz.md
-- `[ ]` Section 9: Proxy (Forward & Reverse)
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/README.md
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/Quiz.md
+- `[x]` Section 9: Proxy (Forward & Reverse)
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/README.md
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/Quiz.md
+- `[ ]` Section 10: Availability & Reliability
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/README.md
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/Quiz.md
 - `[ ]` ... (and so on for remaining chapters)

@@ -1,6 +1,6 @@
-# Chapter 1 to 8 Completion Walkthrough
+# Chapter 1 to 9 Completion Walkthrough
 
-We have successfully delivered Chapters 1 through 8 of the Computer Networks curriculum.
+We have successfully delivered Chapters 1 through 9 of the Computer Networks curriculum.
 
 ## Changes Made
 1. **Module 1 - Chapter 1 (IP Protocol)**:
@@ -26,9 +26,12 @@ We have successfully delivered Chapters 1 through 8 of the Computer Networks cur
    - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/07_Caching/Quiz.md) - 30 MCQs.
 8. **Module 2 - Chapter 8 (CDN - Content Delivery Network)**:
    - Written [README.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/08_CDN/README.md) - Detailed guide covering Edge servers, latency reduction, Push vs Pull CDN topologies, and static vs dynamic caching.
-   - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/08_CDN/Quiz.md) - Exactly 30 MCQs with interactive collapsible answers and explanations under each question.
+   - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/08_CDN/Quiz.md) - 30 MCQs.
+9. **Module 2 - Chapter 9 (Proxy - Forward & Reverse)**:
+   - Written [README.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/README.md) - Detailed guide covering Forward Proxy vs Reverse Proxy, security, anonymity, load distribution, and TLS termination.
+   - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/Quiz.md) - Exactly 30 MCQs with interactive collapsible answers and explanations under each question.
 
 ## How to Proceed
-1. Open the [CDN Study Guide](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/08_CDN/README.md) to read and study.
-2. Open the [CDN Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/08_CDN/Quiz.md) to practice the 30 MCQs.
-3. Let me know when you are ready to commit and proceed to **Chapter 9: Proxy**!
+1. Open the [Proxy Study Guide](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/README.md) to read and study.
+2. Open the [Proxy Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/Quiz.md) to practice the 30 MCQs.
+3. Let me know when you are ready to commit and proceed to **Chapter 10: Availability & Reliability**!
