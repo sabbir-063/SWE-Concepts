@@ -16,7 +16,10 @@
 - `[x]` Section 5: Load Balancing
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/05_Load_Balancing/README.md
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/05_Load_Balancing/Quiz.md
-- `[ ]` Section 6: Clustering
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/06_Clustering/README.md
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/06_Clustering/Quiz.md
+- `[x]` Section 6: Clustering
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/06_Clustering/README.md
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/06_Clustering/Quiz.md
+- `[ ]` Section 7: Caching
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/07_Caching/README.md
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/07_Caching/Quiz.md
 - `[ ]` ... (and so on for remaining chapters)
