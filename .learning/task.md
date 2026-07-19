@@ -28,7 +28,10 @@
 - `[x]` Section 9: Proxy (Forward & Reverse)
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/README.md
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/Quiz.md
-- `[ ]` Section 10: Availability & Reliability
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/README.md
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/Quiz.md
+- `[x]` Section 10: Availability & Reliability
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/README.md
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/Quiz.md
+- `[ ]` Section 11: Scalability
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/README.md
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/Quiz.md
 - `[ ]` ... (and so on for remaining chapters)

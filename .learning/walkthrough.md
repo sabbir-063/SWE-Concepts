@@ -1,6 +1,6 @@
-# Chapter 1 to 9 Completion Walkthrough
+# Chapter 1 to 10 Completion Walkthrough
 
-We have successfully delivered Chapters 1 through 9 of the Computer Networks curriculum.
+We have successfully delivered Chapters 1 through 10 of the Computer Networks curriculum.
 
 ## Changes Made
 1. **Module 1 - Chapter 1 (IP Protocol)**:
@@ -29,9 +29,12 @@ We have successfully delivered Chapters 1 through 9 of the Computer Networks cur
    - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/08_CDN/Quiz.md) - 30 MCQs.
 9. **Module 2 - Chapter 9 (Proxy - Forward & Reverse)**:
    - Written [README.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/README.md) - Detailed guide covering Forward Proxy vs Reverse Proxy, security, anonymity, load distribution, and TLS termination.
-   - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/Quiz.md) - Exactly 30 MCQs with interactive collapsible answers and explanations under each question.
+   - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/Quiz.md) - 30 MCQs.
+10. **Module 2 - Chapter 10 (Availability & Reliability)**:
+    - Written [README.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/README.md) - Detailed guide covering High Availability, Reliability, SLA, SLO, SLI, MTBF, MTTR, Redundancy, and Failover.
+    - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/Quiz.md) - Exactly 30 MCQs with interactive collapsible answers and explanations under each question.
 
 ## How to Proceed
-1. Open the [Proxy Study Guide](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/README.md) to read and study.
-2. Open the [Proxy Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/Quiz.md) to practice the 30 MCQs.
-3. Let me know when you are ready to commit and proceed to **Chapter 10: Availability & Reliability**!
+1. Open the [Availability & Reliability Study Guide](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/README.md) to read and study.
+2. Open the [Availability & Reliability Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/Quiz.md) to practice the 30 MCQs.
+3. Let me know when you are ready to commit and proceed to **Chapter 11: Scalability**!
