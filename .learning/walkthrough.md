@@ -20,11 +20,12 @@ We have successfully delivered all chapters of Module 1 (Core Protocols) and Mod
 12. **Chapter 12 (Microservices vs Monolith)**: [README](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/12_Microservices_Monolith/README.md) & [Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/12_Microservices_Monolith/Quiz.md)
 
 ### Module 3: System Design Advanced
-13. **Chapter 13 (Message Queues & Event Streaming)**: 
-    - Written [README.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/13_Message_Queues/README.md) - Detailed guide covering Synchronous vs Asynchronous communication, Message Queues (RabbitMQ), Pub/Sub, Event Streaming (Kafka), and Event-Driven Architecture.
-    - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/13_Message_Queues/Quiz.md) - Exactly 30 MCQs with interactive collapsible answers and explanations under each question.
+13. **Chapter 13 (Message Queues & Event Streaming)**: [README](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/13_Message_Queues/README.md) & [Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/13_Message_Queues/Quiz.md)
+14. **Chapter 14 (API Gateways & Service Mesh)**: 
+    - Written [README.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/14_API_Gateways/README.md) - Detailed guide covering API Gateways (North-South traffic, Rate Limiting, Kong) and Service Mesh (East-West traffic, Sidecar Pattern, mTLS, Istio).
+    - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/14_API_Gateways/Quiz.md) - Exactly 30 MCQs with interactive collapsible answers and explanations under each question.
 
 ## How to Proceed
-1. Open the [Message Queues Study Guide](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/13_Message_Queues/README.md) to read and study.
-2. Open the [Message Queues Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/13_Message_Queues/Quiz.md) to practice the 30 MCQs.
-3. Let me know when you are ready to commit and proceed to **Chapter 14: API Gateways & Service Mesh**!
+1. Open the [API Gateways Study Guide](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/14_API_Gateways/README.md) to read and study.
+2. Open the [API Gateways Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/14_API_Gateways/Quiz.md) to practice the 30 MCQs.
+3. Let me know when you are ready to commit and proceed to **Chapter 15: Distributed Databases & Consistency**!
