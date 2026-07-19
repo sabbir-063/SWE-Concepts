@@ -13,7 +13,10 @@
 - `[x]` Section 4: DNS (Domain Name System)
   - `[x]` Write ComputerNetworks/Module1_CoreProtocols/04_DNS/README.md
   - `[x]` Write ComputerNetworks/Module1_CoreProtocols/04_DNS/Quiz.md
-- `[ ]` Section 5: Load Balancing
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/05_Load_Balancing/README.md
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/05_Load_Balancing/Quiz.md
+- `[x]` Section 5: Load Balancing
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/05_Load_Balancing/README.md
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/05_Load_Balancing/Quiz.md
+- `[ ]` Section 6: Clustering
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/06_Clustering/README.md
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/06_Clustering/Quiz.md
 - `[ ]` ... (and so on for remaining chapters)
