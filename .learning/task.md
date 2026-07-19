@@ -53,9 +53,9 @@
 - `[x]` Section 15: Distributed Databases & Consistency
   - `[x]` Write ComputerNetworks/Module3_SystemDesignAdvanced/15_Distributed_Databases/README.md
   - `[x]` Write ComputerNetworks/Module3_SystemDesignAdvanced/15_Distributed_Databases/Quiz.md
-- `[ ]` Section 16: Distributed Transactions (SAGA, CQRS)
-  - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/16_Distributed_Transactions/README.md
-  - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/16_Distributed_Transactions/Quiz.md
+- `[x]` Section 16: Distributed Transactions (SAGA, CQRS)
+  - `[x]` Write ComputerNetworks/Module3_SystemDesignAdvanced/16_Distributed_Transactions/README.md
+  - `[x]` Write ComputerNetworks/Module3_SystemDesignAdvanced/16_Distributed_Transactions/Quiz.md
 - `[ ]` Section 17: Storage & RAID
   - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/17_Storage_RAID/README.md
   - `[ ]` Write ComputerNetworks/Module3_SystemDesignAdvanced/17_Storage_RAID/Quiz.md

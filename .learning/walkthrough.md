@@ -22,11 +22,12 @@ We have successfully delivered all chapters of Module 1 (Core Protocols) and Mod
 ### Module 3: System Design Advanced
 13. **Chapter 13 (Message Queues & Event Streaming)**: [README](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/13_Message_Queues/README.md) & [Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/13_Message_Queues/Quiz.md)
 14. **Chapter 14 (API Gateways & Service Mesh)**: [README](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/14_API_Gateways/README.md) & [Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/14_API_Gateways/Quiz.md)
-15. **Chapter 15 (Distributed Databases & Consistency)**: 
-    - Written [README.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/15_Distributed_Databases/README.md) - Detailed guide covering CAP Theorem, PACELC, Strong vs Eventual Consistency, and NoSQL Database types (Key-Value, Document, Wide-Column, Graph).
-    - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/15_Distributed_Databases/Quiz.md) - Exactly 30 MCQs with interactive collapsible answers and explanations under each question.
+15. **Chapter 15 (Distributed Databases & Consistency)**: [README](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/15_Distributed_Databases/README.md) & [Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/15_Distributed_Databases/Quiz.md)
+16. **Chapter 16 (Distributed Transactions)**: 
+    - Written [README.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/16_Distributed_Transactions/README.md) - Detailed guide covering Two-Phase Commit (2PC), Saga Pattern (Choreography vs Orchestration), CQRS, and Event Sourcing.
+    - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/16_Distributed_Transactions/Quiz.md) - Exactly 30 MCQs with interactive collapsible answers and explanations under each question.
 
 ## How to Proceed
-1. Open the [Distributed Databases Study Guide](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/15_Distributed_Databases/README.md) to read and study.
-2. Open the [Distributed Databases Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/15_Distributed_Databases/Quiz.md) to practice the 30 MCQs.
-3. Let me know when you are ready to commit and proceed to **Chapter 16: Distributed Transactions (SAGA, CQRS)**!
+1. Open the [Distributed Transactions Study Guide](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/16_Distributed_Transactions/README.md) to read and study.
+2. Open the [Distributed Transactions Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module3_SystemDesignAdvanced/16_Distributed_Transactions/Quiz.md) to practice the 30 MCQs.
+3. Let me know when you are ready to commit and proceed to **Chapter 17: Storage & RAID**!
