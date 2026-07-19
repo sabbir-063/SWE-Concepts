@@ -7,12 +7,12 @@
 - `[x]` Section 2: OSI Model
   - `[x]` Write ComputerNetworks/Module1_CoreProtocols/02_OSI_Model/README.md
   - `[x]` Write ComputerNetworks/Module1_CoreProtocols/02_OSI_Model/Quiz.md
-- `[ ]` Section 3: TCP & UDP
-  - `[ ]` Write ComputerNetworks/Module1_CoreProtocols/03_TCP_UDP/README.md
-  - `[ ]` Write ComputerNetworks/Module1_CoreProtocols/03_TCP_UDP/Quiz.md
-- `[ ]` Section 4: DNS (Domain Name System)
-  - `[ ]` Write ComputerNetworks/Module1_CoreProtocols/04_DNS/README.md
-  - `[ ]` Write ComputerNetworks/Module1_CoreProtocols/04_DNS/Quiz.md
+- `[x]` Section 3: TCP & UDP
+  - `[x]` Write ComputerNetworks/Module1_CoreProtocols/03_TCP_UDP/README.md
+  - `[x]` Write ComputerNetworks/Module1_CoreProtocols/03_TCP_UDP/Quiz.md
+- `[x]` Section 4: DNS (Domain Name System)
+  - `[x]` Write ComputerNetworks/Module1_CoreProtocols/04_DNS/README.md
+  - `[x]` Write ComputerNetworks/Module1_CoreProtocols/04_DNS/Quiz.md
 - `[ ]` Section 5: Load Balancing
   - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/05_Load_Balancing/README.md
   - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/05_Load_Balancing/Quiz.md
