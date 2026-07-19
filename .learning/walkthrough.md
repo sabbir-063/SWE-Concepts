@@ -1,6 +1,6 @@
-# Chapter 1 to 10 Completion Walkthrough
+# Chapter 1 to 11 Completion Walkthrough
 
-We have successfully delivered Chapters 1 through 10 of the Computer Networks curriculum.
+We have successfully delivered Chapters 1 through 11 of the Computer Networks curriculum.
 
 ## Changes Made
 1. **Module 1 - Chapter 1 (IP Protocol)**:
@@ -32,9 +32,12 @@ We have successfully delivered Chapters 1 through 10 of the Computer Networks cu
    - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/09_Proxy/Quiz.md) - 30 MCQs.
 10. **Module 2 - Chapter 10 (Availability & Reliability)**:
     - Written [README.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/README.md) - Detailed guide covering High Availability, Reliability, SLA, SLO, SLI, MTBF, MTTR, Redundancy, and Failover.
-    - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/Quiz.md) - Exactly 30 MCQs with interactive collapsible answers and explanations under each question.
+    - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/Quiz.md) - 30 MCQs.
+11. **Module 2 - Chapter 11 (Scalability)**:
+    - Written [README.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/README.md) - Detailed guide covering Vertical vs Horizontal scaling, stateful vs stateless architectures, auto-scaling, and elasticity.
+    - Written [Quiz.md](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/Quiz.md) - Exactly 30 MCQs with interactive collapsible answers and explanations under each question.
 
 ## How to Proceed
-1. Open the [Availability & Reliability Study Guide](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/README.md) to read and study.
-2. Open the [Availability & Reliability Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/Quiz.md) to practice the 30 MCQs.
-3. Let me know when you are ready to commit and proceed to **Chapter 11: Scalability**!
+1. Open the [Scalability Study Guide](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/README.md) to read and study.
+2. Open the [Scalability Quiz](file:///d:/Websites/Learning/SWE/ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/Quiz.md) to practice the 30 MCQs.
+3. Let me know when you are ready to commit and proceed to **Chapter 12: Microservices vs Monolith**!

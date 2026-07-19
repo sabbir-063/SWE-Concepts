@@ -31,7 +31,10 @@
 - `[x]` Section 10: Availability & Reliability
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/README.md
   - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/10_Availability_Reliability/Quiz.md
-- `[ ]` Section 11: Scalability
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/README.md
-  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/Quiz.md
+- `[x]` Section 11: Scalability
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/README.md
+  - `[x]` Write ComputerNetworks/Module2_SystemDesignBasics/11_Scalability/Quiz.md
+- `[ ]` Section 12: Microservices vs Monolith
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/12_Microservices_Monolith/README.md
+  - `[ ]` Write ComputerNetworks/Module2_SystemDesignBasics/12_Microservices_Monolith/Quiz.md
 - `[ ]` ... (and so on for remaining chapters)
