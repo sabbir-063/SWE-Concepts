@@ -32,8 +32,8 @@
 - [ ] 01-programming/07-html-css/04-responsive-design.md
 
 ## 02. Data Structures & Algorithms (DSA)
-- [ ] 02-dsa/01-data-structures/01-arrays-strings.md
-- [ ] 02-dsa/01-data-structures/02-linked-lists.md
+- [x] 02-dsa/01-data-structures/01-arrays-strings.md
+- [x] 02-dsa/01-data-structures/02-linked-lists.md
 - [ ] 02-dsa/01-data-structures/03-stacks-queues.md
 - [ ] 02-dsa/01-data-structures/04-trees-bst.md
 - [ ] 02-dsa/01-data-structures/05-graphs.md
