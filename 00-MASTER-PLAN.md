@@ -61,32 +61,15 @@ For every topic, before writing content, Antigravity should ground the explanati
 - Only fall back to an actual generated image file (`.png`/`.svg`, stored in a topic's `assets/` subfolder) when Mermaid genuinely can't express it (e.g., a memory layout diagram, a specific UI mockup for HTML/CSS box model). Reference the image with normal markdown `![alt](assets/filename.png)`.
 
 ### 1.5 File Structure Per Topic
-Every leaf topic file follows this internal structure, in this order:
+Every topic will be a dedicated **folder** containing multiple specialized files. (Note: topics completed prior to Graphs were generated as single `.md` files, but all future topics follow this new structure).
+
+```text
+[topic-name]/
+├── 01-knowledge.md   (In-depth theory, concepts, scenarios, and diagrams)
+├── 02-code.md        (Code implementations, algorithmic problems, edge cases)
+└── 03-mcq.md         (40 to 100 MCQs, including hard and code-based questions)
 ```
-# <Topic Title>
-
-## Learning Objectives
-(2-4 bullet points: what you should be able to answer after this)
-
-## Core Concept
-(the teaching content: explanation + analogy)
-
-## Deep Dive / Gotchas
-(the intermediate/advanced-level nuance, comparisons, edge cases, common mistakes)
-
-## Code Example(s)
-(per section 1.3 rules)
-
-## Diagram
-(per section 1.4 rules, if applicable to this topic)
-
-## Quick Recap
-(3-5 bullet summary)
-
-## Practice MCQs (20-30 Questions)
-(per section 4 format below)
-```
-
+If a topic does not require code (e.g., pure theory), `02-code.md` can be omitted.
 ---
 
 ## 2. Folder & File Structure (create exactly this layout)
@@ -226,11 +209,11 @@ Generate **one topic file at a time**, in this order, and pause/confirm after ea
 
 ---
 
-## 4. MCQ Section Spec (applies to every topic file — this is the exact format to use)
+## 4. MCQ Section Spec (applies to `03-mcq.md` for every topic)
 
-Each topic file ends with a `## Practice MCQs (20-30 Questions)` section. Requirements:
+Requirements:
 
-- **20-30 MCQs per topic**, numbered, 4 options each (A-D), only one correct answer.
+- **Minimum 40 to Maximum 100 MCQs per topic**, numbered, 4 options each (A-D), only one correct answer.
 - Mix of difficulty: ~40% direct recall, ~40% applied/scenario-based ("যদি এমন হয়... তাহলে কী হবে?"), ~20% tricky/gotcha or code-output questions.
 - Where relevant, include **code-snippet-based questions** ("এই কোডের আউটপুট কী হবে?") and **diagram-based questions** (referencing a small inline Mermaid diagram or ASCII diagram).
 - Answer + explanation must be hidden by default behind a **clickable dropdown**, using this exact HTML (works natively in GitHub-flavored Markdown, Antigravity's preview, VSCode, and most `.md` renderers — no JS needed):
