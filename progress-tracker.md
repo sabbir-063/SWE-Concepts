@@ -35,7 +35,7 @@
 - [x] 02-dsa/01-data-structures/01-arrays-strings.md
 - [x] 02-dsa/01-data-structures/02-linked-lists.md
 - [x] 02-dsa/01-data-structures/03-stacks-queues.md
-- [ ] 02-dsa/01-data-structures/04-trees-bst.md
+- [x] 02-dsa/01-data-structures/04-trees-bst.md
 - [ ] 02-dsa/01-data-structures/05-graphs.md
 - [ ] 02-dsa/01-data-structures/06-hash-tables.md
 - [ ] 02-dsa/01-data-structures/07-heaps-priority-queues.md
