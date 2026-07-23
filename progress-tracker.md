@@ -139,10 +139,10 @@
   - [x] 01-knowledge.md
   - [x] 02-code.md
   - [x] 03-mcq.md
-- [ ] 02-dsa/02-algorithms/01-sorting-algorithms/
-  - [ ] 01-knowledge.md
-  - [ ] 02-code.md
-  - [ ] 03-mcq.md
+- [x] 02-dsa/02-algorithms/01-sorting-algorithms/
+  - [x] 01-knowledge.md
+  - [x] 02-code.md
+  - [x] 03-mcq.md
 - [ ] 02-dsa/02-algorithms/02-searching-algorithms/
   - [ ] 01-knowledge.md
   - [ ] 02-code.md
@@ -271,9 +271,9 @@
   - [ ] 03-mcq.md
 
 ## 📊 Overall Progress Summary
-- **Total Progress:** 10 / 70 topics completed.
+- **Total Progress:** 11 / 70 topics completed.
 
 - **01. Programming:** 0 / 29 completed.
-- **02. Data Structures & Algorithms (DSA):** 10 / 18 completed.
+- **02. Data Structures & Algorithms (DSA):** 11 / 18 completed.
 - **03. CS Fundamentals:** 0 / 17 completed.
 - **04. Logical Reasoning:** 0 / 6 completed.

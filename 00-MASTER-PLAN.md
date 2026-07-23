@@ -28,6 +28,7 @@ Antigravity should follow these rules for every single topic `.md` file, no exce
 ### 1.1 Language & Teaching Style
 - Explain in **mixed Bangla + English** (Banglish is fine), the way a teacher explains to a student — step by step, beginner-friendly framing even for advanced points, but don't waste words on things an intermediate dev already knows.
 - Technical terms, code, keywords stay in **English**; explanations/connective narration in Bangla.
+- **MCQ Language Rule:** All MCQ questions (stems), code prompts, and options (A-D) must be written in **English**. Explanations inside the dropdown will remain in **mixed Bangla + English (Banglish)** for clear concept breakdown.
 - Use **concrete examples and real-world analogies** for every concept (e.g., explain a Stack using a "plate stack" analogy, explain Mutex using a "single bathroom key" analogy) — but analogies should feel natural, not forced.
 - After every concept, add a short **"Interview/MCQ Angle"** callout — 2-3 lines on what examiners usually twist this concept into (e.g., "MCQ-তে সাধারণত এইটা জিজ্ঞেস করে...").
 
@@ -213,29 +214,28 @@ Generate **one topic file at a time**, in this order, and pause/confirm after ea
 
 Requirements:
 
+- **Language:** All MCQ questions, code prompts, scenario descriptions, and options (A-D) MUST be written in **English**. The answer explanations inside the `<details>` dropdown remain in **mixed Bangla + English (Banglish)**.
 - **Minimum 40 to Maximum 100 MCQs per topic**, numbered, 4 options each (A-D), only one correct answer.
-- Mix of difficulty: ~40% direct recall, ~40% applied/scenario-based ("যদি এমন হয়... তাহলে কী হবে?"), ~20% tricky/gotcha or code-output questions.
-- Where relevant, include **code-snippet-based questions** ("এই কোডের আউটপুট কী হবে?") and **diagram-based questions** (referencing a small inline Mermaid diagram or ASCII diagram).
+- Mix of difficulty: ~40% direct recall, ~40% applied/scenario-based, ~20% tricky/gotcha or code-output questions.
+- Where relevant, include **code-snippet-based questions** ("What is the output of the following code?") and **diagram-based questions** (referencing a small inline Mermaid diagram or ASCII diagram).
 - Answer + explanation must be hidden by default behind a **clickable dropdown**, using this exact HTML (works natively in GitHub-flavored Markdown, Antigravity's preview, VSCode, and most `.md` renderers — no JS needed):
 
 ```markdown
-**Q1. এই প্রশ্নের বিষয়বস্তু এখানে লিখতে হবে?**
+**Q1. What is the worst-case time complexity of Quick Sort?**
 
-A) Option A
-B) Option B
-C) Option C
-D) Option D
+A) O(n)
+B) O(n log n)
+C) O(n²)
+D) O(1)
 
 <details>
 <summary>✅ Answer & Explanation</summary>
 
-**Answer: B**
+**Answer: C**
 
-এখানে ব্যাখ্যা — কেন B সঠিক, এবং কেন বাকি অপশনগুলো ভুল (each wrong option gets 1 line on why it's a trap).
+এখানে ব্যাখ্যা — কেন C সঠিক (যেমন: worst-case pivot selection breakdown), এবং কেন বাকি অপশনগুলো ভুল।
 
 </details>
-
----
 ```
 
 - After a wrong-option explanation, if the wrong option represents a common misconception, flag it explicitly: "⚠️ Common trap: ..."
