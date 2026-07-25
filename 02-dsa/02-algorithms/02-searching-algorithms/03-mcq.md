@@ -1,10 +1,10 @@
-# 02. Searching Algorithms (Practice MCQs)
+# 03. Searching Algorithms (Practice MCQs)
 
-এই ফাইলে Linear Search, Binary Search, Time Complexities, Edge Cases এবং জাভার বিল্ট-ইন সার্চ মেথডগুলোর ওপর ৪০টি ইন-ডেপথ MCQ দেওয়া হলো।
+This file contains 40 in-depth MCQs on Linear Search, Binary Search, Time Complexities, Edge Cases, and Java's built-in search methods.
 
 ---
 
-**Q1. Linear Search এর Worst-case Time Complexity কত?**
+**Q1. What is the worst-case time complexity of Linear Search?**
 A) $O(1)$
 B) $O(\log n)$
 C) $O(n)$
@@ -19,11 +19,11 @@ D) $O(n \log n)$
 
 ---
 
-**Q2. Binary Search অ্যালগরিদমের মূল শর্ত (Prerequisite) কী?**
-A) ডেটা অবশ্যই পজিটিভ হতে হবে
-B) অ্যারের সাইজ জোড় সংখ্যা হতে হবে
-C) ডেটা অবশ্যই সর্টেড (Sorted) বা সাজানো থাকতে হবে
-D) ডেটা শুধুমাত্র ইনটিজার হতে হবে
+**Q2. What is the primary prerequisite for Binary Search algorithm to work?**
+A) The array elements must be positive numbers
+B) The array size must be an even number
+C) The array elements must be sorted
+D) The array elements must only be integers
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -34,7 +34,7 @@ D) ডেটা শুধুমাত্র ইনটিজার হতে হ�
 
 ---
 
-**Q3. Binary Search এর Time Complexity কত?**
+**Q3. What is the time complexity of Binary Search?**
 A) $O(n)$
 B) $O(\log n)$
 C) $O(n \log n)$
@@ -49,7 +49,7 @@ D) $O(1)$
 
 ---
 
-**Q4. Binary Search এর Space Complexity (Iterative method) কত?**
+**Q4. What is the space complexity of the iterative implementation of Binary Search?**
 A) $O(1)$
 B) $O(\log n)$
 C) $O(n)$
@@ -64,7 +64,7 @@ D) $O(n \log n)$
 
 ---
 
-**Q5. যদি Binary Search রিকার্সিভলি (Recursively) ইমপ্লিমেন্ট করা হয়, তবে এর Space Complexity কত হবে?**
+**Q5. If Binary Search is implemented recursively, what will be its space complexity?**
 A) $O(1)$
 B) $O(\log n)$
 C) $O(n)$
@@ -79,7 +79,7 @@ D) $O(n \log n)$
 
 ---
 
-**Q6. [Interview Gotcha] জাভাতে Binary Search এর `mid` বের করার সবচেয়ে নিরাপদ উপায় কোনটি?**
+**Q6. [Interview Gotcha] What is the safest way to calculate `mid` in Binary Search in Java to avoid integer overflow?**
 A) `(left + right) / 2`
 B) `(left + right) >> 1`
 C) `left + (right - left) / 2`
@@ -94,7 +94,7 @@ D) `left + right / 2`
 
 ---
 
-**Q7. Interpolation Search এর Worst-case Time Complexity কত?**
+**Q7. What is the worst-case time complexity of Interpolation Search?**
 A) $O(\log (\log n))$
 B) $O(\log n)$
 C) $O(n)$
@@ -109,11 +109,11 @@ D) $O(1)$
 
 ---
 
-**Q8. কোন পরিস্থিতিতে Interpolation Search, Binary Search এর চেয়ে ভালো কাজ করে?**
-A) যখন ডেটা Unsorted থাকে
-B) যখন ডেটা Uniformly distributed এবং অনেক বড় হয়
-C) যখন অ্যারেতে ডুপ্লিকেট ডেটা থাকে
-D) যখন মেমোরি কম থাকে
+**Q8. In which scenario does Interpolation Search perform better than Binary Search?**
+A) When the array is unsorted
+B) When the elements are uniformly distributed and the array size is very large
+C) When the array contains many duplicate elements
+D) When memory constraints are tight
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -124,11 +124,11 @@ D) যখন মেমোরি কম থাকে
 
 ---
 
-**Q9. Ternary Search এ অ্যারেকে কয় ভাগে ভাগ করা হয়?**
-A) ২ ভাগে
-B) ৩ ভাগে
-C) ৪ ভাগে
-D) ভাগ করা হয় না
+**Q9. Into how many parts does Ternary Search divide the array?**
+A) 2 parts
+B) 3 parts
+C) 4 parts
+D) It does not divide the array
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -139,11 +139,11 @@ D) ভাগ করা হয় না
 
 ---
 
-**Q10. প্র্যাকটিক্যালি Binary Search এবং Ternary Search এর মধ্যে কোনটি বেশি ফাস্ট?**
+**Q10. Practically, which one is faster between Binary Search and Ternary Search?**
 A) Ternary Search
 B) Binary Search
-C) দুটোই সমান
-D) নির্ভর করে অ্যারের ডেটার ওপর
+C) Both perform equally fast
+D) It depends entirely on the array elements
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -154,11 +154,11 @@ D) নির্ভর করে অ্যারের ডেটার ওপর
 
 ---
 
-**Q11. Exponential Search সাধারণত কোথায় ব্যবহার করা হয়?**
-A) Unsorted Array তে
-B) Infinite বা Unknown সাইজের সর্টেড অ্যারেতে
-C) Linked List এ
-D) Binary Search Tree তে
+**Q11. When is Exponential Search typically used?**
+A) In an unsorted array
+B) In a sorted array of infinite or unknown size
+C) In a singly linked list
+D) In a Binary Search Tree
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -169,11 +169,11 @@ D) Binary Search Tree তে
 
 ---
 
-**Q12. একটি সর্টেড অ্যারেতে `target` এর "First Occurrence" (প্রথম কোথায় আছে) বের করতে Binary Search এ কী পরিবর্তন করতে হয়?**
-A) `mid` এ ডেটা পেলেই লুপ ব্রেক করতে হয়
-B) `mid` এ ডেটা পেলেও খোঁজা না থামিয়ে `right = mid - 1` করে বাম দিকে খুঁজতে হয়
-C) `mid` এ ডেটা পেলেও `left = mid + 1` করে ডান দিকে খুঁজতে হয়
-D) এটি Binary Search দিয়ে করা সম্ভব নয়
+**Q12. To find the "First Occurrence" of a target in a sorted array, what modification is needed in standard Binary Search when `arr[mid] == target`?**
+A) Break the loop immediately and return `mid`
+B) Record `mid` and continue searching in the left half (`right = mid - 1`)
+C) Record `mid` and continue searching in the right half (`left = mid + 1`)
+D) This cannot be done using Binary Search
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -184,11 +184,11 @@ D) এটি Binary Search দিয়ে করা সম্ভব নয়
 
 ---
 
-**Q13. একটি সর্টেড অ্যারেতে `target` এর "Last Occurrence" (সবশেষ কোথায় আছে) বের করতে Binary Search এ কী করতে হয়?**
-A) `right = mid - 1` করতে হয়
-B) `left = mid + 1` করে ডান দিকে খুঁজতে হয়
-C) লুপ উল্টো করে চালাতে হয়
-D) `break` করতে হয়
+**Q13. To find the "Last Occurrence" of a target in a sorted array, what modification is needed in standard Binary Search when `arr[mid] == target`?**
+A) Search in the left half (`right = mid - 1`)
+B) Record `mid` and continue searching in the right half (`left = mid + 1`)
+C) Reverse the loop execution order
+D) Break the loop immediately
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -199,8 +199,8 @@ D) `break` করতে হয়
 
 ---
 
-**Q14. Java এর `Arrays.binarySearch(arr, key)` মেথডটি যদি ডেটা খুঁজে না পায়, তবে কী রিটার্ন করে?**
-A) -1
+**Q14. What does Java's `Arrays.binarySearch(arr, key)` return if the key is not found in the array?**
+A) `-1`
 B) `false`
 C) `NullPointerException`
 D) `-(insertion point) - 1`
@@ -214,11 +214,11 @@ D) `-(insertion point) - 1`
 
 ---
 
-**Q15. `arr = [10, 20, 30, 40, 50]`। আপনি `Arrays.binarySearch(arr, 25)` কল করলেন। আউটপুট কত হবে?**
-A) -1
-B) -2
-C) -3
-D) 2
+**Q15. Given `arr = [10, 20, 30, 40, 50]`. If you call `Arrays.binarySearch(arr, 25)`, what will be the output?**
+A) `-1`
+B) `-2`
+C) `-3`
+D) `2`
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -229,11 +229,11 @@ D) 2
 
 ---
 
-**Q16. Binary Search কি Linked List এর ওপর সরাসরি (Efficiently) প্রয়োগ করা যায়?**
-A) হ্যাঁ, $O(\log n)$ টাইমে
-B) না, কারণ Linked List এ ডাইরেক্ট অ্যাক্সেস (Random Access) নেই, তাই মিডিল এলিমেন্ট বের করতে $O(n)$ সময় লাগে
-C) হ্যাঁ, যদি Doubly Linked List হয়
-D) না, কারণ Linked List সর্ট করা যায় না
+**Q16. Can Binary Search be efficiently applied to a standard Singly Linked List?**
+A) Yes, in $O(\log n)$ time
+B) No, because Linked Lists lack random access, taking $O(n)$ time just to find the middle element
+C) Yes, provided it is a Doubly Linked List
+D) No, because Linked Lists cannot be sorted
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -244,7 +244,7 @@ D) না, কারণ Linked List সর্ট করা যায় না
 
 ---
 
-**Q17. নিচের কোনটি "Divide and Conquer" অ্যালগরিদমের উদাহরণ?**
+**Q17. Which of the following is a classic example of a "Divide and Conquer" algorithm?**
 A) Linear Search
 B) Binary Search
 C) Bubble Sort
@@ -259,9 +259,9 @@ D) Insertion Sort
 
 ---
 
-**Q18. একটি Array তে কোনো ইলিমেন্ট না থাকলে `left` এবং `right` পয়েন্টার Binary Search লুপ শেষে কী অবস্থায় থাকবে?**
+**Q18. In standard Binary Search (with `while(left <= right)`), what is the condition of `left` and `right` pointers when the loop terminates without finding the target?**
 A) `left == right`
-B) `left > right` (ক্রস করে যাবে)
+B) `left > right` (they cross each other)
 C) `left < right`
 D) `left = 0`, `right = 0`
 
@@ -274,11 +274,11 @@ D) `left = 0`, `right = 0`
 
 ---
 
-**Q19. $1,000,000$ (১ মিলিয়ন) এলিমেন্টের একটি সর্টেড অ্যারেতে Binary Search করলে সর্বোচ্চ (Worst-case) কতবার কম্পারিজন (Comparison) করতে হবে?**
-A) 1,000,000 বার
-B) প্রায় 10 বার
-C) প্রায় 20 বার
-D) 500,000 বার
+**Q19. What is the maximum number of comparisons required by Binary Search in the worst case for a sorted array of 1,000,000 elements?**
+A) 1,000,000
+B) Around 10
+C) Around 20
+D) 500,000
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -289,11 +289,11 @@ D) 500,000 বার
 
 ---
 
-**Q20. "Floor of a Number" (Binary Search variation) বলতে কী বোঝায়?**
-A) অ্যারের সবচেয়ে ছোট নাম্বার
-B) টার্গেটের চেয়ে ছোট বা সমান সবচেয়ে বড় নাম্বারটি
-C) টার্গেটের চেয়ে বড় বা সমান সবচেয়ে ছোট নাম্বারটি
-D) টার্গেটের ইনডেক্স
+**Q20. What does the "Floor of a Number" mean in the context of Binary Search variations?**
+A) The smallest number in the array
+B) The greatest element in the array that is smaller than or equal to the target
+C) The smallest element in the array that is greater than or equal to the target
+D) The index of the target
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -304,11 +304,11 @@ D) টার্গেটের ইনডেক্স
 
 ---
 
-**Q21. "Ceiling of a Number" (Ceil) বলতে কী বোঝায়?**
-A) টার্গেটের চেয়ে ছোট সবচেয়ে বড় নাম্বার
-B) টার্গেটের চেয়ে বড় বা সমান সবচেয়ে ছোট নাম্বারটি
-C) অ্যারের সবচেয়ে বড় নাম্বার
-D) টার্গেটের ইনডেক্স
+**Q21. What does the "Ceiling (Ceil) of a Number" mean?**
+A) The greatest element in the array that is smaller than the target
+B) The smallest element in the array that is greater than or equal to the target
+C) The largest number in the array
+D) The index of the target
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -319,11 +319,11 @@ D) টার্গেটের ইনডেক্স
 
 ---
 
-**Q22. LeetCode এর "Search in Rotated Sorted Array" (যেমন `[4,5,6,7,0,1,2]`) প্রবলেমে $O(\log n)$ এ সলভ করার মূল ট্রিক কী?**
-A) প্রথমে Array টি সর্ট করে নেওয়া
-B) Linear Search ব্যবহার করা
-C) প্রতি ধাপে চেক করা যে Array এর বাম অংশ (Left half) সর্টেড নাকি ডান অংশ (Right half) সর্টেড
-D) Array টিকে নতুন দুটি Array তে ভাগ করা
+**Q22. What is the core logic to achieve $O(\log n)$ time in LeetCode's "Search in Rotated Sorted Array" problem?**
+A) Sorting the array first before searching
+B) Falling back to Linear Search
+C) Checking at each step whether the left half or the right half from `mid` is completely sorted
+D) Splitting the array into two separate new arrays
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -334,7 +334,7 @@ D) Array টিকে নতুন দুটি Array তে ভাগ করা
 
 ---
 
-**Q23. [Code Output] নিচের লুপে কী ভুল আছে?**
+**Q23. [Code Output] What is the major bug in the following Binary Search implementation?**
 ```java
 int left = 0, right = arr.length - 1;
 while(left < right) {
@@ -344,10 +344,10 @@ while(left < right) {
     else right = mid - 1;
 }
 ```
-A) কোনো ভুল নেই
-B) `left = mid` দেওয়ার কারণে এটি Infinite Loop এ পড়ে যেতে পারে
-C) `mid` ক্যালকুলেশন ভুল
-D) `while` কন্ডিশন ভুল
+A) There is no bug
+B) Assigning `left = mid` can lead to an Infinite Loop when `left` and `right` are adjacent
+C) `mid` calculation is syntactically wrong
+D) The `while` condition is wrong
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -358,11 +358,11 @@ D) `while` কন্ডিশন ভুল
 
 ---
 
-**Q24. Binary Search Tree (BST) তে ডেটা সার্চ করার টাইম কমপ্লেক্সিটি এবং একটি Sorted Array তে Binary Search করার টাইম কমপ্লেক্সিটির মধ্যে পার্থক্য কী?**
-A) BST তে $O(n)$, Array তে $O(\log n)$
-B) BST তে ব্যালান্সড হলে $O(\log n)$, আনব্যালান্সড (Skewed) হলে $O(n)$। কিন্তু Sorted Array তে সবসময় $O(\log n)$।
-C) দুটোই সবসময় $O(\log n)$
-D) Array তে $O(n)$
+**Q24. What is the difference in time complexity when searching for an element in a Binary Search Tree (BST) versus applying Binary Search on a Sorted Array?**
+A) BST takes $O(n)$, Array takes $O(\log n)$
+B) BST takes $O(\log n)$ if balanced but $O(n)$ if skewed, whereas Sorted Array always guarantees $O(\log n)$
+C) Both always guarantee $O(\log n)$
+D) Array takes $O(n)$
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -373,11 +373,11 @@ D) Array তে $O(n)$
 
 ---
 
-**Q25. "Binary Search on Answer" বা "Monotonic Search" কখন ব্যবহার করা হয়?**
-A) যখন String এর মধ্যে Character খুঁজতে হয়
-B) যখন আমাদের উত্তরের রেঞ্জ (যেমন ১ থেকে ম্যাক্স ক্যাপাসিটি) জানা থাকে এবং উত্তরটি একটি নির্দিষ্ট পয়েন্টের পর থেকে সবসময় True বা False হয় (Monotonic)
-C) যখন Array Unsorted থাকে
-D) যখন Graph Traversal করতে হয়
+**Q25. When is the "Binary Search on Answer" (Monotonic Search) technique primarily used?**
+A) When searching for a character in a String
+B) When the range of possible answers is known and the validity of answers forms a monotonic function (e.g., all `false` followed by all `true`)
+C) When the given array is unsorted
+D) When traversing a Graph
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -388,7 +388,7 @@ D) যখন Graph Traversal করতে হয়
 
 ---
 
-**Q26. Unsorted Array তে একটি নির্দিষ্ট ইলিমেন্ট খোঁজার একমাত্র উপায় কী?**
+**Q26. What is the only guaranteed way to find a specific element in an completely unsorted array?**
 A) Binary Search
 B) Interpolation Search
 C) Linear Search
@@ -403,11 +403,11 @@ D) Ternary Search
 
 ---
 
-**Q27. একটি ম্যাট্রিক্সের (2D Array) সারি (Row) এবং কলাম (Column) উভয়ই সর্টেড। এখানে $O(N+M)$ টাইমে সার্চ করার জন্য কোথা থেকে খোঁজা শুরু করা উচিত?**
-A) টপ-লেফট (0, 0) থেকে
-B) বটম-রাইট (N, M) থেকে
-C) টপ-রাইট (0, M-1) বা বটম-লেফট (N-1, 0) থেকে
-D) যেকোনো জায়গা থেকে
+**Q27. You have a 2D Matrix where both rows and columns are sorted. To search for an element in $O(N+M)$ time, from which position should you ideally start the search?**
+A) Top-Left corner (0, 0)
+B) Bottom-Right corner (N, M)
+C) Top-Right corner (0, M-1) or Bottom-Left corner (N-1, 0)
+D) From the exact middle of the matrix
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -418,11 +418,11 @@ D) যেকোনো জায়গা থেকে
 
 ---
 
-**Q28. "Peak Element" (যে নোডটি তার দুই পাশের নোডের চেয়ে বড়) বের করতে $O(\log n)$ টাইমে কোন লজিক কাজ করে?**
-A) Linear Search
-B) Binary Search (Mid পয়েন্টের ঢাল বা Slope চেক করে)
-C) Array Sorting
-D) Hashing
+**Q28. What is the logic behind finding a "Peak Element" (an element strictly greater than its neighbors) in $O(\log n)$ time?**
+A) Linear Search through all elements
+B) Binary Search by comparing `arr[mid]` with `arr[mid+1]` to determine the slope's direction
+C) Sorting the entire array first
+D) Hashing all elements
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -433,11 +433,11 @@ D) Hashing
 
 ---
 
-**Q29. Binary Search এ যদি Array তে একাধিক টার্গেট এলিমেন্ট থাকে এবং আপনি নরমাল `if (arr[mid] == target) return mid;` ব্যবহার করেন, তবে এটি কোন ইনডেক্সটি রিটার্ন করবে?**
-A) ফার্স্ট ইনডেক্স
-B) লাস্ট ইনডেক্স
-C) যেকোনো একটি (যেটি প্রথমে mid হিসেবে ধরা পড়বে)
-D) সবগুলো ইনডেক্সের লিস্ট
+**Q29. In standard Binary Search, if the array contains multiple occurrences of the target and you use `if (arr[mid] == target) return mid;`, which index is returned?**
+A) Guaranteed first index
+B) Guaranteed last index
+C) Any index that happens to match `mid` first during execution
+D) A list of all matching indices
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -448,11 +448,11 @@ D) সবগুলো ইনডেক্সের লিস্ট
 
 ---
 
-**Q30. `System.out.println(Arrays.binarySearch(new int[]{1, 2, 4, 5}, 3));` এর আউটপুট কত?**
-A) -2
-B) -3
-C) -1
-D) 2
+**Q30. What will be the output of `System.out.println(Arrays.binarySearch(new int[]{1, 2, 4, 5}, 3));` in Java?**
+A) `-2`
+B) `-3`
+C) `-1`
+D) `2`
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -463,10 +463,10 @@ D) 2
 
 ---
 
-**Q31. 1000 সাইজের একটি সর্টেড অ্যারেতে Linear Search এর এভারেজ (Average) টাইম কমপ্লেক্সিটি কত?**
+**Q31. What is the average-case time complexity of Linear Search in an array of 1000 elements?**
 A) $O(\log n)$
 B) $O(1)$
-C) $O(n/2)$ যা গাণিতিকভাবে $O(n)$
+C) Mathematically $O(n/2)$, which simplifies to $O(n)$ in Big-O notation
 D) $O(n^2)$
 
 <details>
@@ -478,11 +478,11 @@ D) $O(n^2)$
 
 ---
 
-**Q32. নিচের কোন ক্ষেত্রে Linear Search, Binary Search এর চেয়ে দ্রুত কাজ করতে পারে?**
-A) যখন টার্গেট এলিমেন্টটি অ্যারের একেবারে প্রথম ইনডেক্সে (0) থাকে
-B) যখন অ্যারে অনেক বড় হয়
-C) যখন টার্গেট এলিমেন্টটি অ্যারের মাঝে থাকে
-D) যখন অ্যারে পুরোপুরি সর্টেড থাকে
+**Q32. Under which specific condition can Linear Search perform faster than Binary Search?**
+A) When the target element is located at the very first index (index 0)
+B) When the array size is astronomically large
+C) When the target element is located exactly in the middle of the array
+D) When the array is perfectly sorted
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -493,11 +493,11 @@ D) যখন অ্যারে পুরোপুরি সর্টেড থ�
 
 ---
 
-**Q33. "Jump Search" অ্যালগরিদম কীভাবে কাজ করে?**
-A) এটি র্যান্ডমলি ইনডেক্স চেক করে
-B) এটি ফিক্সড সাইজের ব্লক (যেমন $\sqrt{n}$) জাম্প করে চেক করে, এবং ব্লক পেয়ে গেলে সেখানে Linear Search করে
-C) এটি Binary Search এর মতোই কাজ করে
-D) এটি Linked list এর জন্য ব্যবহৃত হয়
+**Q33. How does the "Jump Search" algorithm work?**
+A) It checks elements at completely random indices
+B) It jumps ahead by fixed block sizes (e.g., $\sqrt{n}$) to find a boundary, then performs Linear Search within that block
+C) It divides the array in half iteratively like Binary Search
+D) It is specifically designed for Singly Linked Lists
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -508,7 +508,7 @@ D) এটি Linked list এর জন্য ব্যবহৃত হয়
 
 ---
 
-**Q34. C++ এর STL এ Binary Search এর জন্য কোন ফাংশনগুলো আছে (জাভার বিকল্প হিসেবে জানার জন্য)?**
+**Q34. In C++ STL, which functions are provided for Binary Search variations (useful to know as Java alternatives)?**
 A) `binary_search()`, `lower_bound()`, `upper_bound()`
 B) `find()`
 C) `search()`
@@ -523,9 +523,9 @@ D) `b_search()`
 
 ---
 
-**Q35. আপনি একটি 3D গেম বানাচ্ছেন যেখানে একটি অবজেক্ট অন্য অবজেক্টের সাথে ধাক্কা (Collision) খেয়েছে কি না তা ডিটেক্ট করতে হবে। অবজেক্টগুলোর পজিশন সর্ট করা নেই। কোন সার্চ ব্যবহার করবেন?**
+**Q35. You are building a 3D game and need to detect collision between objects whose positions are unsorted. Which search approach is typically used at a basic level?**
 A) Binary Search
-B) Linear Search (বা Spatial Partitioning Tree)
+B) Linear Search (or advanced Spatial Partitioning like Quadtrees)
 C) Interpolation Search
 D) Jump Search
 
@@ -538,11 +538,11 @@ D) Jump Search
 
 ---
 
-**Q36. Bitwise Right Shift (`>>> 1`) ব্যবহার করে $mid$ বের করার সুবিধা কী?**
-A) এটি অ্যারের সাইজ কমিয়ে দেয়
-B) এটি আনসাইনড (Unsigned) রাইট শিফট করে, যা পজিটিভ ওভারফ্লো হ্যান্ডেল করে এবং ডিভাইড `/ 2` এর চেয়ে সামান্য ফাস্ট
-C) এটি ডাবল (Double) রিটার্ন করে
-D) এটি শুধুমাত্র নেগেটিভ নাম্বারের জন্য কাজ করে
+**Q36. What is the primary advantage of using Bitwise Right Shift (`>>> 1`) to calculate `mid` in Java?**
+A) It reduces the overall size of the array
+B) It performs an unsigned right shift, which safely handles positive integer overflow and is slightly faster than division
+C) It converts the result into a floating-point `Double`
+D) It only works properly for negative numbers
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -553,11 +553,11 @@ D) এটি শুধুমাত্র নেগেটিভ নাম্ব�
 
 ---
 
-**Q37. Array এর সাইজ যদি 1 হয়, তবে Binary Search (while left <= right) লুপটি কতবার চলবে?**
-A) 0 বার
-B) 1 বার
-C) 2 বার
-D) Infinite বার
+**Q37. If an array has exactly 1 element, how many times will the standard Binary Search `while (left <= right)` loop execute?**
+A) 0 times
+B) exactly 1 time
+C) 2 times
+D) Infinite times
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -568,11 +568,11 @@ D) Infinite বার
 
 ---
 
-**Q38. "Square Root of an Integer" (যেমন $\sqrt{10}$) বের করার জন্য Binary Search ব্যবহার করা যায়। এর সার্চ স্পেস (Search Space) কত থেকে কত হবে?**
-A) 0 থেকে 10
-B) 0 থেকে 5
-C) 1 থেকে $x/2$ (যেখানে x = 10)
-D) 1 থেকে $x$
+**Q38. When using Binary Search to find the integer square root of a number $x$ (e.g., $\sqrt{10}$), what should be the initial search space?**
+A) `1` to `10`
+B) `0` to `5`
+C) `1` to $x/2$
+D) `1` to $x$
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -583,9 +583,9 @@ D) 1 থেকে $x$
 
 ---
 
-**Q39. একটি অসীম (Infinite) ডেটা স্ট্রিমে যেখানে শেষ ইনডেক্স জানা নেই, সেখানে Binary Search চালানোর আগে কোন অ্যালগরিদম ব্যবহার করে বাউন্ডারি বের করতে হয়?**
+**Q39. In an infinite data stream where the upper bound is unknown, which technique is used to find a boundary before applying Binary Search?**
 A) Linear Search
-B) Exponential Search ($1, 2, 4, 8, 16...$ করে ইনডেক্স বাড়িয়ে রেঞ্জ খোঁজা)
+B) Exponential Search (doubling the index like 1, 2, 4, 8... until a boundary is found)
 C) Jump Search
 D) Ternary Search
 
@@ -598,9 +598,9 @@ D) Ternary Search
 
 ---
 
-**Q40. [Conclusion] ডেটাবেস ইনডেক্সিং (Database Indexing) এ সার্চ ফাস্ট করার জন্য ইন্টার্নালি কোন কনসেপ্টের হাইব্রিড বা মডিফায়েড রূপ ব্যবহার করা হয়?**
+**Q40. [Conclusion] To make searches extremely fast, which hybrid or modified tree concept is internally used by Database Indexing engines?**
 A) Linear Search
-B) B-Tree / B+ Tree (যা এক ধরনের N-ary Search Tree)
+B) B-Tree / B+ Tree (which is a balanced N-ary Search Tree variation)
 C) Bubble Sort
 D) Interpolation Search
 

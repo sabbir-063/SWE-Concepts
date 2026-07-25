@@ -1,10 +1,10 @@
 # 03. Graph Traversal: BFS & DFS (Practice MCQs)
 
-এই ফাইলে BFS, DFS, তাদের Time/Space Complexity, Data Structures (Queue/Stack) এবং রিয়েল-ওয়ার্ল্ড অ্যাপ্লিকেশনের ওপর ৪০টি ইন-ডেপথ MCQ দেওয়া হলো।
+This file contains 40 in-depth MCQs covering BFS, DFS, their Time/Space Complexities, Data Structures (Queue/Stack), and real-world applications.
 
 ---
 
-**Q1. Breadth-First Search (BFS) অ্যালগরিদমে কোন ডেটা স্ট্রাকচার ব্যবহৃত হয়?**
+**Q1. Which data structure is primarily used to implement Breadth-First Search (BFS)?**
 A) Stack
 B) Queue
 C) Priority Queue
@@ -19,8 +19,8 @@ D) Linked List
 
 ---
 
-**Q2. Depth-First Search (DFS) অ্যালগরিদমে কোন ডেটা স্ট্রাকচার ব্যবহৃত হয়?**
-A) Stack (বা Call Stack)
+**Q2. Which data structure is primarily used to implement Depth-First Search (DFS)?**
+A) Stack (or Call Stack via Recursion)
 B) Queue
 C) Hash Map
 D) Array
@@ -34,7 +34,7 @@ D) Array
 
 ---
 
-**Q3. BFS এবং DFS উভয়ের Time Complexity কত? (যেখানে V = Vertices, E = Edges)**
+**Q3. What is the standard Time Complexity of both BFS and DFS? (where V = Vertices, E = Edges)**
 A) $O(V \times E)$
 B) $O(V + E)$
 C) $O(V^2)$
@@ -49,7 +49,7 @@ D) $O(E^2)$
 
 ---
 
-**Q4. যদি গ্রাফটিকে Adjacency Matrix দিয়ে রিপ্রেজেন্ট করা থাকে, তবে BFS বা DFS এর Time Complexity কত হবে?**
+**Q4. If a graph is represented using an Adjacency Matrix, what will be the Time Complexity of BFS or DFS?**
 A) $O(V + E)$
 B) $O(V^2)$
 C) $O(E^2)$
@@ -64,7 +64,7 @@ D) $O(V \log V)$
 
 ---
 
-**Q5. আনওয়েটেড (Unweighted) গ্রাফে সোর্স থেকে ডেস্টিনেশনের Shortest Path (সবচেয়ে ছোট রাস্তা) বের করতে কোনটি ব্যবহার করা হয়?**
+**Q5. Which algorithm is guaranteed to find the shortest path from a source to a destination in an unweighted graph?**
 A) DFS
 B) BFS
 C) Kruskal's
@@ -79,11 +79,11 @@ D) Topological Sort
 
 ---
 
-**Q6. মেমোরি কনজাম্পশনের (Space Complexity) দিক থেকে, একটি অনেক চওড়া (Wide) গ্রাফে (যেখানে প্রতি লেভেলে প্রচুর নোড আছে) কোন অ্যালগরিদম বেশি স্পেস নেবে?**
+**Q6. In terms of Space Complexity, which algorithm will consume more memory for a very wide graph (where each level has a massive number of nodes)?**
 A) DFS
 B) BFS
-C) দুটোই সমান স্পেস নেবে
-D) কোনোটিই স্পেস নেবে না
+C) Both will consume the same amount of memory
+D) Neither will consume extra memory
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -94,11 +94,11 @@ D) কোনোটিই স্পেস নেবে না
 
 ---
 
-**Q7. একটি অনেক গভীর (Deep) গ্রাফ বা ট্রিতে কোন অ্যালগরিদম বেশি মেমোরি নেবে বা StackOverflow ঘটাতে পারে?**
+**Q7. Which algorithm is more likely to cause a StackOverflow error or consume excessive memory when traversing a very deep graph or tree?**
 A) DFS
 B) BFS
-C) দুটোই সমান
-D) Dijkstra
+C) Both are equally vulnerable
+D) Dijkstra's Algorithm
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -109,7 +109,7 @@ D) Dijkstra
 
 ---
 
-**Q8. একটি মেজ (Maze) বা গোলকধাঁধায় ঢোকার পর বের হওয়ার রাস্তা খোঁজার জন্য কোন লজিকটি সবচেয়ে স্বাভাবিক?**
+**Q8. Which traversal logic is the most natural fit for finding a way out of a Maze?**
 A) BFS
 B) DFS (Backtracking)
 C) Floyd-Warshall
@@ -124,7 +124,7 @@ D) Binary Search
 
 ---
 
-**Q9. টরেন্ট (Torrent) বা সোশ্যাল নেটওয়ার্কে (যেমন Facebook/LinkedIn) আপনার ১-ডিগ্রি এবং ২-ডিগ্রি কানেকশনগুলো খুঁজে বের করার জন্য কোনটি বেস্ট?**
+**Q9. Which traversal is best suited for finding your 1st-degree and 2nd-degree connections in a social network like Facebook or LinkedIn?**
 A) DFS
 B) BFS
 C) Bubble Sort
@@ -139,11 +139,11 @@ D) Prim's Algorithm
 
 ---
 
-**Q10. সাইকেল ডিটেকশন (Cycle Detection) এর জন্য কোনটি ব্যবহার করা যেতে পারে?**
-A) শুধুমাত্র DFS
-B) শুধুমাত্র BFS
-C) BFS এবং DFS দুটোই
-D) কোনোটিই নয়
+**Q10. Which traversal algorithms can be used for Cycle Detection in a graph?**
+A) Only DFS
+B) Only BFS
+C) Both BFS and DFS can be used
+D) None of the above
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -154,7 +154,7 @@ D) কোনোটিই নয়
 
 ---
 
-**Q11. Web Crawlers (যেমন গুগল বট) সাধারণত ইন্টারনেট ইনডেক্স করার জন্য কোন ট্রাভার্সাল ফলো করে?**
+**Q11. Web Crawlers (like Googlebot) generally follow which traversal strategy to index the internet?**
 A) DFS
 B) BFS
 C) Random Search
@@ -164,15 +164,15 @@ D) Binary Search
 <summary>✅ Answer & Explanation</summary>
 
 **Answer: B**
-ব্যাখ্যা: ক্রলারগুলো একটি পেজে ঢুকে আগে ওই পেজের সব লিংক (Neighbors) সংগ্রহ করে, তারপর এক লেভেল গভীরে যায়। এটি BFS লজিক। DFS করলে ক্রলার একটি লিংকের ভেতরে ঢুকতেই থাকবে এবং অন্য ওয়েবসাইট আর ইনডেক্স করতে পারবে না।
+ব্যাখ্যা: ক্রলারগুলো একটি পেজে ঢুকে আগে ওই পেজের সব লিংক (Neighbors) সংগ্রহ করে, তারপর এক লেভেল গভীরে যায়। এটি BFS লজিক। DFS করলে ক্রলার একটি লিংকের ভেতরে ঢুকতেই থাকবে এবং অন্য ওয়েবসাইট আর ইনডেক্স করতে পারবে ছুটি পাবে না।
 </details>
 
 ---
 
-**Q12. "Topological Sorting" বের করার জন্য কোন অ্যালগরিদমটি ইন্টার্নালি ব্যবহৃত হয়?**
-A) BFS (Kahn's Algorithm) এবং DFS দুটোই ব্যবহার করা যায়
-B) শুধুমাত্র BFS
-C) শুধুমাত্র Kruskal's
+**Q12. Which algorithm is internally used as the foundation for Topological Sorting?**
+A) Both BFS (Kahn's Algorithm) and DFS (with a Stack) can be used
+B) Only BFS
+C) Only Kruskal's Algorithm
 D) Bellman-Ford
 
 <details>
@@ -184,11 +184,11 @@ D) Bellman-Ford
 
 ---
 
-**Q13. গ্রাফ ট্রাভার্সালে `visited` অ্যারে (বা সেট) ব্যবহার করার মূল কারণ কী?**
-A) স্পেস বাঁচানো
-B) ইনফিনিট লুপ (Infinite Loop) থেকে রক্ষা পাওয়া
-C) কোড ছোট করা
-D) ট্রি-কে গ্রাফে কনভার্ট করা
+**Q13. What is the primary reason for using a `visited` array (or set) during Graph Traversal?**
+A) To save memory space
+B) To prevent the algorithm from falling into an Infinite Loop
+C) To make the code shorter
+D) To convert the graph into a tree
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -199,11 +199,11 @@ D) ট্রি-কে গ্রাফে কনভার্ট করা
 
 ---
 
-**Q14. একটি Tree (যেমন Binary Tree) তে ট্রাভার্স করার সময় কি `visited` অ্যারে লাগে?**
-A) হ্যাঁ, সবসময় লাগে
-B) না, লাগে না
-C) শুধু ব্যালান্সড ট্রিতে লাগে
-D) শুধু স্কিউড ট্রিতে লাগে
+**Q14. Is a `visited` array strictly necessary when traversing a standard Tree (like a Binary Tree)?**
+A) Yes, always
+B) No, it is not required
+C) Only required for balanced trees
+D) Only required for skewed trees
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -214,11 +214,11 @@ D) শুধু স্কিউড ট্রিতে লাগে
 
 ---
 
-**Q15. Iterative DFS এ নোড প্রসেসিং অর্ডারের ক্ষেত্রে Recursive DFS এর সাথে একটি পার্থক্য দেখা যেতে পারে। কেন?**
-A) Iterative DFS ভুল কাজ করে
-B) Recursive DFS বাম থেকে ডানে যায়, আর Iterative DFS এ স্ট্যাকে বাম থেকে ডানে পুশ করলে পপ হয় ডান দিক থেকে আগে (LIFO)
-C) Iterative DFS এ Queue ব্যবহার করা হয়
-D) Iterative DFS শর্টেস্ট পাথ দেয়
+**Q15. Why might the node processing order in Iterative DFS differ from Recursive DFS when visiting a node's children?**
+A) Because Iterative DFS is fundamentally flawed
+B) Because Recursive DFS visits children in left-to-right order naturally, whereas Iterative DFS pushes children onto a Stack, meaning the last child pushed is processed first (LIFO)
+C) Because Iterative DFS uses a Queue implicitly
+D) Because Iterative DFS calculates shortest paths
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -229,11 +229,11 @@ D) Iterative DFS শর্টেস্ট পাথ দেয়
 
 ---
 
-**Q16. Disconnected Graph এ সব নোড ভিজিট করার জন্য কী করতে হয়?**
-A) BFS বা DFS কে রিকার্সিভলি কল করতে হয়
-B) গ্রাফের সব নোডের ওপর একটি লুপ চালিয়ে চেক করতে হয় `visited[i] == false` কি না
-C) এটি সম্ভব নয়
-D) গ্রাফটিকে গাছে (Tree) কনভার্ট করতে হয়
+**Q16. How do you ensure all nodes are visited in a Disconnected Graph?**
+A) Simply call BFS or DFS recursively from any node
+B) Run a `for` loop over all nodes and trigger a new traversal if the node is `visited[i] == false`
+C) It is impossible to visit all nodes in a disconnected graph
+D) First convert the graph into a Tree
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -244,26 +244,26 @@ D) গ্রাফটিকে গাছে (Tree) কনভার্ট কর�
 
 ---
 
-**Q17. গ্রাফে "Connected Components" (কতগুলো আলাদা আলাদা অংশ আছে) বের করতে BFS/DFS কতবার নতুন করে (For loop থেকে) কল করা হয়, সেটাই তার উত্তর। এটি কি সত্য?**
-A) হ্যাঁ
-B) না
-C) শুধুমাত্র আনডিরেক্টেড গ্রাফের জন্য সত্য
-D) শুধুমাত্র ডিরেক্টেড গ্রাফের জন্য সত্য
+**Q17. To count the number of "Connected Components" in an undirected graph, you can simply count how many times BFS/DFS is newly triggered from the outer `for` loop. Is this true?**
+A) Yes
+B) No
+C) Only true for weighted graphs
+D) Only true for directed graphs
 
 <details>
 <summary>✅ Answer & Explanation</summary>
 
-**Answer: C**
-ব্যাখ্যা: আনডিরেক্টেড গ্রাফে (Undirected graph) লুপ থেকে যতবার আনভিজিটেড নোড পেয়ে BFS/DFS কল করা হয়, ঠিক ততগুলোই আলাদা Connected Component থাকে।
+**Answer: A**
+ব্যাখ্যা: আনডিরেক্টেড গ্রাফে (Undirected graph) লুপ থেকে যতবার আনভিজিটেড নোড পেয়ে BFS/DFS কল করা হয়, ঠিক ততগুলোই আলাদা Connected Component থাকে। (Note: answer option fixed to 'Yes' reflecting general truth for undirected graphs).
 </details>
 
 ---
 
-**Q18. [Code Output] একটি Queue তে আপনি `A, B, C` পুশ করলেন। এরপর পপ (`poll`) করলে কোন নোডটি সবার আগে বের হবে?**
+**Q18. [Code Output] You push `A`, `B`, and `C` into a standard Queue in that exact order. When you `poll()` once, which element is removed?**
 A) C
 B) B
 C) A
-D) র্যান্ডমলি একটি
+D) A random element
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -274,11 +274,11 @@ D) র্যান্ডমলি একটি
 
 ---
 
-**Q19. [Code Output] একটি Stack এ আপনি `A, B, C` পুশ করলেন। এরপর পপ (`pop`) করলে কোন নোডটি সবার আগে বের হবে?**
+**Q19. [Code Output] You push `A`, `B`, and `C` into a standard Stack in that exact order. When you `pop()` once, which element is removed?**
 A) C
 B) B
 C) A
-D) র্যান্ডমলি একটি
+D) A random element
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -289,10 +289,10 @@ D) র্যান্ডমলি একটি
 
 ---
 
-**Q20. "Bipartite Graph" (যে গ্রাফকে দুটি ভিন্ন রঙে রাঙানো যায় যাতে পাশাপাশি কোনো নোডের রঙ এক না হয়) চেক করতে কোনটি ব্যবহার করা যায়?**
-A) শুধুমাত্র BFS
-B) শুধুমাত্র DFS
-C) BFS এবং DFS দুটোই
+**Q20. Which algorithm can be used to check if a graph is a "Bipartite Graph" (can be colored with 2 colors such that no two adjacent nodes have the same color)?**
+A) Only BFS
+B) Only DFS
+C) Both BFS and DFS
 D) Dijkstra's Algorithm
 
 <details>
@@ -304,11 +304,11 @@ D) Dijkstra's Algorithm
 
 ---
 
-**Q21. Bi-directional BFS কখন ব্যবহার করা হয়?**
-A) ট্রি ট্রাভার্স করতে
-B) অনেক বড় গ্রাফে সোর্স এবং ডেস্টিনেশনের শর্টেস্ট পাথ খুব দ্রুত বের করতে
-C) সাইকেল ডিটেক্ট করতে
-D) গ্রাফ সর্ট করতে
+**Q21. When is "Bi-directional BFS" typically used?**
+A) To traverse simple trees
+B) To drastically reduce the search space when finding the shortest path between a source and a destination in a massive graph
+C) To detect cycles
+D) To sort a graph topologically
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -319,11 +319,11 @@ D) গ্রাফ সর্ট করতে
 
 ---
 
-**Q22. একটি Weighted Graph (যেখানে এজের বিভিন্ন ওয়েট বা দূরত্ব আছে) এ শর্টেস্ট পাথ বের করতে কি নরমাল BFS কাজ করবে?**
-A) হ্যাঁ
-B) না, এক্ষেত্রে Dijkstra's বা Bellman-Ford ব্যবহার করতে হবে
-C) হ্যাঁ, যদি Queue এর বদলে Stack ব্যবহার করা হয়
-D) হ্যাঁ, যদি গ্রাফটি ডিরেক্টেড হয়
+**Q22. Will standard BFS correctly find the shortest path in a Weighted Graph (where edges have different weights)?**
+A) Yes, it always will
+B) No, for weighted graphs, algorithms like Dijkstra's or Bellman-Ford should be used
+C) Yes, if we replace the Queue with a Stack
+D) Yes, but only if the graph is directed
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -334,11 +334,11 @@ D) হ্যাঁ, যদি গ্রাফটি ডিরেক্টেড 
 
 ---
 
-**Q23. ডিরেক্টেড গ্রাফে (Directed Graph) সাইকেল ডিটেক্ট করার জন্য DFS এ `visited` অ্যারে ছাড়াও আরেকটি অ্যারে বা সেট লাগে। তার নাম কী?**
-A) `recursionStack` (বা `inStack`) অ্যারে
-B) `level` অ্যারে
-C) `parent` অ্যারে
-D) `distance` অ্যারে
+**Q23. When detecting a cycle in a Directed Graph using DFS, besides the standard `visited` array, what additional data structure is needed?**
+A) A `recursionStack` (or `inStack`) array to track nodes currently in the active DFS path
+B) A `level` array
+C) A `parent` array
+D) A `distance` array
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -349,11 +349,11 @@ D) `distance` অ্যারে
 
 ---
 
-**Q24. আনডিরেক্টেড গ্রাফে (Undirected Graph) সাইকেল ডিটেক্ট করতে DFS চালানোর সময় কারেন্ট নোডের প্রতিবেশীদের মধ্যে কাকে ইগনোর (Ignore) করতে হয়?**
-A) রুট নোডকে
-B) প্যারেন্ট (Parent) নোডকে, যেখান থেকে সে এইমাত্র এসেছে
-C) যেকোনো ভিজিটেড নোডকে
-D) কোনোটিই নয়
+**Q24. When detecting a cycle in an Undirected Graph using DFS, which neighbor must the algorithm explicitly ignore during traversal?**
+A) The root node
+B) The immediate parent node from which the current node was just discovered
+C) Any node that has been visited
+D) None of the above
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -364,11 +364,11 @@ D) কোনোটিই নয়
 
 ---
 
-**Q25. একটি গ্রাফে 100 টি নোড এবং 99 টি এজ আছে এবং কোনো সাইকেল নেই। গ্রাফটি আসলে কী?**
-A) একটি Tree
-B) একটি Complete Graph
-C) একটি Bipartite Graph
-D) একটি Disconnected Graph
+**Q25. A connected graph has exactly 100 nodes, 99 edges, and contains absolutely no cycles. What is this graph strictly known as?**
+A) A Tree
+B) A Complete Graph
+C) A Bipartite Graph
+D) A Disconnected Graph
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -379,8 +379,8 @@ D) একটি Disconnected Graph
 
 ---
 
-**Q26. Flood Fill Algorithm (যেমন পেইন্ট বা ফটোশপে একটি রঙের এরিয়া ফিল করা) ইন্টার্নালি কোন লজিক ব্যবহার করে?**
-A) BFS বা DFS
+**Q26. The "Flood Fill" algorithm (used for the paint bucket tool in Photoshop to fill connected regions of the same color) is internally based on which concept?**
+A) BFS or DFS (2D Grid Traversal)
 B) Binary Search
 C) Hashing
 D) Dijkstra
@@ -394,11 +394,11 @@ D) Dijkstra
 
 ---
 
-**Q27. 2D ম্যাট্রিক্স বা গ্রিড (Grid) ট্রাভার্সালের সময় `visited` অ্যারের বদলে স্পেস বাঁচানোর জন্য কী করা যেতে পারে?**
-A) ম্যাট্রিক্সের ডেটা পরিবর্তন করে (যেমন 1 কে -1 বা অন্য কোনো স্পেশাল ভ্যালু করে দেওয়া) ভিজিটেড মার্ক করা
-B) Queue ব্যবহার না করা
-C) Stack ব্যবহার না করা
-D) এটি সম্ভব নয়
+**Q27. When traversing a 2D Matrix or Grid, how can you save the $O(N \times M)$ extra space typically required for the `visited` array?**
+A) By performing In-place modification (e.g., mutating the cell's value to `-1` or a special character) to mark it as visited
+B) By avoiding the use of a Queue entirely
+C) By avoiding the use of a Stack entirely
+D) This optimization is impossible
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -409,11 +409,11 @@ D) এটি সম্ভব নয়
 
 ---
 
-**Q28. "Knight's Tour" বা দাবার ঘোড়া সবচেয়ে কম কয় চালে একটি টার্গেট ঘরে পৌঁছাতে পারবে—এটি সলভ করার বেস্ট উপায় কী?**
+**Q28. What is the most efficient algorithm to solve the "Knight's Tour" problem to find the minimum number of moves a Knight needs to reach a target cell on a chessboard?**
 A) DFS
 B) BFS
 C) Backtracking
-D) DP
+D) Dynamic Programming
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -424,11 +424,11 @@ D) DP
 
 ---
 
-**Q29. DFS এর স্পেস কমপ্লেক্সিটি $O(V)$ বলা হয়, কিন্তু আসলে এটি কিসের ওপর নির্ভর করে?**
-A) গ্রাফের মোট এজের (Edges) ওপর
-B) ট্রির বা গ্রাফের ম্যাক্সিমাম গভীরতা বা হাইটের (Maximum Depth/Height) ওপর
-C) রুট নোডের ভ্যালুর ওপর
-D) Queue এর সাইজের ওপর
+**Q29. The space complexity of DFS is often stated as $O(V)$. However, what does this actually depend on in practice?**
+A) The total number of edges in the graph
+B) The maximum depth or height of the recursion tree/stack for that graph
+C) The value of the root node
+D) The initial size of the Queue
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -439,7 +439,7 @@ D) Queue এর সাইজের ওপর
 
 ---
 
-**Q30. Tree এর "Pre-order Traversal" মূলত কোন অ্যালগরিদমের একটি রূপ?**
+**Q30. "Pre-order Traversal" of a Binary Tree is fundamentally a variation of which traversal technique?**
 A) BFS
 B) DFS
 C) Binary Search
@@ -454,7 +454,7 @@ D) Heapify
 
 ---
 
-**Q31. Tree এর "Level-order Traversal" মূলত কোন অ্যালগরিদমের একটি রূপ?**
+**Q31. "Level-order Traversal" of a Binary Tree is fundamentally a variation of which traversal technique?**
 A) BFS
 B) DFS
 C) Post-order
@@ -469,11 +469,11 @@ D) Dijkstra
 
 ---
 
-**Q32. BFS এ কোনো নোডকে `visited = true` কখন মার্ক করা সবচেয়ে ইফিশিয়েন্ট এবং বাগ-ফ্রি (Bug-free)?**
-A) Queue থেকে `poll()` বা বের করার ঠিক পর পর
-B) Queue তে `add()` বা ঢোকানোর ঠিক আগে বা ঢোকানোর সময়
-C) লুপ শেষ হওয়ার পর
-D) রুট নোডে যাওয়ার পর
+**Q32. When implementing BFS, at what exact point is it most efficient and bug-free to mark a node as `visited = true`?**
+A) Right after it is `poll()`ed out of the Queue
+B) Right before or exactly when it is `add()`ed into the Queue
+C) Only after the entire while loop finishes
+D) Only when it is the root node
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -484,11 +484,11 @@ D) রুট নোডে যাওয়ার পর
 
 ---
 
-**Q33. ডিরেক্টেড গ্রাফে "Strongly Connected Components (SCC)" বের করার জন্য Kosaraju's Algorithm কয়টি DFS ট্রাভার্সাল ব্যবহার করে?**
-A) ১টি
-B) ২টি
-C) ৩টি
-D) কোনোটিই নয়, এটি BFS ব্যবহার করে
+**Q33. Kosaraju's Algorithm, used for finding Strongly Connected Components (SCCs) in a directed graph, utilizes how many DFS traversals?**
+A) 1
+B) 2
+C) 3
+D) None, it utilizes BFS instead
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -499,11 +499,11 @@ D) কোনোটিই নয়, এটি BFS ব্যবহার করে
 
 ---
 
-**Q34. 0-1 BFS কী?**
-A) এটি এমন একটি BFS যা শুধুমাত্র 0 এবং 1 প্রিন্ট করে
-B) এটি এমন একটি গ্রাফের শর্টেস্ট পাথ বের করে যেখানে এজের ওয়েট শুধুমাত্র 0 অথবা 1 হতে পারে
-C) এটি BFS এর একটি ফেইল্ড অ্যালগরিদম
-D) এটি কোনো ডেটা স্ট্রাকচার ব্যবহার করে না
+**Q34. What is a "0-1 BFS"?**
+A) A BFS that only prints the numbers 0 and 1
+B) A modified BFS using a Deque, designed to find shortest paths in a graph where edge weights can only be 0 or 1
+C) A failed variation of standard BFS
+D) A traversal technique that uses no data structures
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -514,11 +514,11 @@ D) এটি কোনো ডেটা স্ট্রাকচার ব্য�
 
 ---
 
-**Q35. "Multi-source BFS" (একাধিক সোর্স থেকে একই সাথে BFS শুরু করা) কখন ব্যবহার করা হয়?**
-A) যখন গ্রাফে কোনো রুট নেই
-B) যখন একাধিক स्टार्टिंग পয়েন্ট থাকে এবং টার্গেটে পৌঁছানোর সবচেয়ে ফাস্ট পাথটি দরকার হয়
-C) যখন সাইকেল ডিটেক্ট করতে হয়
-D) যখন সর্ট করতে হয়
+**Q35. When is "Multi-source BFS" (starting BFS simultaneously from multiple starting nodes) primarily utilized?**
+A) When a graph is missing a root node entirely
+B) When there are multiple potential starting points and you need to find the shortest path from *any* of them to the targets simultaneously
+C) When detecting cycles exclusively
+D) When topologically sorting a graph
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -529,26 +529,26 @@ D) যখন সর্ট করতে হয়
 
 ---
 
-**Q36. Iterative DFS এর ক্ষেত্রে স্ট্যাকে যদি আপনি প্রতিবেশীদের (Neighbors) 1, 2, 3 এই অর্ডারে পুশ করেন, তবে পপ (Pop) হওয়ার অর্ডার কী হবে?**
-A) 1, 2, 3
-B) 3, 2, 1
-C) 2, 1, 3
-D) র্যান্ডম
+**Q36. In Iterative DFS, if you push a node's neighbors into the stack in the order `1, 2, 3`, in what order will they be popped and processed?**
+A) `1, 2, 3`
+B) `3, 2, 1`
+C) `2, 1, 3`
+D) Random order
 
 <details>
 <summary>✅ Answer & Explanation</summary>
 
 **Answer: B**
-ব্যাখ্যা: Stack হলো LIFO (Last In First Out)। সবার শেষে 3 ঢুকেছে, তাই সবার আগে 3 বের হবে। এজন্য স্ট্যাকে ডেটা পুশ করার সময় রিভার্স অর্ডারে পুশ করতে হয় যাতে সোজা অর্ডারে বের হয়।
+ব্যাখ্যা: Stack হলো LIFO (Last In First Out)। সবার শেষে 3 ঢুকেছে, তাই সবার আগে 3 বের হবে। এজন্য স্ট্যাকে ডেটা পুশ করার সময় রিভার্স অর্ডারে (3, 2, 1) পুশ করতে হয় যাতে সোজা অর্ডারে (1, 2, 3) প্রসেস হয়।
 </details>
 
 ---
 
-**Q37. একটি 2D Grid (M x N) এ গ্রাফ অ্যালগরিদম চালানোর সময় ম্যাক্সিমাম কয়টি প্রতিবেশী (Neighbors) থাকতে পারে (যদি ডায়াগোনাল বা কোনাকুনি না ধরা হয়)?**
-A) ৮টি
-B) ৪টি (উপরে, নিচে, বামে, ডানে)
-C) ২টি
-D) ৬টি
+**Q37. When applying graph traversal algorithms on a standard 2D Grid (M x N) without considering diagonal movements, what is the maximum number of neighbors a single cell can have?**
+A) 8
+B) 4 (Up, Down, Left, Right)
+C) 2
+D) 6
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -559,11 +559,11 @@ D) ৬টি
 
 ---
 
-**Q38. "A* Search" বা "A-Star" অ্যালগরিদম মূলত কোন অ্যালগরিদমের একটি আপগ্রেডেড ভার্সন?**
+**Q38. The "A* (A-Star) Search" algorithm is fundamentally an upgraded version of which algorithm?**
 A) DFS
 B) BFS
-C) Dijkstra's Algorithm (Heuristic যোগ করে)
-D) Kruskal's
+C) Dijkstra's Algorithm (by incorporating a Heuristic)
+D) Kruskal's Algorithm
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -574,11 +574,11 @@ D) Kruskal's
 
 ---
 
-**Q39. BFS এ কোনো নোডের লেভেল (Level) বা ডিস্টেন্স ট্র্যাক করার সবচেয়ে সহজ উপায় কোনটি?**
-A) স্ট্যাকের সাইজ গুনে
-B) একটি `int[] distance` অ্যারে রাখা, যেখানে `distance[neighbor] = distance[current] + 1`
-C) রিকার্সনের লেভেল গুনে
-D) কোনো উপায় নেই
+**Q39. In standard BFS, what is the simplest way to track the level or distance of each newly discovered node?**
+A) By counting the size of the stack
+B) By maintaining an array `distance[]` where `distance[neighbor] = distance[current] + 1`
+C) By counting recursion depth levels
+D) It is impossible to track distances in BFS
 
 <details>
 <summary>✅ Answer & Explanation</summary>
@@ -589,11 +589,11 @@ D) কোনো উপায় নেই
 
 ---
 
-**Q40. [Conclusion] একটি আননোন (Unknown) বা অসীম (Infinite) গ্রাফে কোনো নির্দিষ্ট টার্গেট খুঁজছেন (যেটা খুব বেশি গভীরে নেই)। কোন অ্যালগরিদম ভালো?**
+**Q40. [Conclusion] If you are searching for a specific target in an Unknown or Infinite graph, and the target is likely not very deep, which algorithm is safer to use?**
 A) DFS
 B) BFS
-C) DFS ভালো কাজ করবে
-D) দুটোই ফেইল করবে
+C) Both will fail immediately
+D) DFS with randomized choices
 
 <details>
 <summary>✅ Answer & Explanation</summary>
