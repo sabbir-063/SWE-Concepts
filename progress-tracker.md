@@ -155,10 +155,10 @@
   - [x] 01-knowledge.md
   - [x] 02-code.md
   - [x] 03-mcq.md
-- [ ] 02-dsa/02-algorithms/05-dynamic-programming-intro/
-  - [ ] 01-knowledge.md
-  - [ ] 02-code.md
-  - [ ] 03-mcq.md
+- [x] 02-dsa/02-algorithms/05-dynamic-programming-intro/
+  - [x] 01-knowledge.md
+  - [x] 02-code.md
+  - [x] 03-mcq.md
 - [x] 02-dsa/03-complexity-analysis/01-big-o-notation.md
 - [x] 02-dsa/03-complexity-analysis/02-time-space-tradeoffs.md
 - [ ] 02-dsa/04-recursion/01-recursion-basics/
@@ -271,9 +271,9 @@
   - [ ] 03-mcq.md
 
 ## 📊 Overall Progress Summary
-- **Total Progress:** 14 / 70 topics completed.
+- **Total Progress:** 15 / 70 topics completed.
 
 - **01. Programming:** 0 / 29 completed.
-- **02. Data Structures & Algorithms (DSA):** 14 / 18 completed.
+- **02. Data Structures & Algorithms (DSA):** 15 / 18 completed.
 - **03. CS Fundamentals:** 0 / 17 completed.
 - **04. Logical Reasoning:** 0 / 6 completed.
