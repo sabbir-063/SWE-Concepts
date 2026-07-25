@@ -195,10 +195,10 @@
   - [x] 01-knowledge.md
   - [x] 02-code.md
   - [x] 03-mcq.md
-- [ ] 03-cs-fundamentals/03-operating-systems/02-scheduling-algorithms/
-  - [ ] 01-knowledge.md
-  - [ ] 02-code.md
-  - [ ] 03-mcq.md
+- [x] 03-cs-fundamentals/03-operating-systems/02-scheduling-algorithms/
+  - [x] 01-knowledge.md
+  - [x] 02-code.md
+  - [x] 03-mcq.md
 - [ ] 03-cs-fundamentals/03-operating-systems/03-memory-management/
   - [ ] 01-knowledge.md
   - [ ] 02-code.md
@@ -271,9 +271,9 @@
   - [ ] 03-mcq.md
 
 ## 📊 Overall Progress Summary
-- **Total Progress:** 23 / 70 topics completed.
+- **Total Progress:** 24 / 70 topics completed.
 
 - **01. Programming:** 0 / 29 completed.
 - **02. Data Structures & Algorithms (DSA):** 18 / 18 completed.
-- **03. CS Fundamentals:** 5 / 17 completed.
+- **03. CS Fundamentals:** 6 / 17 completed.
 - **04. Logical Reasoning:** 0 / 6 completed.
