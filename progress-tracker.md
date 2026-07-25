@@ -179,10 +179,10 @@
   - [x] 01-knowledge.md
   - [x] 02-code.md
   - [x] 03-mcq.md
-- [ ] 03-cs-fundamentals/01-database-deep/02-cap-theorem/
-  - [ ] 01-knowledge.md
-  - [ ] 02-code.md
-  - [ ] 03-mcq.md
+- [x] 03-cs-fundamentals/01-database-deep/02-cap-theorem/
+  - [x] 01-knowledge.md
+  - [x] 02-code.md
+  - [x] 03-mcq.md
 - [ ] 03-cs-fundamentals/02-networking-deep/01-https-tls/
   - [ ] 01-knowledge.md
   - [ ] 02-code.md
@@ -271,9 +271,9 @@
   - [ ] 03-mcq.md
 
 ## 📊 Overall Progress Summary
-- **Total Progress:** 19 / 70 topics completed.
+- **Total Progress:** 20 / 70 topics completed.
 
 - **01. Programming:** 0 / 29 completed.
 - **02. Data Structures & Algorithms (DSA):** 18 / 18 completed.
-- **03. CS Fundamentals:** 1 / 17 completed.
+- **03. CS Fundamentals:** 2 / 17 completed.
 - **04. Logical Reasoning:** 0 / 6 completed.
