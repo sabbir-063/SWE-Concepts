@@ -223,10 +223,10 @@
   - [x] 01-knowledge.md
   - [x] 02-code.md
   - [x] 03-mcq.md
-- [ ] 03-cs-fundamentals/05-api-http-deep/01-http-headers-caching/
-  - [ ] 01-knowledge.md
-  - [ ] 02-code.md
-  - [ ] 03-mcq.md
+- [x] 03-cs-fundamentals/05-api-http-deep/01-http-headers-caching/
+  - [x] 01-knowledge.md
+  - [x] 02-code.md
+  - [x] 03-mcq.md
 - [ ] 03-cs-fundamentals/05-api-http-deep/02-rest-vs-graphql/
   - [ ] 01-knowledge.md
   - [ ] 02-code.md
@@ -271,9 +271,9 @@
   - [ ] 03-mcq.md
 
 ## 📊 Overall Progress Summary
-- **Total Progress:** 30 / 70 topics completed.
+- **Total Progress:** 31 / 70 topics completed.
 
 - **01. Programming:** 0 / 29 completed.
 - **02. Data Structures & Algorithms (DSA):** 18 / 18 completed.
-- **03. CS Fundamentals:** 12 / 17 completed.
+- **03. CS Fundamentals:** 13 / 17 completed.
 - **04. Logical Reasoning:** 0 / 6 completed.
