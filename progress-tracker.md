@@ -215,10 +215,10 @@
   - [x] 01-knowledge.md
   - [x] 02-code.md
   - [x] 03-mcq.md
-- [ ] 03-cs-fundamentals/04-security/02-common-vulnerabilities-owasp/
-  - [ ] 01-knowledge.md
-  - [ ] 02-code.md
-  - [ ] 03-mcq.md
+- [x] 03-cs-fundamentals/04-security/02-common-vulnerabilities-owasp/
+  - [x] 01-knowledge.md
+  - [x] 02-code.md
+  - [x] 03-mcq.md
 - [ ] 03-cs-fundamentals/04-security/03-authn-vs-authz/
   - [ ] 01-knowledge.md
   - [ ] 02-code.md
@@ -271,9 +271,9 @@
   - [ ] 03-mcq.md
 
 ## 📊 Overall Progress Summary
-- **Total Progress:** 28 / 70 topics completed.
+- **Total Progress:** 29 / 70 topics completed.
 
 - **01. Programming:** 0 / 29 completed.
 - **02. Data Structures & Algorithms (DSA):** 18 / 18 completed.
-- **03. CS Fundamentals:** 10 / 17 completed.
+- **03. CS Fundamentals:** 11 / 17 completed.
 - **04. Logical Reasoning:** 0 / 6 completed.
